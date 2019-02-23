@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">MyDraw</string>
+    <string name="app_bar_name">Вадим Смирнов</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Вадим Смирнов</string>
+    <string name="nav_header_subtitle">художник-философ </string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="large_text">
+        "Вадим Валентинович Смирнов.\n\n"
+
+        "Родился 3 июля 1953 года в городе Красный Луч Ворошиловградской области (Украинская ССР) в семье служащих. \n\n"
+
+        "В 1971 окончил среднюю школу № 1 в Красном Луче.\n\n"
+
+        "Серьёзно заниматься живописью начал в 1972 году. \n\n"
+
+        "Работал руководителем кружка изобразительного искусства в краснолучском Дворце пионеров, художником-оформителем на разных предприятиях города, инструктором боевых искусств в молодёжном центре «Альтаир» (восточные единоборства изучил самостоятельно), давал частные уроки рисования. \n\n"
+
+        "Как художник работал во многих жанрах и направлениях (станковая и монументальная живопись, графика, коллаж, инсталляция). \n\n"
+        "Работы Вадима Смирнова хранятся в частных коллекциях Украины, России, Узбекистана, Италии, Германии, США. \n\n"
+
+        "Скончался художник 27 апреля 2012 года. \n\n"
+    </string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
