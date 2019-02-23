@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_painting"
+            android:icon="@drawable/ic_paintitng"
+            android:title="Живопись" />
+        <item
+            android:id="@+id/nav_graphics"
+            android:icon="@drawable/ic_graphics"
+            android:title="Графика" />
+
+        <item
+            android:id="@+id/nav_poetry"
+            android:icon="@drawable/ic_poetry"
+            android:title="Поэзия" />
+        <item
+            android:id="@+id/nav_interview"
+            android:icon="@drawable/ic_microphone"
+            android:title="Интервью" />
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_photo"
+            android:title="Фото" />
+    </group>
+
+    <item android:title="О художнике">
+        <menu>
+            <item
+                android:id="@+id/nav_biography"
+                android:icon="@drawable/ic_biography"
+                android:title="Биография" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about"
+                android:title="Отзывы о творчестве" />
+        </menu>
+    </item>
+
+</menu>
