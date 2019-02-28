@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 
 public class BioFragment extends Fragment {
 
+    // TODO: Сделать отображение "биографии" через фрагменты. На планшете
+    // TODO: фото слева - текст справа; На телефоно как сейчас.
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

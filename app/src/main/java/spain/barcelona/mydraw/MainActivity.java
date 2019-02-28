@@ -90,9 +90,12 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_painting) {
-            fragmentClass = BioFragment.class;
 
         } else if (id == R.id.nav_graphics) {
+
+        } else if (id == R.id.nav_poetry) {
+            fragmentClass = PoetryFragment.class;
+
 
         } else if (id == R.id.nav_interview) {
 
