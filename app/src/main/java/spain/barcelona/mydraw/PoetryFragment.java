@@ -15,6 +15,9 @@ import static spain.barcelona.mydraw.R.string.poem4;
 public class PoetryFragment extends Fragment {
 
 
+    // данная версия кода для телефонов
+    // TODO для планшетов желательно сделать отображение с помощью 2 фрагментов названия стихотворения-слева (как бы меню) и вывод самого стихотворения справа с возможностью прокручивания правого фрагмента
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
