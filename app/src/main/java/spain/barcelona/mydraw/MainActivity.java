@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity
             fragmentClass = BioFragment.class;
 
         } else if (id == R.id.nav_about) {
-
+            fragmentClass = AboutFragment.class;
         }
 
         try {
