@@ -9,8 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <!-- ExpandableText layout -->
         <com.ms.square.android.expandabletextview.ExpandableTextView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -305,7 +304,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="16dp">
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp">
                 <TextView
                     android:id="@id/expandable_text"
                     android:layout_weight="10"
