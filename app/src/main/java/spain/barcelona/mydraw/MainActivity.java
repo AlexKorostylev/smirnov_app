@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_interview) {
+            fragmentClass = InterviewFragment.class;
 
         } else if (id == R.id.nav_biography) {
             fragmentClass = BioFragment.class;
