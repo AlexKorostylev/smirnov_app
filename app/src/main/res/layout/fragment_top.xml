@@ -15,26 +15,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:background="#e2e2e2"
             android:text="Живопись"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            android:background="#a0a0a0" />
-
         <ImageView
-            android:layout_width="240dp"
-            android:layout_height="180dp"
+            android:layout_width="300dp"
+            android:layout_height="170dp"
             android:src="@drawable/s01_p"
-            android:layout_gravity="center"/>
-
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"/>
 
         <TextView
+            android:layout_marginTop="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Осенний натюрморт"
@@ -44,27 +40,24 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Графика" />
+            android:layout_marginTop="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Графика"
+            android:background="#e2e2e2"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            android:background="#a0a0a0" />
+
 
         <ImageView
-            android:layout_width="240dp"
-            android:layout_height="180dp"
+            android:layout_width="300dp"
+            android:layout_height="170dp"
             android:src="@drawable/s70"
+            android:layout_marginTop="16dp"
             android:layout_gravity="center"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"/>
+            android:scaleType="fitXY"/>
 
         <TextView
+            android:layout_marginTop="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Осенний натюрморт"
