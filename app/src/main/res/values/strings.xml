@@ -608,4 +608,20 @@
     Из интервью, 18 мая 2013
     </string>
 
+
+    <string name="p19_name">Натюрморт с цветущим абрикосом</string>
+    <string name="p19_detail">Холст на картоне 1999</string>
+
+    <string name="s11_p_name">Нико Пирасмани</string>
+    <string name="s11_p_detail">Xoлст, масло | 81x59,5 | 1975</string>
+
+    <string-array name="img_type">
+        <item>1972-1979</item>
+        <item>1980-1989</item>
+        <item>1990-1999</item>
+        <item>2000-2012</item>
+        <item>Все годы</item>
+    </string-array>
+
+
 </resources>

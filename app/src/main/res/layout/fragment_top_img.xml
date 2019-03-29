@@ -1,11 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    tools:context=".TopImgFragment"
+    android:layout_margin="16dp">
 
-    <!--
+    <ImageView
+        android:id="@+id/info_image"
+        android:src="@drawable/s11_p"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:layout_gravity="fill_horizontal"
+        />
+
+    <TextView
+        android:id="@+id/name_text"
+        android:text="@string/s11_p_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/detail_text"
+        android:layout_marginLeft="24dp"
+        android:background="#D9282828"
+        android:paddingEnd="16dp"
+        android:paddingStart="8dp"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/detail_text"
+        android:text="@string/s11_p_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/info_image"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="24dp"
+        android:background="#D9282828"
+        android:paddingEnd="12dp"
+        android:paddingStart="8dp"
+
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+</RelativeLayout>
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TopImgFragment">
+
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="fill_parent"
@@ -60,19 +111,6 @@
         </LinearLayout>
 
     </ScrollView>
-    -->
 
-    <FrameLayout
-        android:id="@+id/img_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="8" />
-
-    <FrameLayout
-        android:id="@+id/btn_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="16dp"
-        android:layout_weight="2" />
-
-</LinearLayout>
+</FrameLayout>
+-->
