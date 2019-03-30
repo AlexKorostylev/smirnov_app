@@ -104,13 +104,12 @@ public class MainActivity extends AppCompatActivity
             ft.commit();
 
         } else if (id == R.id.nav_graphics) {
-            // GraphicFragment
-/*            GraphicFragment graphicFragment = new GraphicFragment();
+            GraphicFragment graphicFragment = new GraphicFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.top_container, graphicFragment);
             ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            ft.commit();*/
+            ft.commit();
 
         } else if (id == R.id.nav_poetry) {
             fragmentClass = PoetryFragment.class;

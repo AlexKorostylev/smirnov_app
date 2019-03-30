@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".GraphicBtnFragment">
+
+    <TextView
+        android:id="@+id/lot_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="92dp"
+        android:text="3 из 18"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    <Spinner
+        android:id="@+id/art_type"
+        android:entries="@array/img_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="117dp"
+        android:background="#fbfbfb"
+        android:gravity="end"
+        android:minWidth="10dp" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="end"
+        android:layout_marginEnd="32dp"
+        android:background="#48b5c6"
+        android:paddingEnd="4dp"
+        android:paddingStart="4dp"
+        android:text="\u232A"
+        android:textColor="#0c0c0c" />
+
+    <Button
+        android:id="@+id/btn_previous"
+        android:layout_width="35dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="32dp"
+        android:background="#d2d4d4"
+        android:text="\u2329"
+        android:textColor="#0c0c0c" />
+
+</RelativeLayout>
