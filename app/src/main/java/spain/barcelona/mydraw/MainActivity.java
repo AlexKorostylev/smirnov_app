@@ -2,11 +2,7 @@ package spain.barcelona.mydraw;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -100,8 +96,21 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_painting) {
+            PaintFragment paintingFragment = new PaintFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.top_container, paintingFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
 
         } else if (id == R.id.nav_graphics) {
+            // GraphicFragment
+/*            GraphicFragment graphicFragment = new GraphicFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.top_container, graphicFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();*/
 
         } else if (id == R.id.nav_poetry) {
             fragmentClass = PoetryFragment.class;
@@ -124,12 +133,12 @@ public class MainActivity extends AppCompatActivity
         }
 
         // Вставляем фрагмент, заменяя текущий фрагмент
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        /*FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
         // Выделяем выбранный пункт меню в шторке
         item.setChecked(true);
         // Выводим выбранный пункт в заголовке
-        setTitle(item.getTitle());
+        setTitle(item.getTitle());*/
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
