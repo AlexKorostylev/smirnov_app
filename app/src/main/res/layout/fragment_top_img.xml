@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TopImgFragment"
-    android:layout_margin="16dp">
+    android:layout_margin="16dp"
+    tools:context=".TopImgFragment">
 
     <ImageView
         android:id="@+id/info_image"
-        android:src="@drawable/s11_p"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:scaleType="fitXY"
         android:layout_gravity="fill_horizontal"
-        />
+        android:scaleType="fitXY"
+        android:src="@drawable/s11_p" />
 
     <TextView
         android:id="@+id/name_text"
-        android:text="@string/s11_p_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/detail_text"
@@ -30,12 +26,12 @@
         android:background="#D9282828"
         android:paddingEnd="16dp"
         android:paddingStart="8dp"
+        android:text="@string/s11_p_name"
         android:textColor="#ffffff"
         android:textSize="16sp" />
 
     <TextView
         android:id="@+id/detail_text"
-        android:text="@string/s11_p_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/info_image"
@@ -44,73 +40,74 @@
         android:background="#D9282828"
         android:paddingEnd="12dp"
         android:paddingStart="8dp"
+        android:text="@string/s11_p_detail"
 
         android:textColor="#ffffff"
         android:textSize="16sp" />
 </RelativeLayout>
 
-<!--
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".TopImgFragment">
-
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".TopImgFragment">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="360dp"
-                android:layout_height="420dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="24dp"
-                android:layout_marginTop="20dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/s11_p" />
-
-            <LinearLayout
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
-                    android:layout_weight="2"
-                    android:background="#045b68"
-                    android:padding="8dp"
-                    android:text="Живопись"
-                    android:textAlignment="center"
-                    android:textColor="#fcfcfc" />
+                <ImageView
+                    android:layout_width="360dp"
+                    android:layout_height="420dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/s11_p" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="60dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_weight="2"
-                    android:background="#e2e2e2"
-                    android:padding="4dp"
-                    android:text="Графика "
-                    android:textAlignment="center"
-                    android:textColor="#002126" />
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="48dp"
+                        android:layout_weight="2"
+                        android:background="#045b68"
+                        android:padding="8dp"
+                        android:text="Живопись"
+                        android:textAlignment="center"
+                        android:textColor="#fcfcfc" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="60dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_weight="2"
+                        android:background="#e2e2e2"
+                        android:padding="4dp"
+                        android:text="Графика "
+                        android:textAlignment="center"
+                        android:textColor="#002126" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
+        </ScrollView>
 
-    </ScrollView>
-
-</FrameLayout>
--->
+    </FrameLayout>
+    -->
