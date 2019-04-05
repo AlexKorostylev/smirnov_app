@@ -15,8 +15,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_gravity="fill_horizontal"
-        android:scaleType="fitXY"
-        android:src="@drawable/s11_p" />
+        android:scaleType="fitXY"/>
 
     <TextView
         android:id="@+id/name_text_paint"
@@ -27,7 +26,6 @@
         android:background="#D9282828"
         android:paddingEnd="16dp"
         android:paddingStart="8dp"
-        android:text="@string/s11_p_name"
         android:textColor="#ffffff"
         android:textSize="16sp" />
 
@@ -41,7 +39,6 @@
         android:background="#D9282828"
         android:paddingEnd="12dp"
         android:paddingStart="8dp"
-        android:text="@string/s11_p_detail"
         android:textColor="#ffffff"
         android:textSize="16sp" />
 
