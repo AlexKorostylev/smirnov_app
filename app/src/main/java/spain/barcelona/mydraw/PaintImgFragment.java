@@ -29,8 +29,11 @@ public class PaintImgFragment extends Fragment {
         image.setImageResource(Pic.paint[0].getImageResourceId());
         TextView nameText = v.findViewById(R.id.name_text_paint);
         nameText.setText(Pic.paint[0].getName());
-        TextView detailText = v.findViewById(R.id.detail_text_paint);
-        detailText.setText(Pic.paint[0].getDetail());
+
+        //TextView detailText = v.findViewById(R.id.detail_text_paint);
+        //detailText.setText(Pic.paint[0].getMaterial());
+
+
 
         return v;
     }

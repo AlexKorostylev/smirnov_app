@@ -7,53 +7,46 @@
     android:layout_height="wrap_content"
     tools:context=".PaintBtnFragment">
 
-
-
     <TextView
-        android:id="@+id/lot_num"
+        android:id="@+id/counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="92dp"
-        android:text="3 из 18"
+        android:layout_marginStart="18dp"
+        android:layout_toEndOf="@+id/btn_previous"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <Spinner
-        android:id="@+id/art_type"
-        android:entries="@array/img_type"
-        android:layout_width="wrap_content"
+        android:id="@+id/art_type_paint"
+        android:layout_width="121dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="117dp"
-        android:background="#fbfbfb"
-        android:gravity="end"
-        android:minWidth="10dp" />
-
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="64dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="end"
-        android:layout_marginEnd="32dp"
-        android:background="#48b5c6"
-        android:paddingEnd="4dp"
-        android:paddingStart="4dp"
-        android:text="\u232A"
-        android:textColor="#0c0c0c" />
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/counter"
+        android:entries="@array/img_type"
+        android:paddingEnd="1dp" />
 
     <Button
         android:id="@+id/btn_previous"
-        android:layout_width="35dp"
-        android:layout_height="25dp"
+        android:layout_width="53dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="32dp"
-        android:background="#d2d4d4"
-        android:text="\u2329"
-        android:textColor="#0c0c0c" />
+        android:layout_marginStart="24dp"
+        android:background="@drawable/btn_next_previous"
+        android:text="@string/btn_previous_txt"
+        android:textSize="@dimen/btn_arrow_size"/>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="53dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="end"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/btn_next_previous"
+        android:text="@string/btn_next_txt"
+        android:textSize="@dimen/btn_arrow_size"/>
 
 </RelativeLayout>
