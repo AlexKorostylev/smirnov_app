@@ -10,9 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class PaintFragment extends Fragment {
 
     @Override
@@ -23,7 +20,7 @@ public class PaintFragment extends Fragment {
         PaintImgFragment imgFragment = new PaintImgFragment();
         PaintBtnFragment yearFragment = new PaintBtnFragment();
         ft.replace(R.id.paint_img_container, imgFragment);
-        ft.replace(R.id.paint_year_container, yearFragment);
+        ft.replace(R.id.paint_btn_container, yearFragment);
         ft.addToBackStack(null);
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.commit();

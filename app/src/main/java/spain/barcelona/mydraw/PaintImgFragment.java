@@ -9,32 +9,22 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static spain.barcelona.mydraw.BizLogic.*;
+import static spain.barcelona.mydraw.Pic.*;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class PaintImgFragment extends Fragment {
-
-
-    public PaintImgFragment() {
-        // Required empty public constructor
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_paint_img, container, false);
         ImageView image = v.findViewById(R.id.info_image_paint);
-        image.setImageResource(Pic.paint[0].getImageResourceId());
         TextView nameText = v.findViewById(R.id.name_text_paint);
-        nameText.setText(Pic.paint[0].getName());
 
-        //TextView detailText = v.findViewById(R.id.detail_text_paint);
-        //detailText.setText(Pic.paint[0].getMaterial());
-
-
-
+        indexAllPeriod = BizLogic.incrementCheck(allPeriod, indexAllPeriod, paint);
+        image.setImageResource(paint[BizLogic.positionAtArray(allPeriod, indexAllPeriod, paint)].getImageResourceId());
+        nameText.setText(paint[BizLogic.positionAtArray(allPeriod, indexAllPeriod, paint)].getName());
         return v;
     }
 
