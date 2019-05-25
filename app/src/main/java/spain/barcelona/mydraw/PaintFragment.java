@@ -26,6 +26,7 @@ public class PaintFragment extends Fragment {
         ft.commit();
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Живопись");
+
         return inflater.inflate(R.layout.fragment_paint, container, false);
     }
 
