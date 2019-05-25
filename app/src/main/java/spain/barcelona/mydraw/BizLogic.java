@@ -8,13 +8,6 @@ public class BizLogic {
     final static int thirdPeriod = 3;
     final static int foursPeriod = 4;
 
-    // start index counter number for paints per period
-    static int indexAllPeriod = -1;
-    static int indexFirstPeriod = -1;
-    static int indexSecondPeriod = -1;
-    static int indexThirdPeriod = -1;
-    static int indexFoursPeriod = -1;
-
     public static int picCountingPerPeriod(int inputPeriod, Pic[] dataArray) {
         int totalPicPerPeriod = 0;
         // Подсчет картин за период
@@ -66,7 +59,7 @@ public class BizLogic {
         return totalPicPerPeriod;
     }
 
-    public static int positionAtArray(int inputPeriod, int indexPerPeriod, Pic[] dataArray ) {
+    public static int positionAtArray(int inputPeriod, int indexPerPeriod, Pic[] dataArray) {
         int[] picPeriodArray = indexingAccordingMainArray(inputPeriod, dataArray);
         return picPeriodArray[indexPerPeriod];
     }
@@ -74,7 +67,7 @@ public class BizLogic {
     // Checking increase counter for overload
     public static int incrementCheck(int inputPeriod, int picIndex, Pic[] dataArray) {
         ++picIndex;
-        if (picIndex > picCountingPerPeriod(inputPeriod,dataArray) - 1) {
+        if (picIndex > picCountingPerPeriod(inputPeriod, dataArray) - 1) {
             picIndex = 0;
         }
         return picIndex;
