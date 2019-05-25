@@ -627,12 +627,20 @@
     <string name="s11_p_name">Нико Пирасмани</string>
     <string name="s11_p_detail">Xoлст, масло | 81x59,5 | 1975</string>
 
-    <string-array name="img_type">
-        <item>1972-2012</item>
-        <item>1972-1979</item>
-        <item>1980-1989</item>
-        <item>1990-1999</item>
-        <item>2000-2012</item>
+    <string-array name="spinner_paint">
+        <item>1974\-2011</item>
+        <item>1974\-1979</item>
+        <item>1980\-1989</item>
+        <item>1990\-1999</item>
+        <item>2000\-2011</item>
+    </string-array>
+
+    <string-array name="spinner_pics">
+        <item>1972\-2012</item>
+        <item>1972\-1979</item>
+        <item>1980\-1989</item>
+        <item>1990\-1999</item>
+        <item>2000\-2012</item>
     </string-array>
 
     <string name="btn_next_txt">\u232A</string>
