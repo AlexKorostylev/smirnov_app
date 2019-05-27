@@ -8,7 +8,7 @@
     tools:context=".PaintBtnFragment">
 
     <TextView
-        android:id="@+id/counter"
+        android:id="@+id/counter_paint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -17,13 +17,13 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <Spinner
-        android:id="@+id/art_type_paint"
+        android:id="@+id/spinner_paint"
         android:layout_width="121dp"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginStart="8dp"
-        android:layout_toEndOf="@+id/counter"
-        android:entries="@array/img_type"
+        android:layout_toEndOf="@+id/counter_paint"
+        android:entries="@array/spinner_paint"
         android:paddingEnd="1dp" />
 
     <Button
