@@ -643,6 +643,10 @@
         <item>2000\-2012</item>
     </string-array>
 
+    <string-array name="spinner_photo">
+        <item>1970\-2011</item>
+    </string-array>
+
     <string name="btn_next_txt">\u232A</string>
     <string name="btn_previous_txt">\u2329</string>
 

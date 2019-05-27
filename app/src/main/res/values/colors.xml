@@ -7,5 +7,6 @@
     <!-- Чтобы сделать цвет текста toolBara черным -->
     <color name="toolbar_title_text_color">#212121</color>
     <color name="toolbar_back_arrow_color">#000000</color>
+    <color name="spinner_photo_color">#f4f4f4</color>
 
 </resources>
