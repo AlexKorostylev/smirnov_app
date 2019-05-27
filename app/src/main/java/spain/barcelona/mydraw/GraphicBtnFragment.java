@@ -8,26 +8,40 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
+import static spain.barcelona.mydraw.BizLogic.*;
+import static spain.barcelona.mydraw.Pic.pics;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class GraphicBtnFragment extends Fragment implements View.OnClickListener {
 
-    int counter = 0;
+    // start index counter number for paints per period
+    static int indexAllPeriod = -1;
+    static int indexFirstPeriod = -1;
+    static int indexSecondPeriod = -1;
+    static int indexThirdPeriod = -1;
+    static int indexFoursPeriod = -1;
+
+    static int periodCurrentState = allPeriod;
+    static int indexCurrentState = indexAllPeriod;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_graphic_btn, container, false);
-        // Inflate the layout for this fragment
+
         Button btnNext = v.findViewById(R.id.btn_next);
         btnNext.setOnClickListener(this);
         Button btnPrevious = v.findViewById(R.id.btn_previous);
         btnPrevious.setOnClickListener(this);
 
+        Spinner spinner = v.findViewById(R.id.spinner_pics);
+        spinner.setSelection(GraphicImgFragment.dataForCounterPeriodState);
+
+        TextView pictureCounter = v.findViewById(R.id.counter_graphic);
+        pictureCounter.setText(BizLogic.dataForCounter(GraphicImgFragment.dataForCounterPeriodState, GraphicImgFragment.dataForCounterIndexState, pics));
         return v;
     }
 
@@ -35,52 +49,116 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
     public void onClick(View v) {
 
         switch (v.getId()) {
-            // Отчет начинается с 0
             case R.id.btn_next:
-                if(counter ==0){
-                    ++counter;
-                } else if (counter >=Pic.pics.length) {
-                    counter = 0;
-                }
-                onClickNext(v);
-                counter++;
+                onClickNext();
                 break;
             case R.id.btn_previous:
-                if(counter==0){
-                    counter = Pic.pics.length-1;
-                } else {
-                    --counter;
-                }
-                onClickPrevious(v);
+                onClickPrevious();
                 break;
-
         }
     }
 
-    public void onClickNext(View v) {
-        //Spinner artType = (Spinner) view.findViewById(R.id.art_type);
-        //String spinnerMsg = (String)artType.getSelectedItem();
+    public void onClickNext() {
         ImageView image = getActivity().findViewById(R.id.info_image_graphic);
         TextView nameText = getActivity().findViewById(R.id.name_text_graphic);
-        TextView detailText = getActivity().findViewById(R.id.detail_text_graphic);
 
+        TextView picCounter = getActivity().findViewById(R.id.counter_graphic);
+        Spinner spinner = getActivity().findViewById(R.id.spinner_pics);
 
-        int picArrayPos = counter;
-        image.setImageResource(Pic.pics[picArrayPos].getImageResourceId());
-        nameText.setText(Pic.pics[picArrayPos].getName());
-        detailText.setText(Pic.pics[picArrayPos].getDetail());
-        //TextView lotNum = (TextView)getActivity().findViewById(R.id.lot_num);
-        //lotNum.setText();
+        String selectedPeriodFromSpinner = String.valueOf(spinner.getSelectedItem());
+        switch (selectedPeriodFromSpinner) {
+            case "1972-2012":
+                indexAllPeriod = BizLogic.incrementCheck(allPeriod, indexAllPeriod, pics);
+                image.setImageResource(pics[BizLogic.positionAtArray(allPeriod, indexAllPeriod, pics)].getImageResourceId());
+                nameText.setText(pics[BizLogic.positionAtArray(allPeriod, indexAllPeriod, pics)].getName());
+                picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, pics));
+                periodCurrentState = allPeriod;
+                indexCurrentState = indexAllPeriod;
+                break;
+            case "1972-1979":
+                indexFirstPeriod = BizLogic.incrementCheck(firstPeriod, indexFirstPeriod, pics);
+                image.setImageResource(pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriod, pics)].getImageResourceId());
+                nameText.setText(pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriod, pics)].getName());
+                picCounter.setText(BizLogic.dataForCounter(firstPeriod, indexFirstPeriod, pics));
+                periodCurrentState = firstPeriod;
+                indexCurrentState = indexFirstPeriod;
+                break;
+            case "1980-1989":
+                indexSecondPeriod = BizLogic.incrementCheck(secondPeriod, indexSecondPeriod, pics);
+                image.setImageResource(pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriod, pics)].getImageResourceId());
+                nameText.setText(pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriod, pics)].getName());
+                picCounter.setText(BizLogic.dataForCounter(secondPeriod, indexSecondPeriod, pics));
+                periodCurrentState = secondPeriod;
+                indexCurrentState = indexSecondPeriod;
+                break;
+            case "1990-1999":
+                indexThirdPeriod = BizLogic.incrementCheck(thirdPeriod, indexThirdPeriod, pics);
+                image.setImageResource(pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriod, pics)].getImageResourceId());
+                nameText.setText(pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriod, pics)].getName());
+                picCounter.setText(BizLogic.dataForCounter(thirdPeriod, indexThirdPeriod, pics));
+                periodCurrentState = thirdPeriod;
+                indexCurrentState = indexThirdPeriod;
+                break;
+            case "2000-2012":
+                indexFoursPeriod = BizLogic.incrementCheck(foursPeriod, indexFoursPeriod, pics);
+                image.setImageResource(pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriod, pics)].getImageResourceId());
+                nameText.setText(pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriod, pics)].getName());
+                picCounter.setText(BizLogic.dataForCounter(foursPeriod, indexFoursPeriod, pics));
+                periodCurrentState = foursPeriod;
+                indexCurrentState = indexFoursPeriod;
+                break;
+        }
     }
 
-    public void onClickPrevious(View v) {
-        int picArrayPos = counter;
+    public void onClickPrevious() {
         ImageView image = getActivity().findViewById(R.id.info_image_graphic);
-        image.setImageResource(Pic.pics[picArrayPos].getImageResourceId());
         TextView nameText = getActivity().findViewById(R.id.name_text_graphic);
-        nameText.setText(Pic.pics[picArrayPos].getName());
-        TextView detailText = getActivity().findViewById(R.id.detail_text_graphic);
-        detailText.setText(Pic.pics[picArrayPos].getDetail());
-    }
 
+        TextView picCounter = getActivity().findViewById(R.id.counter_graphic);
+        Spinner spinner = getActivity().findViewById(R.id.spinner_pics);
+
+        String selectedPeriod = String.valueOf(spinner.getSelectedItem());
+        switch (selectedPeriod) {
+            case "1972-2012":
+                indexAllPeriod = BizLogic.decrementCheck(allPeriod, indexAllPeriod, pics);
+                image.setImageResource(pics[BizLogic.positionAtArray(allPeriod, indexAllPeriod, pics)].getImageResourceId());
+                nameText.setText(pics[BizLogic.positionAtArray(allPeriod, indexAllPeriod, pics)].getName());
+                picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, pics));
+                periodCurrentState = allPeriod;
+                indexCurrentState = indexAllPeriod;
+                break;
+            case "1972-1979":
+                indexFirstPeriod = BizLogic.decrementCheck(firstPeriod, indexFirstPeriod, pics);
+                image.setImageResource(pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriod, pics)].getImageResourceId());
+                nameText.setText(pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriod, pics)].getName());
+                picCounter.setText(BizLogic.dataForCounter(firstPeriod, indexFirstPeriod, pics));
+                periodCurrentState = firstPeriod;
+                indexCurrentState = indexFirstPeriod;
+                break;
+            case "1980-1989":
+                indexSecondPeriod = BizLogic.decrementCheck(secondPeriod, indexSecondPeriod, pics);
+                image.setImageResource(pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriod, pics)].getImageResourceId());
+                nameText.setText(pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriod, pics)].getName());
+                picCounter.setText(BizLogic.dataForCounter(secondPeriod, indexSecondPeriod, pics));
+                periodCurrentState = secondPeriod;
+                indexCurrentState = indexSecondPeriod;
+                break;
+            case "1990-1999":
+                indexThirdPeriod = BizLogic.decrementCheck(thirdPeriod, indexThirdPeriod, pics);
+                image.setImageResource(pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriod, pics)].getImageResourceId());
+                nameText.setText(pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriod, pics)].getName());
+                picCounter.setText(BizLogic.dataForCounter(thirdPeriod, indexThirdPeriod, pics));
+                periodCurrentState = thirdPeriod;
+                indexCurrentState = indexThirdPeriod;
+                break;
+            case "2000-2012":
+                indexFoursPeriod = BizLogic.decrementCheck(foursPeriod, indexFoursPeriod, pics);
+                image.setImageResource(pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriod, pics)].getImageResourceId());
+                nameText.setText(pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriod, pics)].getName());
+                picCounter.setText(BizLogic.dataForCounter(foursPeriod, indexFoursPeriod, pics));
+                periodCurrentState = foursPeriod;
+                indexCurrentState = indexFoursPeriod;
+                break;
+        }
+    }
 }

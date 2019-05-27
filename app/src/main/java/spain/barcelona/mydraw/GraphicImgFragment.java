@@ -9,11 +9,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static spain.barcelona.mydraw.Pic.pics;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class GraphicImgFragment extends Fragment {
+
+    static int dataForCounterPeriodState;
+    static int dataForCounterIndexState;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -21,10 +23,21 @@ public class GraphicImgFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_graphic_img, container, false);
         ImageView image = v.findViewById(R.id.info_image_graphic);
         TextView nameText = v.findViewById(R.id.name_text_graphic);
-        TextView detailText = v.findViewById(R.id.detail_text_graphic);
-        image.setImageResource(Pic.pics[0].getImageResourceId());
-        nameText.setText(Pic.pics[0].getName());
-        detailText.setText(Pic.pics[0].getDetail());
+
+        int periodState = GraphicBtnFragment.periodCurrentState;
+        int indexState = GraphicBtnFragment.indexCurrentState;
+
+        // Сохранение состояния периода по направлению
+        if (periodState == 0 & indexState == -1) {
+            indexState = BizLogic.incrementCheck(periodState, indexState, pics);
+            GraphicBtnFragment.indexAllPeriod++;
+        }
+
+        image.setImageResource(pics[BizLogic.positionAtArray(periodState, indexState, pics)].getImageResourceId());
+        nameText.setText(pics[BizLogic.positionAtArray(periodState, indexState, pics)].getName());
+
+        dataForCounterPeriodState = periodState;
+        dataForCounterIndexState = indexState;
 
         return v;
     }
