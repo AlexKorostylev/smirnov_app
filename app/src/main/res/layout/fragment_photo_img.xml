@@ -24,11 +24,11 @@
         android:layout_alignBottom="@id/info_image_photo"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="8dp"
-        android:background="#D9282828"
+        android:background="@color/photo_text_background"
         android:maxLines="1"
         android:paddingStart="8dp"
         android:paddingEnd="12dp"
-        android:textColor="#ffffff"
+        android:textColor="@color/photo_text_color"
         android:textSize="16sp" />
 
     <!--
