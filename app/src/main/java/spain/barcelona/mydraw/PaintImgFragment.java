@@ -9,15 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static spain.barcelona.mydraw.BizLogic.*;
 import static spain.barcelona.mydraw.Pic.*;
-import static spain.barcelona.mydraw.PaintBtnFragment.indexAllPeriod;
-
 
 public class PaintImgFragment extends Fragment {
 
-    static int dataForCounterPeriodState; // 0 главный период
-    static int dataForCounterIndexState; //-1 - first start*/
+    static int dataForCounterPeriodState;
+    static int dataForCounterIndexState;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,7 +26,6 @@ public class PaintImgFragment extends Fragment {
         int periodState = PaintBtnFragment.periodCurrentState; //
         int indexState = PaintBtnFragment.indexCurrentState;
 
-        // Сохранение состояния периода по направлению
         if (periodState == 0 & indexState == -1) {
             indexState = BizLogic.incrementCheck(periodState, indexState, paint);
             PaintBtnFragment.indexAllPeriod++;
@@ -37,6 +33,7 @@ public class PaintImgFragment extends Fragment {
 
         image.setImageResource(paint[BizLogic.positionAtArray(periodState, indexState, paint)].getImageResourceId());
         nameText.setText(paint[BizLogic.positionAtArray(periodState, indexState, paint)].getName());
+
         dataForCounterPeriodState = periodState;
         dataForCounterIndexState = indexState;
 
