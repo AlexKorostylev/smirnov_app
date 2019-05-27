@@ -21,9 +21,8 @@
         android:id="@+id/name_text_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/info_image_photo"
+        android:layout_above="@id/detail_text_photo"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="8dp"
         android:background="@color/photo_text_background"
         android:maxLines="1"
         android:paddingStart="8dp"
@@ -31,18 +30,17 @@
         android:textColor="@color/photo_text_color"
         android:textSize="16sp" />
 
-    <!--
-<TextView
-        android:id="@+id/name_text_paint"
+
+    <TextView
+        android:id="@+id/detail_text_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/detail_text_paint"
+        android:layout_alignBottom="@id/info_image_photo"
         android:layout_marginStart="24dp"
-        android:background="#D9282828"
-        android:paddingEnd="16dp"
+        android:background="@color/photo_text_background"
         android:paddingStart="8dp"
-        android:textColor="#ffffff"
+        android:paddingEnd="16dp"
+        android:textColor="@color/photo_text_color"
         android:textSize="16sp" />
-        -->
 
 </RelativeLayout>

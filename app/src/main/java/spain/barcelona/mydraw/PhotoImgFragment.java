@@ -24,7 +24,8 @@ public class PhotoImgFragment extends Fragment {
 
         ImageView image = v.findViewById(R.id.info_image_photo);
         TextView nameText = v.findViewById(R.id.name_text_photo);
-        //TextView detailText = v.findViewById(R.id.detail_text_photo);
+        // в некоторых фото вообще нет деталей, значит и этого блока быть не должно
+        TextView detailText = v.findViewById(R.id.detail_text_photo);
 
         int periodState = PhotoBtnFragment.periodCurrentState; //
         int indexState = PhotoBtnFragment.indexCurrentState;
@@ -34,11 +35,13 @@ public class PhotoImgFragment extends Fragment {
             PhotoBtnFragment.indexAllPeriod++;
         }
 
-
         image.setImageResource(photo[BizLogic.positionAtArray(periodState, indexState, photo)].getImageResourceId());
         nameText.setText(photo[BizLogic.positionAtArray(periodState, indexState, photo)].getName());
 
-        //detailText.setText(Pic.photo[14].getMaterial());
+        String year = photo[BizLogic.positionAtArray(periodState, indexState, photo)].getYear();
+        String place = photo[BizLogic.positionAtArray(periodState, indexState, photo)].getMaterial();
+        // String comment = photo[BizLogic.positionAtArray(periodState, indexState, photo)].getSize();
+        detailText.setText(PhotoBtnFragment.photoDetail(year, place));
 
         dataForCounterPeriodState = periodState;
         dataForCounterIndexState = indexState;
