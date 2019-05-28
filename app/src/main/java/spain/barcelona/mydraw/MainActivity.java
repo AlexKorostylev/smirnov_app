@@ -2,7 +2,6 @@ package spain.barcelona.mydraw;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,15 +11,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, InterviewListFragment.InterviewListListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -43,12 +42,12 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // Фрагмент открывающийся при начальной загрузке
-        TopFragment topFragment = new TopFragment();
+       /* TopFragment topFragment = new TopFragment();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.replace(R.id.top_container, topFragment);
         ft.addToBackStack(null);
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        ft.commit();
+        ft.commit();*/
     }
 
     @Override
@@ -60,6 +59,7 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -87,17 +87,10 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
-        // Создадим новый фрагмент
-        Fragment fragment = null;
-        Class fragmentClass = null;
-
-
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_painting) {
+        if (id == R.id.nav_painting ) {
             PaintFragment paintingFragment = new PaintFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.top_container, paintingFragment);
@@ -114,36 +107,69 @@ public class MainActivity extends AppCompatActivity
             ft.commit();
 
         } else if (id == R.id.nav_poetry) {
-            fragmentClass = PoetryFragment.class;
-
+            PoetryFragment poetryFragment = new PoetryFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.top_container, poetryFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
 
         } else if (id == R.id.nav_interview) {
-            fragmentClass = InterviewFragment.class;
+            // InterviewFragment interviewFragment = new InterviewFragment();
+            InterviewListFragment interviewListFragment = new InterviewListFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.top_container, interviewListFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+
+        } else if (id == R.id.nav_camera) {
+            PhotoFragment photoFragment = new PhotoFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.top_container, photoFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
 
         } else if (id == R.id.nav_biography) {
-            fragmentClass = BioFragment.class;
+            BioFragment bioFragment = new BioFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.top_container, bioFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
 
         } else if (id == R.id.nav_about) {
-            fragmentClass = AboutFragment.class;
+            AboutListFragment aboutListFragment = new AboutListFragment();
+            // AboutFragment aboutFragment = new AboutFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            // aboutFragment.setAbautComment(0);
+            ft.replace(R.id.top_container, aboutListFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+
         }
-
-        try {
-            fragment = (Fragment) fragmentClass.newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // Вставляем фрагмент, заменяя текущий фрагмент
-        /*FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-        // Выделяем выбранный пункт меню в шторке
-        item.setChecked(true);
-        // Выводим выбранный пункт в заголовке
-        setTitle(item.getTitle());*/
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+    @Override
+    public void itemClicked(long id) {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        InterviewDetailFragment interviewDetailFragment = new InterviewDetailFragment();
+        interviewDetailFragment.setInterviewId(id);
+        ft.replace(R.id.top_container, interviewDetailFragment);
+        ft.addToBackStack(null);
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        ft.commit();
+/*        if(getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }*/
+
+    }
+
 }
