@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, InterviewListFragment.InterviewListListener {
+        implements NavigationView.OnNavigationItemSelectedListener, InterviewListFragment.InterviewListListener, PoetryListFragment.PoetryListListener {
 
 
     @Override
@@ -107,9 +107,9 @@ public class MainActivity extends AppCompatActivity
             ft.commit();
 
         } else if (id == R.id.nav_poetry) {
-            PoetryFragment poetryFragment = new PoetryFragment();
+            PoetryListFragment poetryListFragment = new PoetryListFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.top_container, poetryFragment);
+            ft.replace(R.id.top_container, poetryListFragment);
             ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
@@ -163,6 +163,19 @@ public class MainActivity extends AppCompatActivity
         InterviewDetailFragment interviewDetailFragment = new InterviewDetailFragment();
         interviewDetailFragment.setInterviewId(id);
         ft.replace(R.id.top_container, interviewDetailFragment);
+        ft.addToBackStack(null);
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        ft.commit();
+/*        if(getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }*/
+
+    }
+    public void itemClickedPoetry(long id) {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        PoetryDetailFragment poetryDetailFragment = new PoetryDetailFragment();
+        poetryDetailFragment.setPoetryId(id);
+        ft.replace(R.id.top_container, poetryDetailFragment);
         ft.addToBackStack(null);
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.commit();
