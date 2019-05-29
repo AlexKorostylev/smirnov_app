@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, InterviewListFragment.InterviewListListener, PoetryListFragment.PoetryListListener {
+        implements NavigationView.OnNavigationItemSelectedListener, InterviewListFragment.InterviewListListener, PoetryListFragment.PoetryListListener, AboutListFragment.AboutListListener {
 
 
     @Override
@@ -141,9 +141,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_about) {
             AboutListFragment aboutListFragment = new AboutListFragment();
-            // AboutFragment aboutFragment = new AboutFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
-            // aboutFragment.setAbautComment(0);
             ft.replace(R.id.top_container, aboutListFragment);
             ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
@@ -179,10 +177,15 @@ public class MainActivity extends AppCompatActivity
         ft.addToBackStack(null);
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.commit();
-/*        if(getSupportActionBar() != null){
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }*/
-
     }
 
+    public void itemClickedAbout(long id) {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        AboutDetailFragment AboutDetailFragment = new AboutDetailFragment();
+        AboutDetailFragment.setAboutId(id);
+        ft.replace(R.id.top_container, AboutDetailFragment);
+        ft.addToBackStack(null);
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        ft.commit();
+    }
 }
