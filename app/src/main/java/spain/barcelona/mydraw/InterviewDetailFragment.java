@@ -33,6 +33,10 @@ public class InterviewDetailFragment extends Fragment {
             title.setText(interview.getTitle());
             TextView description = view.findViewById(R.id.description_text);
             description.setText(interview.getDescription());
+
+            TextView sign = view.findViewById(R.id.outputData_text);
+            String outputData = interview.getAuthor() + ". \n" + interview.getOutputData();
+            sign.setText(outputData);
         }
     }
 

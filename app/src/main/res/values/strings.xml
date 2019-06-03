@@ -47,10 +47,10 @@
 
     <string name="btn_next_txt">\u232A</string>
     <string name="btn_previous_txt">\u2329</string>
+    <string name="expand_button" />
 
 
     <!-- Poetry. Topic -->
-    <string name="expand_button" />
     <string name="poem1">Иcтория Х \n\n
     Где-то жил человек, \n
     Его звали Иисус. \n
@@ -532,12 +532,6 @@
     ​
     2011
     </string>
-
-
-
-
-
-
 
     <!-- Biography of the artist. Topic -->
     <string name="biography_text">
