@@ -34,6 +34,9 @@ public class PoetryDetailFragment extends Fragment {
             title.setText(poem.getTitle());
             TextView description = view.findViewById(R.id.description_text);
             description.setText(poem.getDescription());
+            TextView sign = view.findViewById(R.id.outputData_text);
+            String outputData = poem.getAuthor() + ". \n" + poem.getOutputData();
+            sign.setText(outputData);
         }
     }
 
