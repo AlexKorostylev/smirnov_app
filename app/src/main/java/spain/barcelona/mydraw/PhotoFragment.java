@@ -25,7 +25,7 @@ public class PhotoFragment extends Fragment {
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.commit();
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Фотографии");
+        toolbar.setTitle("Фотоархив");
 
         return inflater.inflate(R.layout.fragment_photo, container, false);
     }
