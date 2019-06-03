@@ -33,6 +33,9 @@ public class AboutDetailFragment extends Fragment {
             title.setText(about.getTitle());
             TextView description = view.findViewById(R.id.description_text);
             description.setText(about.getDescription());
+            TextView sign = view.findViewById(R.id.outputData_text);
+            String outputData = about.getAuthor() + ". \n" + about.getOutputData();
+            sign.setText(outputData);
         }
     }
 
