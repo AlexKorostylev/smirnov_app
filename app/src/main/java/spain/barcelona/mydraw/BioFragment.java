@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 public class BioFragment extends Fragment {
@@ -20,10 +21,17 @@ public class BioFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        View view = inflater.inflate(R.layout.fragment_biogrphy, container, false);
+
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.drawer_bio);
 
-        return inflater.inflate(R.layout.fragment_biogrphy, container, false);
-        //return inflater.inflate(R.layout.fragment_bio, container, false);
+        TextView title = view.findViewById(R.id.title_text);
+        TextView description = view.findViewById(R.id.description_text);
+        Text bio = Text.bio[0];
+        title.setText(bio.getTitle());
+        description.setText(bio.getDescription());
+
+        return view;
     }
 }
