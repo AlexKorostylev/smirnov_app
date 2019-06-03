@@ -7,7 +7,7 @@
     <string name="nav_header_subtitle">художник-философ </string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="large_text">
+    <string name="biography_text">
         "Вадим Валентинович Смирнов.\n\n"
 
         "Родился 3 июля 1953 года в городе Красный Луч Ворошиловградской области (Украинская ССР) в семье служащих. \n\n"
@@ -27,7 +27,7 @@
 
     <string name="drawer_painting">Живопись</string>
     <string name="drawer_graphics">Графика</string>
-    <string name="drawer_photo">Фото</string>
+    <string name="drawer_photo">Фотоархив</string>
     <string name="drawer_poetry">Поэзия</string>
     <string name="drawer_interview">Интервью</string>
     <string name="drawer_about_split_line">О художнике</string>
@@ -519,7 +519,7 @@
     2011
     </string>
 
-    <!-- Аbout the artist. Topic -->
+    <!-- Аbout the artist. Topic
     <string name="about1_title">А.Н.    >></string>
     <string name="about1">Вадим Смирнов – художник-философ, разносторонний и интересный, находящийся в вечной погоне за своей музой.\n\n
 
@@ -620,6 +620,8 @@
     Из интервью, 18 мая 2013
     </string>
 
+    -->
+
 
     <string name="p19_name">Натюрморт с цветущим абрикосом</string>
     <string name="p19_detail">Холст на картоне 1999</string>
@@ -649,6 +651,9 @@
 
     <string name="btn_next_txt">\u232A</string>
     <string name="btn_previous_txt">\u2329</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
