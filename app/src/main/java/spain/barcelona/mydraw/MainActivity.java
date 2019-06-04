@@ -42,12 +42,12 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // Фрагмент открывающийся при начальной загрузке
-       /* TopFragment topFragment = new TopFragment();
+        TopFragment topFragment = new TopFragment();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.replace(R.id.top_container, topFragment);
         ft.addToBackStack(null);
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        ft.commit();*/
+        ft.commit();
     }
 
     @Override
