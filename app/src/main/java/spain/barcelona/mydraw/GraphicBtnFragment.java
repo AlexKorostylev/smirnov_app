@@ -68,6 +68,9 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
         String selectedPeriodFromSpinner = String.valueOf(spinner.getSelectedItem());
         switch (selectedPeriodFromSpinner) {
             case "1972-2012":
+                if(periodCurrentState != allPeriod ){
+                    --indexAllPeriod;
+                }
                 indexAllPeriod = BizLogic.incrementCheck(allPeriod, indexAllPeriod, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(allPeriod, indexAllPeriod, pics)].getImageResourceId());
                 nameText.setText(pics[BizLogic.positionAtArray(allPeriod, indexAllPeriod, pics)].getName());
@@ -76,6 +79,9 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 indexCurrentState = indexAllPeriod;
                 break;
             case "1972-1979":
+                if((periodCurrentState != firstPeriod) & (indexFirstPeriod >= 0)){
+                    --indexFirstPeriod;
+                }
                 indexFirstPeriod = BizLogic.incrementCheck(firstPeriod, indexFirstPeriod, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriod, pics)].getImageResourceId());
                 nameText.setText(pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriod, pics)].getName());
@@ -84,6 +90,9 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 indexCurrentState = indexFirstPeriod;
                 break;
             case "1980-1989":
+                if((periodCurrentState != secondPeriod) & (indexSecondPeriod >= 0)){
+                    --indexSecondPeriod;
+                }
                 indexSecondPeriod = BizLogic.incrementCheck(secondPeriod, indexSecondPeriod, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriod, pics)].getImageResourceId());
                 nameText.setText(pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriod, pics)].getName());
@@ -92,6 +101,9 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 indexCurrentState = indexSecondPeriod;
                 break;
             case "1990-1999":
+                if((periodCurrentState != thirdPeriod) & (indexThirdPeriod >= 0)){
+                    --indexThirdPeriod;
+                }
                 indexThirdPeriod = BizLogic.incrementCheck(thirdPeriod, indexThirdPeriod, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriod, pics)].getImageResourceId());
                 nameText.setText(pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriod, pics)].getName());
@@ -100,6 +112,9 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 indexCurrentState = indexThirdPeriod;
                 break;
             case "2000-2012":
+                if((periodCurrentState != foursPeriod) & (indexFoursPeriod >= 0)){
+                    --indexFoursPeriod;
+                }
                 indexFoursPeriod = BizLogic.incrementCheck(foursPeriod, indexFoursPeriod, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriod, pics)].getImageResourceId());
                 nameText.setText(pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriod, pics)].getName());
@@ -120,6 +135,9 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
         String selectedPeriod = String.valueOf(spinner.getSelectedItem());
         switch (selectedPeriod) {
             case "1972-2012":
+                if(periodCurrentState != allPeriod ){
+                    ++indexAllPeriod;
+                }
                 indexAllPeriod = BizLogic.decrementCheck(allPeriod, indexAllPeriod, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(allPeriod, indexAllPeriod, pics)].getImageResourceId());
                 nameText.setText(pics[BizLogic.positionAtArray(allPeriod, indexAllPeriod, pics)].getName());
@@ -128,6 +146,9 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 indexCurrentState = indexAllPeriod;
                 break;
             case "1972-1979":
+                if((periodCurrentState != firstPeriod) & (indexFirstPeriod>=0)){
+                    ++indexFirstPeriod;
+                }
                 indexFirstPeriod = BizLogic.decrementCheck(firstPeriod, indexFirstPeriod, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriod, pics)].getImageResourceId());
                 nameText.setText(pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriod, pics)].getName());
@@ -136,6 +157,9 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 indexCurrentState = indexFirstPeriod;
                 break;
             case "1980-1989":
+                if((periodCurrentState != secondPeriod) & (indexSecondPeriod >= 0)){
+                    ++indexSecondPeriod;
+                }
                 indexSecondPeriod = BizLogic.decrementCheck(secondPeriod, indexSecondPeriod, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriod, pics)].getImageResourceId());
                 nameText.setText(pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriod, pics)].getName());
@@ -144,6 +168,9 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 indexCurrentState = indexSecondPeriod;
                 break;
             case "1990-1999":
+                if((periodCurrentState != thirdPeriod) & (indexThirdPeriod >= 0)){
+                    ++indexThirdPeriod;
+                }
                 indexThirdPeriod = BizLogic.decrementCheck(thirdPeriod, indexThirdPeriod, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriod, pics)].getImageResourceId());
                 nameText.setText(pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriod, pics)].getName());
@@ -152,6 +179,9 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 indexCurrentState = indexThirdPeriod;
                 break;
             case "2000-2012":
+                if((periodCurrentState != foursPeriod) & (indexFoursPeriod >= 0)){
+                    ++indexFoursPeriod;
+                }
                 indexFoursPeriod = BizLogic.decrementCheck(foursPeriod, indexFoursPeriod, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriod, pics)].getImageResourceId());
                 nameText.setText(pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriod, pics)].getName());
