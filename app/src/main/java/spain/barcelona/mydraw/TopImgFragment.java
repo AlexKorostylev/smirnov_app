@@ -26,16 +26,16 @@ public class TopImgFragment extends Fragment {
         ImageView image = v.findViewById(R.id.info_image_top);
         TextView nameText = v.findViewById(R.id.name_text_top);
 
-        int periodState = PaintBtnFragment.periodCurrentState; //
-        int indexState = PaintBtnFragment.indexCurrentState;
+        int periodState = TopBtnFragment.periodCurrentState;
+        int indexState = TopBtnFragment.indexCurrentState;
 
         if (periodState == 0 & indexState == -1) {
-            indexState = BizLogic.incrementCheck(periodState, indexState, paint);
-            PaintBtnFragment.indexAllPeriod++;
+            indexState = BizLogic.incrementCheck(periodState, indexState, topScreen);
+            TopBtnFragment.indexAllPeriod++;
         }
 
-        image.setImageResource(paint[BizLogic.positionAtArray(periodState, indexState, paint)].getImageResourceId());
-        nameText.setText(paint[BizLogic.positionAtArray(periodState, indexState, paint)].getName());
+        image.setImageResource(topScreen[BizLogic.positionAtArray(periodState, indexState, topScreen)].getImageResourceId());
+        nameText.setText(topScreen[BizLogic.positionAtArray(periodState, indexState, topScreen)].getName());
 
         dataForCounterPeriodState = periodState;
         dataForCounterIndexState = indexState;

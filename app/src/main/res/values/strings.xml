@@ -24,6 +24,13 @@
     <string name="s11_p_name">Нико Пирасмани</string>
     <string name="s11_p_detail">Xoлст, масло | 81x59,5 | 1975</string>
 
+
+    <string-array name="spinner_top">
+        <item>знакомство</item>
+        <item>живопись</item>
+        <item>графика</item>
+    </string-array>
+
     <string-array name="spinner_paint">
         <item>1974\-2011</item>
         <item>1974\-1979</item>

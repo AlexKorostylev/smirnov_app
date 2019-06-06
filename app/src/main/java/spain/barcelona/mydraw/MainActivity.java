@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, InterviewListFragment.InterviewListListener, PoetryListFragment.PoetryListListener, AboutListFragment.AboutListListener {
+        implements NavigationView.OnNavigationItemSelectedListener, InterviewListFragment.InterviewListListener, PoetryListFragment.PoetryListListener, AboutListFragment.AboutListListener, TopBtnFragment.FragmentArtListener {
 
 
     @Override
@@ -42,10 +42,11 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // Фрагмент открывающийся при начальной загрузке
+
+
         TopFragment topFragment = new TopFragment();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.replace(R.id.top_container, topFragment);
-        ft.addToBackStack(null);
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.commit();
     }
@@ -188,4 +189,30 @@ public class MainActivity extends AppCompatActivity
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.commit();
     }
+
+    public void itemClickedArtListener(String fragment_name) {
+        switch (fragment_name){
+            case "живопись":
+                PaintFragment paintingFragment = new PaintFragment();
+                FragmentTransaction ftp = getFragmentManager().beginTransaction();
+                ftp.replace(R.id.top_container, paintingFragment);
+                ftp.addToBackStack(null);
+                ftp.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ftp.commit();
+                break;
+            case "графика":
+                GraphicFragment graphicFragment = new GraphicFragment();
+                FragmentTransaction ftg = getFragmentManager().beginTransaction();
+                ftg.replace(R.id.top_container, graphicFragment);
+                ftg.addToBackStack(null);
+                ftg.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ftg.commit();
+                break;
+
+        }
+    }
+
+
+
+
 }

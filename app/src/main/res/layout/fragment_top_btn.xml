@@ -11,18 +11,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginStart="18dp"
+        android:layout_marginStart="16dp"
         android:layout_toEndOf="@+id/btn_previous"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <Spinner
         android:id="@+id/spinner_top"
-        android:layout_width="121dp"
+        android:layout_width="138dp"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginStart="8dp"
         android:layout_toEndOf="@+id/counter_top"
-        android:entries="@array/spinner_paint"
+        android:entries="@array/spinner_top"
         android:paddingEnd="1dp" />
 
     <Button

@@ -16,7 +16,7 @@ public class Pic {
     private int period;
     private int imageResourceId;
 
-    public static final Pic[] photo ={
+    public static final Pic[] photo = {
             new Pic("Вадим Смирнов", "", 1, "", 1, "1970", 1, R.drawable.f01_1970),
             new Pic("Вадим Смирнов", "", 1, "", 1, "1973", 1, R.drawable.f02_1973),
             new Pic("Вадим Смирнов", "", 1, "", 1, "", 1, R.drawable.f03),
@@ -249,6 +249,18 @@ public class Pic {
             new Pic("Убитая степь", "", 2, "Бумага, акварель, белила", 2, "2002", 4, R.drawable.g83_2002),
             new Pic("Сафо", "16.3х13.6", 1, "Бумага, тушь, чернила", 2, "2005", 4, R.drawable.g84_2005),
             new Pic("Охотники на снегу", "20.7х29.3", 2, "Бумага, тушь, бистр, карандаш", 2, "2010", 4, R.drawable.g85_2010)
+    };
+
+    static Pic[] topScreen = {
+            paint[18],
+            paint[82], paint[97], paint[16],
+            paint[6],  paint[27],
+             paint[3], pics[59],
+            paint[37], pics[68], pics[63],
+            paint[12],
+            pics[25], paint[77], paint[89],  paint[74], pics[14], pics[1], paint[2], pics[60], paint[10]
+
+
     };
 
     private Pic(String name, String size, int orientation, String
