@@ -3,41 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/grp1"
+        android:checkableBehavior="single">
+
         <item
             android:id="@+id/nav_painting"
             android:icon="@drawable/ic_paintitng"
-            android:title="Живопись" />
+            android:title="@string/drawer_painting" />
         <item
             android:id="@+id/nav_graphics"
             android:icon="@drawable/ic_graphics"
-            android:title="Графика" />
+            android:title="@string/drawer_graphics" />
 
         <item
             android:id="@+id/nav_poetry"
             android:icon="@drawable/ic_poetry"
-            android:title="Поэзия" />
+            android:title="@string/drawer_poetry" />
         <item
             android:id="@+id/nav_interview"
             android:icon="@drawable/ic_microphone"
-            android:title="Интервью" />
+            android:title="@string/drawer_interview" />
+
+    </group>
+    <group
+        android:id="@+id/grp2"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_biography"
+            android:icon="@drawable/ic_biography"
+            android:title="@string/drawer_bio" />
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_photo"
-            android:title="Фото" />
+            android:title="@string/drawer_photo" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_about"
+            android:title="@string/drawer_about" />
+
     </group>
 
-    <item android:title="О художнике">
-        <menu>
-            <item
-                android:id="@+id/nav_biography"
-                android:icon="@drawable/ic_biography"
-                android:title="Биография" />
-            <item
-                android:id="@+id/nav_about"
-                android:icon="@drawable/ic_about"
-                android:title="Отзывы о творчестве" />
-        </menu>
-    </item>
 
 </menu>
