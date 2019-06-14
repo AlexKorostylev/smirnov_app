@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyDraw</string>
+    <string name="app_name">V.Smirnov</string>
     <string name="app_bar_name">Вадим Смирнов</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -14,12 +14,9 @@
     <string name="drawer_photo">Фотоархив</string>
     <string name="drawer_poetry">Поэзия</string>
     <string name="drawer_interview">Интервью</string>
-    <string name="drawer_about_split_line">О художнике</string>
+
     <string name="drawer_bio">Биография</string>
     <string name="drawer_about">Отзывы о творчестве</string>
-
-    <string name="p19_name">Натюрморт с цветущим абрикосом</string>
-    <string name="p19_detail">Холст на картоне 1999</string>
 
     <string name="s11_p_name">Нико Пирасмани</string>
     <string name="s11_p_detail">Xoлст, масло | 81x59,5 | 1975</string>
@@ -50,6 +47,8 @@
     <string-array name="spinner_photo">
         <item>1970\-2011</item>
     </string-array>
+
+    <string name="img">img</string>
 
     <string name="btn_next_txt">\u232A</string>
     <string name="btn_previous_txt">\u2329</string>
