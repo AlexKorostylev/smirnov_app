@@ -14,8 +14,8 @@ import android.widget.ListView;
 
 public class InterviewListFragment extends ListFragment {
 
-    static interface InterviewListListener {
-        void itemClicked(long id);
+    interface InterviewListListener {
+        void itemClickedInterview(long id);
     }
 
     public InterviewListListener listener;
@@ -32,7 +32,7 @@ public class InterviewListFragment extends ListFragment {
             listTitles[i] = Text.interview[i].getTitle();
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 inflater.getContext(), android.R.layout.simple_list_item_1,
                 listTitles);
         setListAdapter(adapter);
@@ -42,13 +42,13 @@ public class InterviewListFragment extends ListFragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        this.listener = (InterviewListListener)activity;
+        this.listener = (InterviewListListener) activity;
     }
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         if (listener != null) {
-            listener.itemClicked(id);
+            listener.itemClickedInterview(id);
         }
     }
 
