@@ -27,4 +27,9 @@
         <item name="android:textColorSecondary">@color/toolbar_back_arrow_color</item>
     </style>
 
+    <style name="ThemeOverlay.AppCompat.navTheme">
+        <!-- Background color when SELECTED at deower menu -->
+        <item name="colorControlHighlight">@color/drawer_item_background_color</item>
+    </style>
+
 </resources>

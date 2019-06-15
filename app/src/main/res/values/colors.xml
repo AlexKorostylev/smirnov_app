@@ -13,4 +13,6 @@
     <color name="photo_text_background">#D9ffffff</color>
     <color name="photo_text_color">#000000</color>
 
+    <color name="drawer_item_background_color">#315D7C7C</color>
+
 </resources>
