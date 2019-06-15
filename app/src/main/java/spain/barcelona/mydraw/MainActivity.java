@@ -105,7 +105,6 @@ public class MainActivity extends AppCompatActivity
             ft.commit();
 
         } else if (id == R.id.nav_interview) {
-            // InterviewFragment interviewFragment = new InterviewFragment();
             InterviewListFragment interviewListFragment = new InterviewListFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.top_container, interviewListFragment);
