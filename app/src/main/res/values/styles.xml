@@ -28,7 +28,7 @@
     </style>
 
     <style name="ThemeOverlay.AppCompat.navTheme">
-        <!-- Background color when SELECTED at deower menu -->
+        <!-- Background color when SELECTED at drawer menu -->
         <item name="colorControlHighlight">@color/drawer_item_background_color</item>
     </style>
 

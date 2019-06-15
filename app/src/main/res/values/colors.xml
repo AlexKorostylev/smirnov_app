@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
     <color name="colorPrimary">#f4f4f4</color>
     <color name="colorPrimaryDark">#3E000000</color>
     <color name="colorAccent">#FF4081</color>
     <color name="nav_header_title_color">#000000</color>
-    <!-- Чтобы сделать цвет текста toolBara черным -->
+
     <color name="toolbar_title_text_color">#212121</color>
     <color name="toolbar_back_arrow_color">#000000</color>
-    <color name="spinner_photo_color">#f4f4f4</color>
 
+    <color name="spinner_photo_color">#f4f4f4</color>
 
     <color name="photo_text_background">#D9ffffff</color>
     <color name="photo_text_color">#000000</color>
 
+    <color name="drawer_item_text__color">#212121</color>
+    <color name="drawer_item_text_selected_color">#CB2B00</color>
     <color name="drawer_item_background_color">#315D7C7C</color>
 
 </resources>
