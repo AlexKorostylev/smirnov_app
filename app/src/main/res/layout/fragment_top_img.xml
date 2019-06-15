@@ -8,7 +8,7 @@
     tools:context=".TopImgFragment">
 
     <ImageView
-        android:contentDescription="@string/img"
+        android:contentDescription="@string/img_description"
         android:id="@+id/info_image_top"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
