@@ -13,7 +13,7 @@ import android.widget.ListView;
 
 public class PoetryListFragment extends ListFragment {
 
-    static interface PoetryListListener {
+    interface PoetryListListener {
         void itemClickedPoetry(long id);
     }
 
@@ -31,7 +31,7 @@ public class PoetryListFragment extends ListFragment {
             listTitles[i] = Text.poetry[i].getTitle();
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 inflater.getContext(), android.R.layout.simple_list_item_1,
                 listTitles);
         setListAdapter(adapter);

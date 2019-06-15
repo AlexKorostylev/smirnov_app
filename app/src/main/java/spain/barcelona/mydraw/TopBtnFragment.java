@@ -25,7 +25,7 @@ public class TopBtnFragment extends Fragment implements View.OnClickListener {
     static int indexCurrentState = indexAllPeriod;
 
 
-    static interface FragmentArtListener {
+    interface FragmentArtListener {
         void itemClickedArtListener(String fragment_name);
     }
 

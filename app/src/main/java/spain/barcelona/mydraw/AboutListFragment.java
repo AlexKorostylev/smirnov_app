@@ -13,7 +13,7 @@ import android.widget.ListView;
 
 public class AboutListFragment extends ListFragment {
 
-    static interface AboutListListener {
+    interface AboutListListener {
         void itemClickedAbout(long id);
     }
 
@@ -32,7 +32,7 @@ public class AboutListFragment extends ListFragment {
             listTitles[i] = Text.about[i].getAuthor();
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 inflater.getContext(), android.R.layout.simple_list_item_1,
                 listTitles);
         setListAdapter(adapter);

@@ -1,8 +1,5 @@
 package spain.barcelona.mydraw;
 
-import android.app.FragmentTransaction;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.widget.Toolbar;
