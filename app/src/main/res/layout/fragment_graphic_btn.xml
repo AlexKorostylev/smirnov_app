@@ -12,8 +12,8 @@
         android:id="@+id/btn_previous"
         android:layout_width="53dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/btn_previous_txt"
         android:textSize="@dimen/btn_arrow_size"
         android:background="@drawable/btn_next_previous"/>
@@ -47,8 +47,8 @@
         android:layout_width="53dp"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/btn_next_txt"
         android:textSize="@dimen/btn_arrow_size"
         android:background="@drawable/btn_next_previous"/>
