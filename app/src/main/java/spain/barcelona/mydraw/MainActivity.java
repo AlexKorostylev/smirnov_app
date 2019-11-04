@@ -1,6 +1,7 @@
 package spain.barcelona.mydraw;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -13,7 +14,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, InterviewListFragment.InterviewListListener, PoetryListFragment.PoetryListListener, AboutListFragment.AboutListListener, TopBtnFragment.FragmentArtListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        InterviewListFragment.InterviewListListener,
+        PoetryListFragment.PoetryListListener,
+        AboutListFragment.AboutListListener,
+        TopBtnFragment.FragmentArtListener,
+        PaintImgFragment.onSomeEventListener{
 
 
     @Override
@@ -202,6 +208,11 @@ public class MainActivity extends AppCompatActivity
                 break;
 
         }
+    }
+
+    public void someEvent(String s) {
+        Intent intent = new Intent(this, PicDetailActivity.class);
+        startActivity(intent);
     }
 
 

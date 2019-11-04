@@ -1,7 +1,9 @@
 package spain.barcelona.mydraw;
 
 
+import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +13,28 @@ import android.widget.TextView;
 
 import static spain.barcelona.mydraw.Pic.*;
 
-public class PaintImgFragment extends Fragment {
+public class PaintImgFragment extends Fragment{
 
     static int dataForCounterPeriodState;
     static int dataForCounterIndexState;
+
+    public interface onSomeEventListener {
+        public void someEvent(String s);
+    }
+
+    onSomeEventListener someEventListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            someEventListener = (onSomeEventListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
+        }
+    }
+
+    final String LOG_TAG = "myLogs";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,6 +56,12 @@ public class PaintImgFragment extends Fragment {
 
         dataForCounterPeriodState = periodState;
         dataForCounterIndexState = indexState;
+
+        image.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                someEventListener.someEvent("Test signal from fragment to Activity");
+            }
+        });
 
         return v;
     }
