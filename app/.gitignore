@@ -9,3 +9,7 @@
 /build
 
 /captures
+
+.gradle
+.build.gradle
+/build_file_checksums.ser
