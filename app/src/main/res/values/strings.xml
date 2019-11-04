@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">V.Smirnov</string>
     <string name="app_bar_name">Вадим Смирнов</string>
+    <string name="pic_detail">О картине</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Вадим Смирнов</string>
     <string name="nav_header_subtitle">художник-философ </string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
 
     <string name="drawer_painting">Живопись</string>
     <string name="drawer_graphics">Графика</string>
