@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity
         TopBtnFragment.FragmentArtListener,
         PaintImgFragment.onSomeEventListener{
 
+    final String LOG_TAG = "myLogs";
+    static int startPoint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +43,20 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // Фрагмент открывающийся при начальной загрузке
-        TopFragment topFragment = new TopFragment();
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.top_container, topFragment);
-        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        ft.commit();
+        if(startPoint ==1){
+            PaintFragment paintingFragment = new PaintFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.top_container, paintingFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+        } else {
+            TopFragment topFragment = new TopFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.top_container, topFragment);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+        }
     }
 
     @Override
@@ -55,6 +67,12 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
 
@@ -210,10 +228,18 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public void someEvent(String s) {
+    public void someEvent(int picIndex) {
         Intent intent = new Intent(this, PicDetailActivity.class);
+        intent.putExtra("PIC_INDEX", picIndex);
         startActivity(intent);
+        startPoint =1;
+        Log.d(LOG_TAG, "Time to markkkkkkkk");
+        onCreate();
     }
 
+    public void onCreate(){
+        Log.d(LOG_TAG, "Старт ++++++++++++");
+        super.onResume();
+    }
 
 }
