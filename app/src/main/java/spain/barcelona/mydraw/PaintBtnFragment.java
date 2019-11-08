@@ -1,6 +1,5 @@
 package spain.barcelona.mydraw;
 
-
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import static spain.barcelona.mydraw.BizLogic.*;
+import static spain.barcelona.mydraw.PaintImgFragment.indexToPicDetail;
 import static spain.barcelona.mydraw.Pic.paint;
 
 public class PaintBtnFragment extends Fragment implements View.OnClickListener {
@@ -74,6 +74,7 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, paint));
                 periodCurrentState = allPeriod;
                 indexCurrentState = indexAllPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, paint);
                 break;
             case "1974-1979":
                 if((periodCurrentState != firstPeriod) & (indexFirstPeriod >= 0)){
@@ -85,6 +86,7 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 picCounter.setText(BizLogic.dataForCounter(firstPeriod, indexFirstPeriod, paint));
                 periodCurrentState = firstPeriod;
                 indexCurrentState = indexFirstPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(firstPeriod, indexFirstPeriod, paint);
                 break;
             case "1980-1989":
                 if((periodCurrentState != secondPeriod) & (indexSecondPeriod >= 0)){
@@ -96,6 +98,7 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 picCounter.setText(BizLogic.dataForCounter(secondPeriod, indexSecondPeriod, paint));
                 periodCurrentState = secondPeriod;
                 indexCurrentState = indexSecondPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(secondPeriod, indexSecondPeriod, paint);
                 break;
             case "1990-1999":
                 if((periodCurrentState != thirdPeriod) & (indexThirdPeriod >= 0)){
@@ -107,6 +110,7 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 picCounter.setText(BizLogic.dataForCounter(thirdPeriod, indexThirdPeriod, paint));
                 periodCurrentState = thirdPeriod;
                 indexCurrentState = indexThirdPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(thirdPeriod, indexThirdPeriod, paint);
                 break;
             case "2000-2011":
                 if((periodCurrentState != foursPeriod) & (indexFoursPeriod >= 0)){
@@ -118,6 +122,7 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 picCounter.setText(BizLogic.dataForCounter(foursPeriod, indexFoursPeriod, paint));
                 periodCurrentState = foursPeriod;
                 indexCurrentState = indexFoursPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(foursPeriod, indexFoursPeriod, paint);
                 break;
         }
     }
@@ -141,6 +146,7 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, paint));
                 periodCurrentState = allPeriod;
                 indexCurrentState = indexAllPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, paint);
                 break;
             case "1974-1979":
                 if((periodCurrentState != firstPeriod) & (indexFirstPeriod>=0)){
@@ -152,6 +158,7 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 picCounter.setText(BizLogic.dataForCounter(firstPeriod, indexFirstPeriod, paint));
                 periodCurrentState = firstPeriod;
                 indexCurrentState = indexFirstPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(firstPeriod, indexFirstPeriod, paint);
                 break;
             case "1980-1989":
                 if((periodCurrentState != secondPeriod) & (indexSecondPeriod >= 0)){
@@ -163,6 +170,7 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 picCounter.setText(BizLogic.dataForCounter(secondPeriod, indexSecondPeriod, paint));
                 periodCurrentState = secondPeriod;
                 indexCurrentState = indexSecondPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(secondPeriod, indexSecondPeriod, paint);
                 break;
             case "1990-1999":
                 if((periodCurrentState != thirdPeriod) & (indexThirdPeriod >= 0)){
@@ -174,6 +182,7 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 picCounter.setText(BizLogic.dataForCounter(thirdPeriod, indexThirdPeriod, paint));
                 periodCurrentState = thirdPeriod;
                 indexCurrentState = indexThirdPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(thirdPeriod, indexThirdPeriod, paint);
                 break;
             case "2000-2011":
                 if((periodCurrentState != foursPeriod) & (indexFoursPeriod >= 0)){
@@ -185,7 +194,9 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 picCounter.setText(BizLogic.dataForCounter(foursPeriod, indexFoursPeriod, paint));
                 periodCurrentState = foursPeriod;
                 indexCurrentState = indexFoursPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(foursPeriod, indexFoursPeriod, paint);
                 break;
         }
     }
+
 }
