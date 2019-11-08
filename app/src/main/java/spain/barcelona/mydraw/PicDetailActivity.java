@@ -15,8 +15,8 @@ public class PicDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pic_detail);
 
         ImageView picImg = findViewById(R.id.detail_pic_img);
-        TextView picName = findViewById(R.id.detail_pic_name); // Название картины
-        TextView picMaterial = findViewById(R.id.detail_pic_material); // Техника исполнения (Например: холст, масло)
+        TextView picName = findViewById(R.id.detail_pic_name);
+        TextView picMaterial = findViewById(R.id.detail_pic_detail);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -29,8 +29,5 @@ public class PicDetailActivity extends AppCompatActivity {
                     (paint[picIndex].getYear())+"г.";
             picMaterial.setText(picDetail);
         }
-
-
-
     }
 }
