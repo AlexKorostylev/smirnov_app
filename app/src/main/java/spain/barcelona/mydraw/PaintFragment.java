@@ -1,6 +1,5 @@
 package spain.barcelona.mydraw;
 
-
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -19,6 +18,7 @@ public class PaintFragment extends Fragment {
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
         PaintImgFragment imgFragment = new PaintImgFragment();
         PaintBtnFragment yearFragment = new PaintBtnFragment();
+
         ft.replace(R.id.paint_img_container, imgFragment);
         ft.replace(R.id.paint_btn_container, yearFragment);
         ft.addToBackStack(null);
