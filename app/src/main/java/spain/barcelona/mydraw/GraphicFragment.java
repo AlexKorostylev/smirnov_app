@@ -28,6 +28,8 @@ public class GraphicFragment extends Fragment {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Графика");
 
+        ((MainActivity)getActivity()).getSupportActionBar().show();
+
         return inflater.inflate(R.layout.fragment_graphic, container, false);
     }
 }

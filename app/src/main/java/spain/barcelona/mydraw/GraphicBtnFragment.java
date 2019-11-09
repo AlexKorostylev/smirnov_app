@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import static spain.barcelona.mydraw.BizLogic.*;
+import static spain.barcelona.mydraw.GraphicImgFragment.indexToPicDetail;
 import static spain.barcelona.mydraw.Pic.pics;
 
 
@@ -77,6 +78,7 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, pics));
                 periodCurrentState = allPeriod;
                 indexCurrentState = indexAllPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, pics);
                 break;
             case "1972-1979":
                 if((periodCurrentState != firstPeriod) & (indexFirstPeriod >= 0)){
@@ -88,6 +90,7 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 picCounter.setText(BizLogic.dataForCounter(firstPeriod, indexFirstPeriod, pics));
                 periodCurrentState = firstPeriod;
                 indexCurrentState = indexFirstPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, pics);
                 break;
             case "1980-1989":
                 if((periodCurrentState != secondPeriod) & (indexSecondPeriod >= 0)){
@@ -99,6 +102,7 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 picCounter.setText(BizLogic.dataForCounter(secondPeriod, indexSecondPeriod, pics));
                 periodCurrentState = secondPeriod;
                 indexCurrentState = indexSecondPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(secondPeriod, indexSecondPeriod, pics);
                 break;
             case "1990-1999":
                 if((periodCurrentState != thirdPeriod) & (indexThirdPeriod >= 0)){
@@ -110,6 +114,7 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 picCounter.setText(BizLogic.dataForCounter(thirdPeriod, indexThirdPeriod, pics));
                 periodCurrentState = thirdPeriod;
                 indexCurrentState = indexThirdPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(thirdPeriod, indexThirdPeriod, pics);
                 break;
             case "2000-2012":
                 if((periodCurrentState != foursPeriod) & (indexFoursPeriod >= 0)){
@@ -121,6 +126,7 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 picCounter.setText(BizLogic.dataForCounter(foursPeriod, indexFoursPeriod, pics));
                 periodCurrentState = foursPeriod;
                 indexCurrentState = indexFoursPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(foursPeriod, indexFoursPeriod, pics);
                 break;
         }
     }
@@ -144,6 +150,7 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, pics));
                 periodCurrentState = allPeriod;
                 indexCurrentState = indexAllPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, pics);
                 break;
             case "1972-1979":
                 if((periodCurrentState != firstPeriod) & (indexFirstPeriod>=0)){
@@ -155,6 +162,7 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 picCounter.setText(BizLogic.dataForCounter(firstPeriod, indexFirstPeriod, pics));
                 periodCurrentState = firstPeriod;
                 indexCurrentState = indexFirstPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(firstPeriod, indexFirstPeriod, pics);
                 break;
             case "1980-1989":
                 if((periodCurrentState != secondPeriod) & (indexSecondPeriod >= 0)){
@@ -166,6 +174,7 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 picCounter.setText(BizLogic.dataForCounter(secondPeriod, indexSecondPeriod, pics));
                 periodCurrentState = secondPeriod;
                 indexCurrentState = indexSecondPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(secondPeriod, indexSecondPeriod, pics);
                 break;
             case "1990-1999":
                 if((periodCurrentState != thirdPeriod) & (indexThirdPeriod >= 0)){
@@ -177,6 +186,7 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 picCounter.setText(BizLogic.dataForCounter(thirdPeriod, indexThirdPeriod, pics));
                 periodCurrentState = thirdPeriod;
                 indexCurrentState = indexThirdPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(thirdPeriod, indexThirdPeriod, pics);
                 break;
             case "2000-2012":
                 if((periodCurrentState != foursPeriod) & (indexFoursPeriod >= 0)){
@@ -188,6 +198,7 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 picCounter.setText(BizLogic.dataForCounter(foursPeriod, indexFoursPeriod, pics));
                 periodCurrentState = foursPeriod;
                 indexCurrentState = indexFoursPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(foursPeriod, indexFoursPeriod, pics);
                 break;
         }
     }
