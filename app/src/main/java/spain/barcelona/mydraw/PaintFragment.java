@@ -27,6 +27,8 @@ public class PaintFragment extends Fragment {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Живопись");
 
+        ((MainActivity)getActivity()).getSupportActionBar().show();
+
         return inflater.inflate(R.layout.fragment_paint, container, false);
     }
 

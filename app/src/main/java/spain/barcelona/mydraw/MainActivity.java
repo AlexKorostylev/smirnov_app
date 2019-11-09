@@ -220,7 +220,6 @@ public class MainActivity extends AppCompatActivity
         DetailPicFragment detailFragment = new DetailPicFragment();
         ft.replace(R.id.top_container, detailFragment);
         ft.addToBackStack(null);
-        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.commit();
     }
 

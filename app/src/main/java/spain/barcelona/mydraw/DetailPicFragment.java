@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.view.MotionEvent;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -54,9 +55,22 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
         picImg.setScaleType(ImageView.ScaleType.FIT_CENTER); // make the image fit to the center.
         picImg.setOnTouchListener(this);
 
+        // Hiding toolbar
+        if (getActivity() instanceof MainActivity) {
+            ((MainActivity)getActivity()).getSupportActionBar().hide();
+        }
+
+        // Back button
+        ImageView imgBtn = v.findViewById(R.id.back_button);
+        imgBtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
+
         return v;
     }
-
     public boolean onTouch(View v, MotionEvent event) {
         ImageView view = (ImageView) v;
         // make the image scalable as a matrix

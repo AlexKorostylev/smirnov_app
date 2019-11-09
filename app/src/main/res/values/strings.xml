@@ -47,5 +47,6 @@
 
     <string name="btn_next_txt">\u232A</string>
     <string name="btn_previous_txt">\u2329</string>
+    <string name="img_btn_back_arrow">back</string>
 
 </resources>
