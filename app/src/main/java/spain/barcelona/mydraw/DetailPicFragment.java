@@ -9,16 +9,15 @@ import android.view.ViewGroup;
 import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.view.MotionEvent;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
-import static spain.barcelona.mydraw.PaintImgFragment.indexToPicDetail;
-import static spain.barcelona.mydraw.Pic.paint;
+import static spain.barcelona.mydraw.Pic.*;
 
 
-public class DetailPicFragment extends Fragment implements View.OnTouchListener  {
+public class DetailPicFragment extends Fragment implements View.OnTouchListener {
+
+    static String artWayIndex;
 
     // These matrices will be used to move and zoom image
     Matrix matrix = new Matrix();
@@ -45,24 +44,38 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
         TextView picName = v.findViewById(R.id.detail_pic_name);
         TextView picMaterial = v.findViewById(R.id.detail_pic_detail);
 
-        int picIndex = indexToPicDetail;
+
+        if (artWayIndex.equals("painting")) {
+            int picIndex = PaintImgFragment.indexToPicDetail;
             picImg.setImageResource(paint[picIndex].getImageResourceId());
             picName.setText(paint[picIndex].getName());
 
             String picDetail = paint[picIndex].getMaterial() + "   " + (paint[picIndex].getSize()) + "   " +
-                    (paint[picIndex].getYear())+"г.";
+                    (paint[picIndex].getYear());
             picMaterial.setText(picDetail);
+
+        } else if(artWayIndex.equals("pics")){
+            int picIndex = GraphicImgFragment.indexToPicDetail;
+            picImg.setImageResource(pics[picIndex].getImageResourceId());
+            picName.setText(pics[picIndex].getName());
+
+            String picDetail = pics[picIndex].getMaterial() + "   " + (pics[picIndex].getSize()) + "   " +
+                    (pics[picIndex].getYear());
+            picMaterial.setText(picDetail);
+        }
+
+
         picImg.setScaleType(ImageView.ScaleType.FIT_CENTER); // make the image fit to the center.
         picImg.setOnTouchListener(this);
 
         // Hiding toolbar
         if (getActivity() instanceof MainActivity) {
-            ((MainActivity)getActivity()).getSupportActionBar().hide();
+            ((MainActivity) getActivity()).getSupportActionBar().hide();
         }
 
         // Back button
         ImageView imgBtn = v.findViewById(R.id.back_button);
-        imgBtn.setOnClickListener( new View.OnClickListener() {
+        imgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity().onBackPressed();
@@ -71,6 +84,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
 
         return v;
     }
+
     public boolean onTouch(View v, MotionEvent event) {
         ImageView view = (ImageView) v;
         // make the image scalable as a matrix
@@ -102,19 +116,16 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
                 break;
 
             case MotionEvent.ACTION_MOVE:
-                if (mode == DRAG)
-                { //movement of first finger
+                if (mode == DRAG) { //movement of first finger
                     matrix.set(savedMatrix);
-                    if (view.getLeft() >= 0)
-                    {
+                    if (view.getLeft() >= 0) {
                         matrix.postTranslate(event.getX() - start.x, event.getY() - start.y);
                     }
-                }
-                else if (mode == ZOOM) { //pinch zooming
+                } else if (mode == ZOOM) { //pinch zooming
                     float newDist = spacing(event);
                     if (newDist > 5f) {
                         matrix.set(savedMatrix);
-                        scale = newDist/oldDist; // XXX may need to play with this value to limit it
+                        scale = newDist / oldDist; // XXX may need to play with this value to limit it
                         matrix.postScale(scale, scale, mid.x, mid.y);
                     }
                 }
@@ -130,7 +141,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
     private float spacing(MotionEvent event) {
         float x = event.getX(0) - event.getX(1);
         float y = event.getY(0) - event.getY(1);
-        return (float)Math.sqrt(x * x + y * y);
+        return (float) Math.sqrt(x * x + y * y);
     }
 
     private void midPoint(PointF point, MotionEvent event) {
