@@ -18,19 +18,19 @@ public class PaintImgFragment extends Fragment{
     static int dataForCounterIndexState;
     static int indexToPicDetail;
 
-    public interface onSomeEventListener {
-        void someEvent(int indexPic);
+    public interface onClickImgListener {
+        void imgClick();
     }
 
-    onSomeEventListener someEventListener;
+    onClickImgListener paintImgListener;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            someEventListener = (onSomeEventListener) activity;
+            paintImgListener = (onClickImgListener) activity;
         } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
+            throw new ClassCastException(activity.toString() + " must implement onClickImgListener");
         }
     }
 
@@ -64,7 +64,7 @@ public class PaintImgFragment extends Fragment{
         // Переход на карточку картины
         image.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                someEventListener.someEvent(indexToPicDetail);
+                paintImgListener.imgClick();
             }
         });
 

@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity
         PoetryListFragment.PoetryListListener,
         AboutListFragment.AboutListListener,
         TopBtnFragment.FragmentArtListener,
-        PaintImgFragment.onSomeEventListener {
+        PaintImgFragment.onClickImgListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public void someEvent(int picIndex) {
+    public void imgClick() {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         DetailPicFragment detailFragment = new DetailPicFragment();
         ft.replace(R.id.top_container, detailFragment);
