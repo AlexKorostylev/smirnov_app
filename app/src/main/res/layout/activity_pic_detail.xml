@@ -15,7 +15,7 @@
         android:layout_weight="5"
         android:layout_height="270dp"
         android:scaleType="fitCenter"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="4dp"/>
 
     <TextView
         android:id="@+id/detail_pic_name"
@@ -31,8 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="16dp"
         android:layout_weight="1"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="12dp"
         android:gravity ="center"
         android:textColor="#000000"
         android:textSize="16sp" />
