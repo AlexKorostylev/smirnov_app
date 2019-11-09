@@ -17,8 +17,7 @@ public class MainActivity extends AppCompatActivity
         InterviewListFragment.InterviewListListener,
         PoetryListFragment.PoetryListListener,
         AboutListFragment.AboutListListener,
-        TopBtnFragment.FragmentArtListener,
-        PaintImgFragment.onClickImgListener {
+        TopBtnFragment.FragmentArtListener, ImgClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

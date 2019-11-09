@@ -1,6 +1,5 @@
 package spain.barcelona.mydraw;
 
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
@@ -10,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static spain.barcelona.mydraw.DetailPicFragment.artWayIndex;
 import static spain.barcelona.mydraw.Pic.*;
 
 public class PaintImgFragment extends Fragment{
@@ -18,17 +18,13 @@ public class PaintImgFragment extends Fragment{
     static int dataForCounterIndexState;
     static int indexToPicDetail;
 
-    public interface onClickImgListener {
-        void imgClick();
-    }
-
-    onClickImgListener paintImgListener;
+    ImgClickListener imgListener;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            paintImgListener = (onClickImgListener) activity;
+            imgListener = (ImgClickListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString() + " must implement onClickImgListener");
         }
@@ -42,21 +38,21 @@ public class PaintImgFragment extends Fragment{
         TextView nameText = v.findViewById(R.id.name_text_paint);
 
         // Отображение нужной картины
-        int periodState = PaintBtnFragment.periodCurrentState; //
+        int periodState = PaintBtnFragment.periodCurrentState;
         int indexState = PaintBtnFragment.indexCurrentState;
 
-
+        // Сохранение состояния периода по направлению
         if (periodState == 0 & indexState == -1) {
             indexState = BizLogic.incrementCheck(periodState, indexState, paint);
             PaintBtnFragment.indexAllPeriod++;
         }
-
 
         image.setImageResource(paint[BizLogic.positionAtArray(periodState, indexState, paint)].getImageResourceId());
         nameText.setText(paint[BizLogic.positionAtArray(periodState, indexState, paint)].getName());
 
 
         indexToPicDetail = BizLogic.positionAtArray(periodState, indexState, paint);
+        artWayIndex = "painting";
 
         dataForCounterPeriodState = periodState;
         dataForCounterIndexState = indexState;
@@ -64,7 +60,7 @@ public class PaintImgFragment extends Fragment{
         // Переход на карточку картины
         image.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                paintImgListener.imgClick();
+                imgListener.imgClick();
             }
         });
 
