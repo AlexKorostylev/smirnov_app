@@ -1,7 +1,6 @@
 package spain.barcelona.mydraw;
 
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -38,11 +37,13 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
         TopFragment topFragment = new TopFragment();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.replace(R.id.top_container, topFragment);
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.commit();
+
     }
 
     @Override
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity
         onBackPressed();
         return true;
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -145,6 +147,7 @@ public class MainActivity extends AppCompatActivity
             ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
+
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -213,14 +216,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void someEvent(int picIndex) {
-        Intent intent = new Intent(this, PicDetailActivity.class);
-        intent.putExtra("PIC_INDEX", picIndex);
-        startActivity(intent);
-        onCreate();
-    }
-
-    public void onCreate() {
-        super.onResume();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        DetailPicFragment detailFragment = new DetailPicFragment();
+        ft.replace(R.id.top_container, detailFragment);
+        ft.addToBackStack(null);
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        ft.commit();
     }
 
 }
