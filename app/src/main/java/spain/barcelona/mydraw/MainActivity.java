@@ -10,7 +10,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -20,10 +19,7 @@ public class MainActivity extends AppCompatActivity
         PoetryListFragment.PoetryListListener,
         AboutListFragment.AboutListListener,
         TopBtnFragment.FragmentArtListener,
-        PaintImgFragment.onSomeEventListener{
-
-    final String LOG_TAG = "myLogs";
-    static int startPoint;
+        PaintImgFragment.onSomeEventListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,21 +38,11 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // Фрагмент открывающийся при начальной загрузке
-        if(startPoint ==1){
-            PaintFragment paintingFragment = new PaintFragment();
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.top_container, paintingFragment);
-            ft.addToBackStack(null);
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            ft.commit();
-        } else {
-            TopFragment topFragment = new TopFragment();
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.top_container, topFragment);
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            ft.commit();
-        }
+        TopFragment topFragment = new TopFragment();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.top_container, topFragment);
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        ft.commit();
     }
 
     @Override
@@ -74,7 +60,6 @@ public class MainActivity extends AppCompatActivity
         onBackPressed();
         return true;
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -160,7 +145,6 @@ public class MainActivity extends AppCompatActivity
             ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
-
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -232,13 +216,10 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, PicDetailActivity.class);
         intent.putExtra("PIC_INDEX", picIndex);
         startActivity(intent);
-        startPoint =1;
-        Log.d(LOG_TAG, "Time to markkkkkkkk");
         onCreate();
     }
 
-    public void onCreate(){
-        Log.d(LOG_TAG, "Старт ++++++++++++");
+    public void onCreate() {
         super.onResume();
     }
 
