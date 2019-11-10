@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import static spain.barcelona.mydraw.BizLogic.*;
+import static spain.barcelona.mydraw.TopImgFragment.indexToPicDetail;
 import static spain.barcelona.mydraw.Pic.*;
 
 public class TopBtnFragment extends Fragment implements View.OnClickListener {
@@ -83,6 +84,7 @@ public class TopBtnFragment extends Fragment implements View.OnClickListener {
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, topScreen));
                 periodCurrentState = allPeriod;
                 indexCurrentState = indexAllPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, topScreen);
                 break;
             case "живопись":
                 onListItemClick("живопись");
@@ -113,6 +115,7 @@ public class TopBtnFragment extends Fragment implements View.OnClickListener {
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, topScreen));
                 periodCurrentState = allPeriod;
                 indexCurrentState = indexAllPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, topScreen);
                 break;
             case "живопись":
                 onListItemClick("живопись");

@@ -45,15 +45,14 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
         TextView picMaterial = v.findViewById(R.id.detail_pic_detail);
 
 
-        if (artWayIndex.equals("painting")) {
-            int picIndex = PaintImgFragment.indexToPicDetail;
-            picImg.setImageResource(paint[picIndex].getImageResourceId());
-            picName.setText(paint[picIndex].getName());
+        if(artWayIndex.equals("welcome")) {
+            int picIndex = TopImgFragment.indexToPicDetail;
+            picImg.setImageResource(topScreen[picIndex].getImageResourceId());
+            picName.setText(topScreen[picIndex].getName());
 
-            String picDetail = paint[picIndex].getMaterial() + "   " + (paint[picIndex].getSize()) + "   " +
-                    (paint[picIndex].getYear());
+            String picDetail = topScreen[picIndex].getMaterial() + "   " + (topScreen[picIndex].getSize()) + "   " +
+                    (topScreen[picIndex].getYear());
             picMaterial.setText(picDetail);
-
         } else if(artWayIndex.equals("pics")){
             int picIndex = GraphicImgFragment.indexToPicDetail;
             picImg.setImageResource(pics[picIndex].getImageResourceId());
@@ -62,8 +61,15 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             String picDetail = pics[picIndex].getMaterial() + "   " + (pics[picIndex].getSize()) + "   " +
                     (pics[picIndex].getYear());
             picMaterial.setText(picDetail);
-        }
+        } else if(artWayIndex.equals("painting")) {
+            int picIndex = PaintImgFragment.indexToPicDetail;
+            picImg.setImageResource(paint[picIndex].getImageResourceId());
+            picName.setText(paint[picIndex].getName());
 
+            String picDetail = paint[picIndex].getMaterial() + "   " + (paint[picIndex].getSize()) + "   " +
+                    (paint[picIndex].getYear());
+            picMaterial.setText(picDetail);
+        }
 
         picImg.setScaleType(ImageView.ScaleType.FIT_CENTER); // make the image fit to the center.
         picImg.setOnTouchListener(this);

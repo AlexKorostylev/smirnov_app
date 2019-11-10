@@ -29,6 +29,8 @@ public class TopFragment extends Fragment {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Вадим Смирнов");
 
+        ((MainActivity)getActivity()).getSupportActionBar().show();
+
         return inflater.inflate(R.layout.fragment_top, container, false);
     }
 
