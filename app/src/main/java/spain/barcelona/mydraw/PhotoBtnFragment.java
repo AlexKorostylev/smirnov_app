@@ -57,7 +57,7 @@ public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
 
     public void onClickNext() {
         ImageView image = getActivity().findViewById(R.id.info_image_photo);
-        TextView nameText = getActivity().findViewById(R.id.name_text_photo);
+        //TextView nameText = getActivity().findViewById(R.id.name_text_photo);
         TextView detailText = getActivity().findViewById(R.id.detail_text_photo);
 
         TextView picCounter = getActivity().findViewById(R.id.counter_photo);
@@ -68,12 +68,9 @@ public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
             case "1970-2011":
                 indexAllPeriod = BizLogic.incrementCheck(allPeriod, indexAllPeriod, photo);
                 image.setImageResource(photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getImageResourceId());
-                nameText.setText(photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getName());
                 String year = photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getYear();
                 String place = photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getMaterial();
-                //String comment = photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getSize();
-                String photoDetail = place +"  "+ year;
-
+                String photoDetail = place + "  " + year;
                 detailText.setText(photoDetail);
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, photo));
                 periodCurrentState = allPeriod;
@@ -85,7 +82,6 @@ public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
 
     public void onClickPrevious() {
         ImageView image = getActivity().findViewById(R.id.info_image_photo);
-        TextView nameText = getActivity().findViewById(R.id.name_text_photo);
         TextView detailText = getActivity().findViewById(R.id.detail_text_photo);
 
         TextView picCounter = getActivity().findViewById(R.id.counter_photo);
@@ -96,10 +92,8 @@ public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
             case "1970-2011":
                 indexAllPeriod = BizLogic.decrementCheck(allPeriod, indexAllPeriod, photo);
                 image.setImageResource(photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getImageResourceId());
-                nameText.setText(photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getName());
                 String year = photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getYear();
                 String place = photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getMaterial();
-                //String comment = photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getSize();
                 detailText.setText(photoDetail(year, place));
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, photo));
                 periodCurrentState = allPeriod;
@@ -109,12 +103,12 @@ public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    public static String photoDetail(String year, String place){
+    public static String photoDetail(String year, String place) {
         String photoDetail;
         if (place.equals("")) {
             photoDetail = year;
         } else {
-            photoDetail = place +"  "+ year;
+            photoDetail = place + "  " + year;
         }
         return photoDetail;
     }
