@@ -27,6 +27,8 @@ public class PhotoFragment extends Fragment {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Фотоархив");
 
+        ((MainActivity)getActivity()).getSupportActionBar().show();
+
         return inflater.inflate(R.layout.fragment_photo, container, false);
     }
 

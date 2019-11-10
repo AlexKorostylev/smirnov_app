@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import static spain.barcelona.mydraw.BizLogic.*;
+import static spain.barcelona.mydraw.PhotoImgFragment.indexToPicDetail;
 import static spain.barcelona.mydraw.Pic.photo;
 
 public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
@@ -77,6 +78,7 @@ public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, photo));
                 periodCurrentState = allPeriod;
                 indexCurrentState = indexAllPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo);
                 break;
         }
     }
@@ -102,6 +104,7 @@ public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, photo));
                 periodCurrentState = allPeriod;
                 indexCurrentState = indexAllPeriod;
+                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo);
                 break;
         }
     }

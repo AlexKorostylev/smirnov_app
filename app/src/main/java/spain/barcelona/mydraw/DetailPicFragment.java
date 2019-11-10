@@ -53,6 +53,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             String picDetail = topScreen[picIndex].getMaterial() + "   " + (topScreen[picIndex].getSize()) + "   " +
                     (topScreen[picIndex].getYear());
             picMaterial.setText(picDetail);
+
         } else if(artWayIndex.equals("pics")){
             int picIndex = GraphicImgFragment.indexToPicDetail;
             picImg.setImageResource(pics[picIndex].getImageResourceId());
@@ -61,6 +62,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             String picDetail = pics[picIndex].getMaterial() + "   " + (pics[picIndex].getSize()) + "   " +
                     (pics[picIndex].getYear());
             picMaterial.setText(picDetail);
+
         } else if(artWayIndex.equals("painting")) {
             int picIndex = PaintImgFragment.indexToPicDetail;
             picImg.setImageResource(paint[picIndex].getImageResourceId());
@@ -68,6 +70,15 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
 
             String picDetail = paint[picIndex].getMaterial() + "   " + (paint[picIndex].getSize()) + "   " +
                     (paint[picIndex].getYear());
+            picMaterial.setText(picDetail);
+
+        } else if(artWayIndex.equals("photo")) {
+            int picIndex = PhotoImgFragment.indexToPicDetail;
+            picImg.setImageResource(photo[picIndex].getImageResourceId());
+            picName.setText(photo[picIndex].getName());
+
+            String picDetail = photo[picIndex].getMaterial() + "   " + (photo[picIndex].getSize()) + "   " +
+                    (photo[picIndex].getYear());
             picMaterial.setText(picDetail);
         }
 
