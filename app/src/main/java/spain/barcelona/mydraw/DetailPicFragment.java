@@ -77,7 +77,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picImg.setImageResource(photo[picIndex].getImageResourceId());
             picName.setText(photo[picIndex].getName());
 
-            String picDetail = photo[picIndex].getMaterial() + "   " + (photo[picIndex].getSize()) + "   " +
+            String picDetail = photo[picIndex].getMaterial() + "   " +
                     (photo[picIndex].getYear());
             picMaterial.setText(picDetail);
         }
