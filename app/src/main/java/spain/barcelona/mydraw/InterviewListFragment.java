@@ -36,6 +36,9 @@ public class InterviewListFragment extends ListFragment {
                 inflater.getContext(), android.R.layout.simple_list_item_1,
                 listTitles);
         setListAdapter(adapter);
+
+        ((MainActivity) getActivity()).getSupportActionBar().show();
+
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
