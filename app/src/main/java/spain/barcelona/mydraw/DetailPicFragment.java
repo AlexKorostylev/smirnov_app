@@ -82,8 +82,21 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
         } else if(artWayIndex.equals("about")) {
             int picIndex = 1;
-            for(int i =0; i < paint.length-1; i++){
+            for(int i =0; i < paint.length; i++){
                 if (paint[i].getImageResourceId() == AboutDetailFragment.paintIndex ){
+                    picIndex = i;
+                }
+            }
+            picImg.setImageResource(paint[picIndex].getImageResourceId());
+            picName.setText(paint[picIndex].getName());
+
+            String picDetail = paint[picIndex].getMaterial() + "   " +
+                    (paint[picIndex].getYear());
+            picMaterial.setText(picDetail);
+        }else if(artWayIndex.equals("interview")) {
+            int picIndex = 1;
+            for(int i =0; i < paint.length; i++){
+                if (paint[i].getImageResourceId() == InterviewDetailFragment.paintIndex ){
                     picIndex = i;
                 }
             }
