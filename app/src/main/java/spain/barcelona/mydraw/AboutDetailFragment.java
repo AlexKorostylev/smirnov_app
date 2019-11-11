@@ -1,5 +1,6 @@
 package spain.barcelona.mydraw;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,11 +9,25 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static spain.barcelona.mydraw.DetailPicFragment.artWayIndex;
 
 public class AboutDetailFragment extends Fragment {
 
     private long aboutId;
     public static int fontSizeChange = 4;
+    public static int paintIndex;
+
+    ImgClickListener imgListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            imgListener = (ImgClickListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onClickImgListener");
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,6 +70,16 @@ public class AboutDetailFragment extends Fragment {
             final TextView sign = view.findViewById(R.id.outputData_text);
             String outputData = about.getAuthor() + ". \n" + about.getOutputData();
             sign.setText(outputData);
+
+            ImageView additionalPic = view.findViewById(R.id.additional_pic);
+            additionalPic.setImageResource(about.getImageResourceId());
+            paintIndex = about.getImageResourceId();
+            additionalPic.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    imgListener.imgClick();
+                    artWayIndex = "about";
+                }
+            });
 
             if (fontSizeChange == 1) {
                 description.setTextSize(getResources().getDimension(R.dimen.text_body_11));
@@ -175,6 +200,4 @@ public class AboutDetailFragment extends Fragment {
     public void setAboutId(long id) {
         this.aboutId = id;
     }
-
-
 }

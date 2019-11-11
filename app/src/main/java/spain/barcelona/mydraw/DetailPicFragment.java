@@ -80,6 +80,19 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             String picDetail = photo[picIndex].getMaterial() + "   " +
                     (photo[picIndex].getYear());
             picMaterial.setText(picDetail);
+        } else if(artWayIndex.equals("about")) {
+            int picIndex = 1;
+            for(int i =0; i < paint.length-1; i++){
+                if (paint[i].getImageResourceId() == AboutDetailFragment.paintIndex ){
+                    picIndex = i;
+                }
+            }
+            picImg.setImageResource(paint[picIndex].getImageResourceId());
+            picName.setText(paint[picIndex].getName());
+
+            String picDetail = paint[picIndex].getMaterial() + "   " +
+                    (paint[picIndex].getYear());
+            picMaterial.setText(picDetail);
         }
 
         picImg.setScaleType(ImageView.ScaleType.FIT_CENTER); // make the image fit to the center.
