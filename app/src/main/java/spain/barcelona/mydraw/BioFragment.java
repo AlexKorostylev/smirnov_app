@@ -1,5 +1,6 @@
 package spain.barcelona.mydraw;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.widget.Toolbar;
@@ -9,14 +10,29 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static spain.barcelona.mydraw.DetailPicFragment.artWayIndex;
 
-public class BioFragment extends Fragment {
+
+public class BioFragment extends Fragment  {
 
     // TODO: Сделать отображение "биографии" через фрагменты. На планшете
     // TODO: фото слева - текст справа; На телефоно как сейчас.
 
 
     public static int fontSizeChange = 4;
+    public static int paintIndex;
+
+    ImgClickListener imgListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            imgListener = (ImgClickListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onClickImgListener");
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,6 +48,17 @@ public class BioFragment extends Fragment {
         Text bio = Text.bio[0];
         title.setText(bio.getTitle());
         description.setText(bio.getDescription());
+
+        ImageView additionalPic = view.findViewById(R.id.additional_pic);
+        additionalPic.setImageResource(bio.getImageResourceId());
+        paintIndex = bio.getImageResourceId();
+
+        additionalPic.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                imgListener.imgClick();
+                artWayIndex = "bio";
+            }
+        });
 
         if (fontSizeChange == 1) {
             description.setTextSize(getResources().getDimension(R.dimen.text_body_11));
