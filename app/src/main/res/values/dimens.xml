@@ -8,4 +8,15 @@
     <dimen name="text_margin">16dp</dimen>
     <dimen name="btn_arrow_size">19sp</dimen>
     <dimen name="text_header">19sp</dimen>
+
+
+    <dimen name="text_body_11">4sp</dimen>
+    <dimen name="text_body_12">4.5sp</dimen>
+    <dimen name="text_body_13">5sp</dimen>
+    <dimen name="text_body_14">5.5sp</dimen>
+    <dimen name="text_body_15">6sp</dimen>
+    <dimen name="text_body_16">6.5sp</dimen>
+    <dimen name="text_body_17">7sp</dimen>
+    <dimen name="text_body_18">7.5sp</dimen>
+    <dimen name="text_body_19">8sp</dimen>
 </resources>
