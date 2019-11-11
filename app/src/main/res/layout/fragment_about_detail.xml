@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:scaleType="fitStart"
-            android:src="@drawable/p77_1997" />
+            android:scaleType="fitStart"/>
+
     </LinearLayout>
 </ScrollView>
