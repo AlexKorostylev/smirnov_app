@@ -138,6 +138,7 @@ public class BioFragment extends Fragment  {
             }
         });
 
+        ((MainActivity) getActivity()).getSupportActionBar().show();
 
         return view;
     }
