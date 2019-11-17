@@ -1,6 +1,7 @@
 package spain.barcelona.mydraw;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -34,8 +35,22 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
     PointF mid = new PointF();
     float oldDist = 1f;
 
+
+    ChipListener chipListener;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            chipListener = (ChipListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onClickImgListener");
+        }
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_detail_pic, container, false);
@@ -43,9 +58,10 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
         ImageView picImg = v.findViewById(R.id.detail_pic_img);
         TextView picName = v.findViewById(R.id.detail_pic_name);
         TextView picMaterial = v.findViewById(R.id.detail_pic_detail);
+        ImageView imgBtn = v.findViewById(R.id.back_button);
 
 
-        if(artWayIndex.equals("welcome")) {
+        if (artWayIndex.equals("welcome")) {
             int picIndex = TopImgFragment.indexToPicDetail;
             picImg.setImageResource(topScreen[picIndex].getImageResourceId());
             picName.setText(topScreen[picIndex].getName());
@@ -54,7 +70,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
                     (topScreen[picIndex].getYear());
             picMaterial.setText(picDetail);
 
-        } else if(artWayIndex.equals("pics")){
+        } else if (artWayIndex.equals("pics")) {
             int picIndex = GraphicImgFragment.indexToPicDetail;
             picImg.setImageResource(pics[picIndex].getImageResourceId());
             picName.setText(pics[picIndex].getName());
@@ -63,7 +79,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
                     (pics[picIndex].getYear());
             picMaterial.setText(picDetail);
 
-        } else if(artWayIndex.equals("painting")) {
+        } else if (artWayIndex.equals("painting")) {
             int picIndex = PaintImgFragment.indexToPicDetail;
             picImg.setImageResource(paint[picIndex].getImageResourceId());
             picName.setText(paint[picIndex].getName());
@@ -72,7 +88,15 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
                     (paint[picIndex].getYear());
             picMaterial.setText(picDetail);
 
-        } else if(artWayIndex.equals("photo")) {
+            // Back button
+            imgBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    getActivity().onBackPressed();
+                }
+            });
+        }
+        else if (artWayIndex.equals("photo")) {
             int picIndex = PhotoImgFragment.indexToPicDetail;
             picImg.setImageResource(photo[picIndex].getImageResourceId());
             picName.setText(photo[picIndex].getName());
@@ -80,10 +104,11 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             String picDetail = photo[picIndex].getMaterial() + "   " +
                     (photo[picIndex].getYear());
             picMaterial.setText(picDetail);
-        } else if(artWayIndex.equals("about")) {
+
+        } else if (artWayIndex.equals("about")) {
             int picIndex = 1;
-            for(int i =0; i < paint.length; i++){
-                if (paint[i].getImageResourceId() == AboutDetailFragment.paintIndex ){
+            for (int i = 0; i < paint.length; i++) {
+                if (paint[i].getImageResourceId() == AboutDetailFragment.paintIndex) {
                     picIndex = i;
                 }
             }
@@ -93,33 +118,76 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             String picDetail = paint[picIndex].getMaterial() + "   " +
                     (paint[picIndex].getYear());
             picMaterial.setText(picDetail);
-        } else if(artWayIndex.equals("interview")) {
-            int picIndex = 1;
-            for(int i =0; i < paint.length; i++){
-                if (paint[i].getImageResourceId() == InterviewDetailFragment.paintIndex ){
-                    picIndex = i;
-                }
-            }
-            picImg.setImageResource(paint[picIndex].getImageResourceId());
-            picName.setText(paint[picIndex].getName());
 
-            String picDetail = paint[picIndex].getMaterial() + "   " +
-                    (paint[picIndex].getYear());
-            picMaterial.setText(picDetail);
-        }else if(artWayIndex.equals("bio")) {
-            int picIndex = 1;
-            for(int i =0; i < paint.length; i++){
-                if (paint[i].getImageResourceId() == BioFragment.paintIndex ){
-                    picIndex = i;
+            // Back button
+            imgBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    getActivity().onBackPressed();
                 }
-            }
-            picImg.setImageResource(paint[picIndex].getImageResourceId());
-            picName.setText(paint[picIndex].getName());
-
-            String picDetail = paint[picIndex].getMaterial() + "   " +
-                    (paint[picIndex].getYear());
-            picMaterial.setText(picDetail);
+            });
         }
+        else if (artWayIndex.equals("interview")) {
+            int picIndex = 1;
+            for (int i = 0; i < paint.length; i++) {
+                if (paint[i].getImageResourceId() == InterviewDetailFragment.paintIndex) {
+                    picIndex = i;
+                }
+            }
+            picImg.setImageResource(paint[picIndex].getImageResourceId());
+            picName.setText(paint[picIndex].getName());
+
+            String picDetail = paint[picIndex].getMaterial() + "   " +
+                    (paint[picIndex].getYear());
+            picMaterial.setText(picDetail);
+
+            // Back button
+            imgBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    getActivity().onBackPressed();
+                }
+            });
+        }
+        else if (artWayIndex.equals("bio")) {
+            int picIndex = 1;
+            for (int i = 0; i < paint.length; i++) {
+                if (paint[i].getImageResourceId() == BioFragment.paintIndex) {
+                    picIndex = i;
+                }
+            }
+            picImg.setImageResource(paint[picIndex].getImageResourceId());
+            picName.setText(paint[picIndex].getName());
+
+            String picDetail = paint[picIndex].getMaterial() + "   " +
+                    (paint[picIndex].getYear());
+            picMaterial.setText(picDetail);
+
+            // Back button
+            imgBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    getActivity().onBackPressed();
+                }
+            });
+
+        } else if (artWayIndex.equals("recycle_paint")) {
+            int picIndex = RecycleListFragment.positionPaint;
+            picImg.setImageResource(paint[picIndex].getImageResourceId());
+            picName.setText(paint[picIndex].getName());
+
+            String picDetail = paint[picIndex].getMaterial() + "   " +
+                    (paint[picIndex].getYear());
+            picMaterial.setText(picDetail);
+
+            // Back button
+            imgBtn.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    chipListener.chipClick();
+                }
+            });
+        }
+
 
         picImg.setScaleType(ImageView.ScaleType.FIT_CENTER); // make the image fit to the center.
         picImg.setOnTouchListener(this);
@@ -129,14 +197,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             ((MainActivity) getActivity()).getSupportActionBar().hide();
         }
 
-        // Back button
-        ImageView imgBtn = v.findViewById(R.id.back_button);
-        imgBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().onBackPressed();
-            }
-        });
+
 
         return v;
     }
@@ -205,5 +266,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
         float y = event.getY(0) + event.getY(1);
         point.set(x / 2, y / 2);
     }
+
+
 
 }
