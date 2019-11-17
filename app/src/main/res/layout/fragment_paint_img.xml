@@ -8,13 +8,13 @@
     tools:context=".PaintImgFragment">
 
     <ImageView
-        android:contentDescription="@string/img_description"
         android:id="@+id/info_image_paint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_gravity="fill_horizontal"
+        android:contentDescription="@string/img_description"
         android:scaleType="fitCenter" />
 
     <TextView
