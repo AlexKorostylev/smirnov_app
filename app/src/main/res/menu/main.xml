@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <!-- <item
-        android:id="@+id/action_settings"
+
+    <item
+        android:id="@+id/recycle_list"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
-        -->
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/frame_grid"
+        android:title="Frame"
+        />
+
+    <item
+        android:id="@+id/background_mode"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/day_night_24"
+        android:title="" />
 </menu>
