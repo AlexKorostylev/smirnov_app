@@ -19,4 +19,7 @@
     <dimen name="text_body_17">7sp</dimen>
     <dimen name="text_body_18">7.5sp</dimen>
     <dimen name="text_body_19">8sp</dimen>
+
+    <dimen name="chip_btn_textSize">10sp</dimen>
+
 </resources>

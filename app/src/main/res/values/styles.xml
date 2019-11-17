@@ -1,13 +1,35 @@
 <resources>
 
     <!-- Base application theme. -->
+    <!-- Light / day Mode theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="toolbarStyle">@style/CustomToolBarStyle</item>
+        <item name="backgroundcolor">#4B93E2</item>
     </style>
+
+    <!-- Night / dark Mode theme. -->
+    <style name="DarkTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#7CD400</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="toolbarStyle">@style/CustomToolBarStyle</item>
+        <item name="backgroundcolor">#C14BE2</item>
+    </style>
+
+
+
+
+
+
+
+
+
+
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
