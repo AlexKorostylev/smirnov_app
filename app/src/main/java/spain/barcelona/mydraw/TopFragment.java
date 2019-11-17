@@ -9,14 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
 public class TopFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_top, container, false);
+
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
         TopImgFragment imgFragment = new TopImgFragment();
         TopBtnFragment topBtnFragment = new TopBtnFragment();
@@ -29,9 +29,9 @@ public class TopFragment extends Fragment {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Вадим Смирнов");
 
-        ((MainActivity)getActivity()).getSupportActionBar().show();
+        ((MainActivity) getActivity()).getSupportActionBar().show();
 
-        return inflater.inflate(R.layout.fragment_top, container, false);
+        return v;
     }
 
 }
