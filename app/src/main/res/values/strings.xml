@@ -49,4 +49,10 @@
     <string name="btn_previous_txt">\u2329</string>
     <string name="img_btn_back_arrow">back</string>
 
+    <string name="chip_btn_all">1974-2011</string>
+    <string name="chip_btn1">1974-79</string>
+    <string name="chip_btn2">1980-89</string>
+    <string name="chip_btn3">1990-99</string>
+    <string name="chip_btn4">2000-11</string>
+
 </resources>
