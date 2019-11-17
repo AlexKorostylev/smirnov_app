@@ -1,5 +1,6 @@
 package spain.barcelona.mydraw;
 
+
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,16 +12,34 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         InterviewListFragment.InterviewListListener,
         PoetryListFragment.PoetryListListener,
         AboutListFragment.AboutListListener,
-        TopBtnFragment.FragmentArtListener, ImgClickListener {
+        TopBtnFragment.FragmentArtListener, ImgClickListener, ChipListener {
+
+// Variable for Paint Branch (paint and recycle paint fragmtnt)
+    static int periodCurrentStatePaint = 0;
+    static int indexCurrentState = 0;
+
+    static int indexAllPeriod = -1;
+    static int indexFirstPeriod = -1;
+    static int indexSecondPeriod = -1;
+    static int indexThirdPeriod = -1;
+    static int indexFoursPeriod = -1;
+
+
+    // Recycle
+    static int positionRecycle;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -42,7 +61,6 @@ public class MainActivity extends AppCompatActivity
         ft.replace(R.id.top_container, topFragment);
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.commit();
-
     }
 
     @Override
@@ -66,23 +84,41 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        menu.findItem(R.id.background_mode).setTitle("Тёмный фон");
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        if (item.getTitle().equals("Тёмный фон")) {
+        }
+        switch (item.getItemId()) {
+            case R.id.background_mode:
+/*                if (item.getTitle().equals("Тёмный фон")) {
+                    FrameLayout frame = findViewById(R.id.top_container);
+                    frame.setBackgroundColor(getResources().getColor(R.color.darkBackground));
 
-        //int id = item.getItemId();
+                    Toolbar toolbar = findViewById(R.id.toolbar);
+                    toolbar.setBackgroundColor(getResources().getColor(R.color.darkBackground));
+                    toolbar.setTitleTextColor(getResources().getColor(R.color.darkTextColor));
 
-        //noinspection SimplifiableIfStatement
- /*       if (id == R.id.action_settings) {
-            return true;
-        }*/
+                    //  DrawerLayout drawer = findViewById(R.id.drawer_layout);
+                    //  ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                    //          this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 
-        return super.onOptionsItemSelected(item);
+                    NavigationView navigationView = findViewById(R.id.nav_view);
+                    navigationView.setItemBackground(R.color.darkBackground);*//*
+
+                    //  toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.darkBackground));
+
+                }
+                return super.onOptionsItemSelected(item);*/
+            case R.id.recycle_list:
+
+            default:
+                break;
+        }
+        return false;
     }
 
     @Override
@@ -98,6 +134,7 @@ public class MainActivity extends AppCompatActivity
             ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
+
 
         } else if (id == R.id.nav_graphics) {
             GraphicFragment graphicFragment = new GraphicFragment();
@@ -221,5 +258,15 @@ public class MainActivity extends AppCompatActivity
         ft.addToBackStack(null);
         ft.commit();
     }
+
+    public void chipClick() {
+        RecycleTopFragment recycleTopFragment = new RecycleTopFragment();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.top_container, recycleTopFragment);
+        ft.addToBackStack(null);
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        ft.commit();
+    }
+
 
 }
