@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="32dp"
+    android:layout_gravity="center"
+    android:orientation="horizontal"
+    tools:context=".RecycleChipsPaintFragment">
+
+    <Button
+        android:id="@+id/chipBtn_1"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/chips"
+        android:textSize="@dimen/chip_btn_textSize" />
+
+    <Button
+        android:id="@+id/chipBtn_2"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/chips"
+        android:textSize="@dimen/chip_btn_textSize" />
+
+    <Button
+        android:id="@+id/chipBtn_3"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/chips"
+        android:textSize="@dimen/chip_btn_textSize" />
+
+</LinearLayout>
+
