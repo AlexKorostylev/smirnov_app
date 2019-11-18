@@ -70,6 +70,14 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
                     (topScreen[picIndex].getYear());
             picMaterial.setText(picDetail);
 
+            // Back button
+            imgBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    getActivity().onBackPressed();
+                }
+            });
+
         } else if (artWayIndex.equals("painting")) {
             int picIndex = PaintImgFragment.indexToPicDetail;
             picImg.setImageResource(paint[picIndex].getImageResourceId());
@@ -197,6 +205,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
                     chipListener.chipClick();
                 }
             });
+
         } else if (artWayIndex.equals("recycle_graphic")) {
             int picIndex = RecycleListGraphicFragment.positionGraphic;
             picImg.setImageResource(pics[picIndex].getImageResourceId());
@@ -204,6 +213,21 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
 
             String picDetail = pics[picIndex].getMaterial() + "   " +
                     (pics[picIndex].getYear());
+            picMaterial.setText(picDetail);
+
+            // Back button
+            imgBtn.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    chipListener.chipClick();
+                }
+            });
+        } else if (artWayIndex.equals("recycle_welcome")) {
+            int picIndex = RecycleListWelcomeFragment.positionWelcome;
+            picImg.setImageResource(topScreen[picIndex].getImageResourceId());
+            picName.setText(topScreen[picIndex].getName());
+
+            String picDetail = topScreen[picIndex].getMaterial() + "   " +
+                    (topScreen[picIndex].getYear());
             picMaterial.setText(picDetail);
 
             // Back button
