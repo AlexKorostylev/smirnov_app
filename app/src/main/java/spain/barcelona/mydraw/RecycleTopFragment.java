@@ -52,6 +52,20 @@ public class RecycleTopFragment extends Fragment {
             Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
             toolbar.setTitle("Живопись");
         }
+        else if(appBranch.equals("welcomeBranch")){
+            RecycleListWelcomeFragment recycleListFragment = new RecycleListWelcomeFragment();
+            RecycleChipsPaintFragment recycleChipsFragment = new RecycleChipsPaintFragment();
+            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+
+            ft.replace(R.id.recycle_chips_container, recycleChipsFragment);
+            ft.replace(R.id.recycle_list_container, recycleListFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+
+            Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+            toolbar.setTitle("Вадим Смирнов");
+        }
 
 
 
@@ -94,7 +108,15 @@ public class RecycleTopFragment extends Fragment {
                     ft.commit();
                     MainActivity.startPositionPaint = 0;
                 }
-
+                else if(appBranch.equals("welcomeBranch")) {
+                    TopFragment topFragment = new TopFragment();
+                    FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.top_container, topFragment);
+                    ft.addToBackStack(null);
+                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                    ft.commit();
+                    MainActivity.startPositionWelcome = 0;
+                }
 
                 break;
             case R.id.background_mode:
