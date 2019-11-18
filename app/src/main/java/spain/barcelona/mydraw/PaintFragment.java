@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import static spain.barcelona.mydraw.MainActivity.appBranch;
+
 
 public class PaintFragment extends Fragment {
 
@@ -73,7 +75,8 @@ public class PaintFragment extends Fragment {
                     ft.addToBackStack(null);
                     ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                     ft.commit();
-                    MainActivity.startPosition = 1;
+                    MainActivity.startPositionPaint = 1;
+                    appBranch = "paintingBranch";
                 }
         }
         return false;
