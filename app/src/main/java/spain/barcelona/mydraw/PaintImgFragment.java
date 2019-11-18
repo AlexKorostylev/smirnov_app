@@ -39,12 +39,12 @@ public class PaintImgFragment extends Fragment{
 
         // Отображение нужной картины
         int periodState = MainActivity.periodCurrentStatePaint;
-        int indexState = MainActivity.indexCurrentState;
+        int indexState = MainActivity.indexCurrentStatePaint;
 
         // Сохранение состояния периода по направлению
         if (periodState == 0 & indexState == -1) {
             indexState = BizLogic.incrementCheck(periodState, indexState, paint);
-            MainActivity.indexAllPeriod++;
+            MainActivity.indexAllPeriodPaint++;
         }
 
         image.setImageResource(paint[BizLogic.positionAtArray(periodState, indexState, paint)].getImageResourceId());
