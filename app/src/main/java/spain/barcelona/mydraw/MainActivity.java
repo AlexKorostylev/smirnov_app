@@ -12,7 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
+
+import static spain.barcelona.mydraw.BizLogic.allPeriod;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -21,17 +22,34 @@ public class MainActivity extends AppCompatActivity
         AboutListFragment.AboutListListener,
         TopBtnFragment.FragmentArtListener, ImgClickListener, ChipListener {
 
-// Variable for Paint Branch (paint and recycle paint fragmtnt)
+
+// Global Variable
+    static String appBranch; // for recycleList Fragment
+
+
+// Variable for Paint Branch (paint and recycle paint fragment.
     static int periodCurrentStatePaint = 0;
-    static int indexCurrentState = 0;
+    static int indexCurrentStatePaint = 0;
 
-    static int indexAllPeriod = -1;
-    static int indexFirstPeriod = -1;
-    static int indexSecondPeriod = -1;
-    static int indexThirdPeriod = -1;
-    static int indexFoursPeriod = -1;
-    static int startPosition =0;
+    static int indexAllPeriodPaint = -1;
+    static int indexFirstPeriodPaint = -1;
+    static int indexSecondPeriodPaint = -1;
+    static int indexThirdPeriodPaint = -1;
+    static int indexFoursPeriodPaint = -1;
+    static int startPositionPaint =0;
 
+// Variable for Graphic Branch (graphic and recycle graphic fragment.
+    static int periodCurrentStateGraphic = 0;
+    static int indexCurrentStateGraphic = 0;
+
+    static int indexAllPeriodGraphic = -1;
+    static int indexFirstPeriodGraphic = -1;
+    static int indexSecondPeriodGraphic = -1;
+    static int indexThirdPeriodGraphic = -1;
+    static int indexFoursPeriodGraphic = -1;
+
+
+    static int startPositionGraphic =0;
 
     // Recycle
     static int positionRecycle;
@@ -129,7 +147,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_painting) {
-            if(startPosition==0){
+            appBranch = "paintingBranch";
+            if(startPositionPaint ==0){
                 PaintFragment paintingFragment = new PaintFragment();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.top_container, paintingFragment);
@@ -146,12 +165,22 @@ public class MainActivity extends AppCompatActivity
             }
 
         } else if (id == R.id.nav_graphics) {
-            GraphicFragment graphicFragment = new GraphicFragment();
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.top_container, graphicFragment);
-            ft.addToBackStack(null);
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            ft.commit();
+            appBranch = "graphicBranch";
+            if(startPositionGraphic ==0){
+                GraphicFragment graphicFragment = new GraphicFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.top_container, graphicFragment);
+                ft.addToBackStack(null);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();
+            } else {
+                RecycleTopFragment recycleTopFragment = new RecycleTopFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.top_container, recycleTopFragment);
+                ft.addToBackStack(null);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();
+            }
 
         } else if (id == R.id.nav_poetry) {
             PoetryListFragment poetryListFragment = new PoetryListFragment();
