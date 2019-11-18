@@ -101,7 +101,6 @@ public class RecycleListWelcomeFragment extends Fragment {
             }
         });
 
-
         return pizzaRecycler;
     }
 
