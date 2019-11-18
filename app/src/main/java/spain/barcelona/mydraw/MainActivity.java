@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity
     static int indexCurrentStateWelcome = 0;
 
     static int indexAllPeriodWelcome = -1;
+    static int startPositionWelcome =0;
 
 // Variable for Paint Branch (paint and recycle paint fragment.
     static int periodCurrentStatePaint = 0;
@@ -52,8 +53,6 @@ public class MainActivity extends AppCompatActivity
     static int indexSecondPeriodGraphic = -1;
     static int indexThirdPeriodGraphic = -1;
     static int indexFoursPeriodGraphic = -1;
-
-
     static int startPositionGraphic =0;
 
     // Recycle
@@ -80,11 +79,26 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        TopFragment topFragment = new TopFragment();
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.top_container, topFragment);
-        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        ft.commit();
+
+
+
+        if(startPositionWelcome ==0){
+            TopFragment topFragment = new TopFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.top_container, topFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+        } else {
+            appBranch = "welcomeBranch";
+            RecycleTopFragment recycleTopFragment = new RecycleTopFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.top_container, recycleTopFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+        }
+
     }
 
     @Override
