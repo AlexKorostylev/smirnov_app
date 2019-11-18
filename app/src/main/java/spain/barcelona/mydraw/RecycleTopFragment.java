@@ -54,7 +54,7 @@ public class RecycleTopFragment extends Fragment {
         }
         else if(appBranch.equals("welcomeBranch")){
             RecycleListWelcomeFragment recycleListFragment = new RecycleListWelcomeFragment();
-            RecycleChipsPaintFragment recycleChipsFragment = new RecycleChipsPaintFragment();
+            RecycleChipsWelcomeFragment recycleChipsFragment = new RecycleChipsWelcomeFragment();
             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
 
             ft.replace(R.id.recycle_chips_container, recycleChipsFragment);
