@@ -40,12 +40,12 @@ public class TopImgFragment extends Fragment {
         ImageView image = v.findViewById(R.id.info_image_top);
         TextView nameText = v.findViewById(R.id.name_text_top);
 
-        int periodState = TopBtnFragment.periodCurrentState;
-        int indexState = TopBtnFragment.indexCurrentState;
+        int periodState = MainActivity.periodCurrentStateWelcome;
+        int indexState = MainActivity.indexCurrentStateWelcome;
 
         if (periodState == 0 & indexState == -1) {
             indexState = BizLogic.incrementCheck(periodState, indexState, topScreen);
-            TopBtnFragment.indexAllPeriod++;
+            MainActivity.indexAllPeriodWelcome++;
         }
 
         image.setImageResource(topScreen[BizLogic.positionAtArray(periodState, indexState, topScreen)].getImageResourceId());
