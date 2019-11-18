@@ -13,6 +13,9 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import static spain.barcelona.mydraw.MainActivity.indexCurrentStateWelcome;
+import static spain.barcelona.mydraw.MainActivity.periodCurrentStateWelcome;
+
 import static spain.barcelona.mydraw.BizLogic.*;
 import static spain.barcelona.mydraw.TopImgFragment.indexToPicDetail;
 import static spain.barcelona.mydraw.Pic.*;
@@ -22,8 +25,7 @@ public class TopBtnFragment extends Fragment implements View.OnClickListener {
     // start index counter number for paints per period
     static int indexAllPeriod = -1;
 
-    static int periodCurrentState = allPeriod;
-    static int indexCurrentState = indexAllPeriod;
+
 
 
     interface FragmentArtListener {
@@ -75,15 +77,15 @@ public class TopBtnFragment extends Fragment implements View.OnClickListener {
         String selectedPeriodFromSpinner = String.valueOf(spinner.getSelectedItem());
         switch (selectedPeriodFromSpinner) {
             case "знакомство":
-                if(periodCurrentState != allPeriod ){
+                if(periodCurrentStateWelcome != allPeriod ){
                     --indexAllPeriod;
                 }
                 indexAllPeriod = BizLogic.incrementCheck(allPeriod, indexAllPeriod, topScreen);
                 image.setImageResource(topScreen[BizLogic.positionAtArray(allPeriod, indexAllPeriod, topScreen)].getImageResourceId());
                 nameText.setText(topScreen[BizLogic.positionAtArray(allPeriod, indexAllPeriod, topScreen)].getName());
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, topScreen));
-                periodCurrentState = allPeriod;
-                indexCurrentState = indexAllPeriod;
+                periodCurrentStateWelcome = allPeriod;
+                indexCurrentStateWelcome = indexAllPeriod;
                 indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, topScreen);
                 break;
             case "живопись":
@@ -106,15 +108,15 @@ public class TopBtnFragment extends Fragment implements View.OnClickListener {
         String selectedPeriod = String.valueOf(spinner.getSelectedItem());
         switch (selectedPeriod) {
             case "знакомство":
-                if(periodCurrentState != allPeriod ){
+                if(periodCurrentStateWelcome != allPeriod ){
                     ++indexAllPeriod;
                 }
                 indexAllPeriod = BizLogic.decrementCheck(allPeriod, indexAllPeriod, topScreen);
                 image.setImageResource(topScreen[BizLogic.positionAtArray(allPeriod, indexAllPeriod, topScreen)].getImageResourceId());
                 nameText.setText(topScreen[BizLogic.positionAtArray(allPeriod, indexAllPeriod, topScreen)].getName());
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, topScreen));
-                periodCurrentState = allPeriod;
-                indexCurrentState = indexAllPeriod;
+                periodCurrentStateWelcome = allPeriod;
+                indexCurrentStateWelcome = indexAllPeriod;
                 indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, topScreen);
                 break;
             case "живопись":
