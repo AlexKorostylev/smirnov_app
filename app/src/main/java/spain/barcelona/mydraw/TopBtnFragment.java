@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import static spain.barcelona.mydraw.MainActivity.indexCurrentStateWelcome;
 import static spain.barcelona.mydraw.MainActivity.periodCurrentStateWelcome;
+import static spain.barcelona.mydraw.MainActivity.indexAllPeriodWelcome;
 
 import static spain.barcelona.mydraw.BizLogic.*;
 import static spain.barcelona.mydraw.TopImgFragment.indexToPicDetail;
@@ -23,7 +24,7 @@ import static spain.barcelona.mydraw.Pic.*;
 public class TopBtnFragment extends Fragment implements View.OnClickListener {
 
     // start index counter number for paints per period
-    static int indexAllPeriod = -1;
+
 
 
 
@@ -78,15 +79,15 @@ public class TopBtnFragment extends Fragment implements View.OnClickListener {
         switch (selectedPeriodFromSpinner) {
             case "знакомство":
                 if(periodCurrentStateWelcome != allPeriod ){
-                    --indexAllPeriod;
+                    --indexAllPeriodWelcome;
                 }
-                indexAllPeriod = BizLogic.incrementCheck(allPeriod, indexAllPeriod, topScreen);
-                image.setImageResource(topScreen[BizLogic.positionAtArray(allPeriod, indexAllPeriod, topScreen)].getImageResourceId());
-                nameText.setText(topScreen[BizLogic.positionAtArray(allPeriod, indexAllPeriod, topScreen)].getName());
-                picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, topScreen));
+                indexAllPeriodWelcome = BizLogic.incrementCheck(allPeriod, indexAllPeriodWelcome, topScreen);
+                image.setImageResource(topScreen[BizLogic.positionAtArray(allPeriod, indexAllPeriodWelcome, topScreen)].getImageResourceId());
+                nameText.setText(topScreen[BizLogic.positionAtArray(allPeriod, indexAllPeriodWelcome, topScreen)].getName());
+                picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriodWelcome, topScreen));
                 periodCurrentStateWelcome = allPeriod;
-                indexCurrentStateWelcome = indexAllPeriod;
-                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, topScreen);
+                indexCurrentStateWelcome = indexAllPeriodWelcome;
+                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriodWelcome, topScreen);
                 break;
             case "живопись":
                 onListItemClick("живопись");
@@ -109,15 +110,15 @@ public class TopBtnFragment extends Fragment implements View.OnClickListener {
         switch (selectedPeriod) {
             case "знакомство":
                 if(periodCurrentStateWelcome != allPeriod ){
-                    ++indexAllPeriod;
+                    ++indexAllPeriodWelcome;
                 }
-                indexAllPeriod = BizLogic.decrementCheck(allPeriod, indexAllPeriod, topScreen);
-                image.setImageResource(topScreen[BizLogic.positionAtArray(allPeriod, indexAllPeriod, topScreen)].getImageResourceId());
-                nameText.setText(topScreen[BizLogic.positionAtArray(allPeriod, indexAllPeriod, topScreen)].getName());
-                picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, topScreen));
+                indexAllPeriodWelcome = BizLogic.decrementCheck(allPeriod, indexAllPeriodWelcome, topScreen);
+                image.setImageResource(topScreen[BizLogic.positionAtArray(allPeriod, indexAllPeriodWelcome, topScreen)].getImageResourceId());
+                nameText.setText(topScreen[BizLogic.positionAtArray(allPeriod, indexAllPeriodWelcome, topScreen)].getName());
+                picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriodWelcome, topScreen));
                 periodCurrentStateWelcome = allPeriod;
-                indexCurrentStateWelcome = indexAllPeriod;
-                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, topScreen);
+                indexCurrentStateWelcome = indexAllPeriodWelcome;
+                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriodWelcome, topScreen);
                 break;
             case "живопись":
                 onListItemClick("живопись");
