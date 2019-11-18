@@ -26,6 +26,11 @@ public class MainActivity extends AppCompatActivity
 // Global Variable
     static String appBranch; // for recycleList Fragment
 
+// Variable for Welcome Branch (welcome and recycle welcome fragment).
+    static int periodCurrentStateWelcome = 0;
+    static int indexCurrentStateWelcome = 0;
+
+    static int indexAllPeriodWelcome = -1;
 
 // Variable for Paint Branch (paint and recycle paint fragment.
     static int periodCurrentStatePaint = 0;
@@ -38,7 +43,7 @@ public class MainActivity extends AppCompatActivity
     static int indexFoursPeriodPaint = -1;
     static int startPositionPaint =0;
 
-// Variable for Graphic Branch (graphic and recycle graphic fragment.
+// Variable for Graphic Branch (graphic and recycle graphic fragment).
     static int periodCurrentStateGraphic = 0;
     static int indexCurrentStateGraphic = 0;
 
