@@ -38,13 +38,13 @@ public class GraphicImgFragment extends Fragment {
         TextView nameText = v.findViewById(R.id.name_text_graphic);
 
         // Отображение нужной картины
-        int periodState = GraphicBtnFragment.periodCurrentState;
-        int indexState = GraphicBtnFragment.indexCurrentState;
+        int periodState = MainActivity.periodCurrentStateGraphic;
+        int indexState = MainActivity.indexCurrentStateGraphic;
 
         // Сохранение состояния периода по направлению
         if (periodState == 0 & indexState == -1) {
             indexState = BizLogic.incrementCheck(periodState, indexState, pics);
-            GraphicBtnFragment.indexAllPeriod++;
+            MainActivity.indexAllPeriodGraphic++;
         }
 
         image.setImageResource(pics[BizLogic.positionAtArray(periodState, indexState, pics)].getImageResourceId());
