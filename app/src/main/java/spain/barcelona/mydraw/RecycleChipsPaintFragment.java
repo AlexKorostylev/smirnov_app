@@ -12,7 +12,7 @@ import android.widget.Button;
 import static spain.barcelona.mydraw.MainActivity.periodCurrentStatePaint;
 
 
-public class RecycleChipsFragment extends Fragment implements View.OnClickListener {
+public class RecycleChipsPaintFragment extends Fragment implements View.OnClickListener {
 
 
 
@@ -36,9 +36,8 @@ public class RecycleChipsFragment extends Fragment implements View.OnClickListen
 
         View v = inflater.inflate(R.layout.fragment_recycle_chips, container, false);
 
-
-
         Button chipBtnAll = v.findViewById(R.id.chipBtnAll);
+        chipBtnAll.setText(R.string.chip_btn_all_paint);
         chipBtnAll.setOnClickListener(this);
         Button chipBtn_1 = v.findViewById(R.id.chipBtn_1);
         chipBtn_1.setOnClickListener(this);
@@ -47,6 +46,7 @@ public class RecycleChipsFragment extends Fragment implements View.OnClickListen
         Button chipBtn_3 = v.findViewById(R.id.chipBtn_3);
         chipBtn_3.setOnClickListener(this);
         Button chipBtn_4 = v.findViewById(R.id.chipBtn_4);
+        chipBtn_4.setText(R.string.chip_btn4_paint);
         chipBtn_4.setOnClickListener(this);
 
 

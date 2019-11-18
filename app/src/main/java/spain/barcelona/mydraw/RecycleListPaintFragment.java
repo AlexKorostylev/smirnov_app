@@ -16,10 +16,9 @@ import static spain.barcelona.mydraw.DetailPicFragment.artWayIndex;
 
 import static spain.barcelona.mydraw.MainActivity.positionRecycle;
 
-public class RecycleListFragment extends Fragment {
+public class RecycleListPaintFragment extends Fragment {
 
     static int positionPaint;
-
 
     public static int period;
 
@@ -54,23 +53,23 @@ public class RecycleListFragment extends Fragment {
         switch (period) {
             case 1:
                 amountOfPicAtPeriod = picCountingPerPeriod(1, paint);
-                positionRecycle = MainActivity.indexFirstPeriod-2;
+                positionRecycle = MainActivity.indexFirstPeriodPaint -2;
                 break;
             case 2:
                 amountOfPicAtPeriod = picCountingPerPeriod(2, paint);
-                positionRecycle = MainActivity.indexSecondPeriod-2;
+                positionRecycle = MainActivity.indexSecondPeriodPaint -2;
                 break;
             case 3:
                 amountOfPicAtPeriod = picCountingPerPeriod(3, paint);
-                positionRecycle = MainActivity.indexThirdPeriod-2;
+                positionRecycle = MainActivity.indexThirdPeriodPaint -2;
                 break;
             case 4:
                 amountOfPicAtPeriod = picCountingPerPeriod(4, paint);
-                positionRecycle = MainActivity.indexFoursPeriod-2;
+                positionRecycle = MainActivity.indexFoursPeriodPaint -2;
                 break;
             default:
                 amountOfPicAtPeriod = picCountingPerPeriod(0, paint);
-                positionRecycle = MainActivity.indexAllPeriod - 2;
+                positionRecycle = MainActivity.indexAllPeriodPaint - 2;
         }
 
 
@@ -101,7 +100,6 @@ public class RecycleListFragment extends Fragment {
 
         // Если данные пришли из recycle view выбранным пользователем
         // Если данные пришли из Paint Fragment
-
         layoutManager.scrollToPositionWithOffset(positionRecycle, 20);
 
 
@@ -109,19 +107,19 @@ public class RecycleListFragment extends Fragment {
             public void onClick(int position) {
                 // Получил номер карточки в выбранном моссиве
                 if (period == 1) {
-                    MainActivity.indexFirstPeriod = position;
+                    MainActivity.indexFirstPeriodPaint = position;
                 } else if(period == 2){
-                    MainActivity.indexSecondPeriod = position;
+                    MainActivity.indexSecondPeriodPaint = position;
                 } else if(period == 3){
-                    MainActivity.indexThirdPeriod = position;
+                    MainActivity.indexThirdPeriodPaint = position;
                 } else if(period == 4){
-                    MainActivity.indexFoursPeriod = position;
+                    MainActivity.indexFoursPeriodPaint = position;
                 } else {
-                    MainActivity.indexAllPeriod = position;
+                    MainActivity.indexAllPeriodPaint = position;
                 }
 
                 // Позиция в глобальном массиве
-                MainActivity.indexCurrentState = position;
+                MainActivity.indexCurrentStatePaint = position;
 
                 artWayIndex = "recycle_paint";
                 positionPaint = periodArray[position];
