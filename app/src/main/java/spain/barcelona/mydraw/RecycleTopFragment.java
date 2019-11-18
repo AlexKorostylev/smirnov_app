@@ -4,6 +4,7 @@ package spain.barcelona.mydraw;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -32,6 +33,9 @@ public class RecycleTopFragment extends Fragment {
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.commit();
 
+        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+        toolbar.setTitle("Живопись");
+
         ((MainActivity) getActivity()).getSupportActionBar().show();
 
         return inflater.inflate(R.layout.fragment_recycle_top, container, false);
@@ -58,6 +62,7 @@ public class RecycleTopFragment extends Fragment {
                 ft.addToBackStack(null);
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 ft.commit();
+                MainActivity.startPosition = 0;
                 break;
             case R.id.background_mode:
                 FrameLayout layout = getActivity().findViewById(R.id.recycle_chips_container);

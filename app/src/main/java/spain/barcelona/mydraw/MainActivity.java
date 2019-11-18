@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity
     static int indexSecondPeriod = -1;
     static int indexThirdPeriod = -1;
     static int indexFoursPeriod = -1;
+    static int startPosition =0;
 
 
     // Recycle
@@ -128,13 +129,21 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_painting) {
-            PaintFragment paintingFragment = new PaintFragment();
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.top_container, paintingFragment);
-            ft.addToBackStack(null);
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            ft.commit();
-
+            if(startPosition==0){
+                PaintFragment paintingFragment = new PaintFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.top_container, paintingFragment);
+                ft.addToBackStack(null);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();
+            } else {
+                RecycleTopFragment recycleTopFragment = new RecycleTopFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.top_container, recycleTopFragment);
+                ft.addToBackStack(null);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();
+            }
 
         } else if (id == R.id.nav_graphics) {
             GraphicFragment graphicFragment = new GraphicFragment();

@@ -73,6 +73,7 @@ public class PaintFragment extends Fragment {
                     ft.addToBackStack(null);
                     ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                     ft.commit();
+                    MainActivity.startPosition = 1;
                 }
         }
         return false;
