@@ -86,7 +86,7 @@ public class RecycleListGraphicFragment extends Fragment {
 
         int[] picImages = new int[amountOfPicAtPeriod];
         for (int i = 0; i < amountOfPicAtPeriod; i++) {
-            picImages[i] = pics[positionAtArray(period, i, pics)].getImageResourceId();
+            picImages[i] = pics[positionAtArray(period, i, pics)].getSmallimageResourceId();
         }
 
         CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(picNames, picImages);
@@ -100,7 +100,7 @@ public class RecycleListGraphicFragment extends Fragment {
 
         // Если данные пришли из recycle view выбранным пользователем
         // Если данные пришли из Paint Fragment
-        layoutManager.scrollToPositionWithOffset(positionRecycle, 20);
+        layoutManager.scrollToPositionWithOffset(positionRecycle, 2);
 
 
         adapter.setListener(new CaptionedImagesAdapter.Listener() {

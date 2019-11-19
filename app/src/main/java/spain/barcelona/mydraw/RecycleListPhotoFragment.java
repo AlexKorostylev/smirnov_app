@@ -68,7 +68,7 @@ public class RecycleListPhotoFragment extends Fragment {
 
         int[] picImages = new int[amountOfPicAtPeriod];
         for (int i = 0; i < amountOfPicAtPeriod; i++) {
-            picImages[i] = photo[positionAtArray(period, i, photo)].getImageResourceId();
+            picImages[i] = photo[positionAtArray(period, i, photo)].getSmallimageResourceId();
         }
 
         CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(picYear, picImages);
