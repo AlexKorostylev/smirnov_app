@@ -17,6 +17,7 @@ import static spain.barcelona.mydraw.DetailPicFragment.artWayIndex;
 import static spain.barcelona.mydraw.MainActivity.positionRecycle;
 
 public class RecycleListWelcomeFragment extends Fragment {
+
     static int positionWelcome;
 
     public static int period;
