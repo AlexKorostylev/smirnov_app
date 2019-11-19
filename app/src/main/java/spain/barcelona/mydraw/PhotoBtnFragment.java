@@ -11,6 +11,11 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+
+import static spain.barcelona.mydraw.MainActivity.indexAllPeriodPhoto;
+import static spain.barcelona.mydraw.MainActivity.indexCurrentStatePhoto;
+import static spain.barcelona.mydraw.MainActivity.periodCurrentStatePhoto;
+
 import static spain.barcelona.mydraw.BizLogic.*;
 import static spain.barcelona.mydraw.PhotoImgFragment.indexToPicDetail;
 import static spain.barcelona.mydraw.Pic.photo;
@@ -18,10 +23,9 @@ import static spain.barcelona.mydraw.Pic.photo;
 public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
 
     // start index counter number for paints per period
-    static int indexAllPeriod = -1;
 
-    static int periodCurrentState = allPeriod;
-    static int indexCurrentState = indexAllPeriod;
+
+
 
 
     @Override
@@ -66,16 +70,16 @@ public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
         String selectedPeriodFromSpinner = String.valueOf(spinner.getSelectedItem());
         switch (selectedPeriodFromSpinner) {
             case "1970-2011":
-                indexAllPeriod = BizLogic.incrementCheck(allPeriod, indexAllPeriod, photo);
-                image.setImageResource(photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getImageResourceId());
-                String year = photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getYear();
-                String place = photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getMaterial();
+                indexAllPeriodPhoto = incrementCheck(allPeriod, indexAllPeriodPhoto, photo);
+                image.setImageResource(photo[positionAtArray(allPeriod, indexAllPeriodPhoto, photo)].getImageResourceId());
+                String year = photo[positionAtArray(allPeriod, indexAllPeriodPhoto, photo)].getYear();
+                String place = photo[positionAtArray(allPeriod, indexAllPeriodPhoto, photo)].getMaterial();
                 String photoDetail = place + "  " + year;
                 detailText.setText(photoDetail);
-                picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, photo));
-                periodCurrentState = allPeriod;
-                indexCurrentState = indexAllPeriod;
-                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo);
+                picCounter.setText(dataForCounter(allPeriod, indexAllPeriodPhoto, photo));
+                periodCurrentStatePhoto = allPeriod;
+                indexAllPeriodPhoto = indexAllPeriodPhoto;
+                indexToPicDetail = positionAtArray(allPeriod, indexAllPeriodPhoto, photo);
                 break;
         }
     }
@@ -90,15 +94,15 @@ public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
         String selectedPeriod = String.valueOf(spinner.getSelectedItem());
         switch (selectedPeriod) {
             case "1970-2011":
-                indexAllPeriod = BizLogic.decrementCheck(allPeriod, indexAllPeriod, photo);
-                image.setImageResource(photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getImageResourceId());
-                String year = photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getYear();
-                String place = photo[BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo)].getMaterial();
+                indexAllPeriodPhoto = decrementCheck(allPeriod, indexAllPeriodPhoto, photo);
+                image.setImageResource(photo[positionAtArray(allPeriod, indexAllPeriodPhoto, photo)].getImageResourceId());
+                String year = photo[positionAtArray(allPeriod, indexAllPeriodPhoto, photo)].getYear();
+                String place = photo[positionAtArray(allPeriod, indexAllPeriodPhoto, photo)].getMaterial();
                 detailText.setText(photoDetail(year, place));
-                picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriod, photo));
-                periodCurrentState = allPeriod;
-                indexCurrentState = indexAllPeriod;
-                indexToPicDetail = BizLogic.positionAtArray(allPeriod, indexAllPeriod, photo);
+                picCounter.setText(dataForCounter(allPeriod, indexAllPeriodPhoto, photo));
+                periodCurrentStatePhoto = allPeriod;
+                indexCurrentStatePhoto = indexAllPeriodPhoto;
+                indexToPicDetail = positionAtArray(allPeriod, indexAllPeriodPhoto, photo);
                 break;
         }
     }

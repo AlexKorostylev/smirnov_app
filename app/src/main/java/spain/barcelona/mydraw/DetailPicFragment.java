@@ -124,6 +124,14 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
                     (photo[picIndex].getYear());
             picMaterial.setText(picDetail);
 
+            // Back button
+            imgBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    getActivity().onBackPressed();
+                }
+            });
+
         } else if (artWayIndex.equals("about")) {
             int picIndex = 1;
             for (int i = 0; i < paint.length; i++) {
@@ -228,6 +236,22 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
 
             String picDetail = topScreen[picIndex].getMaterial() + "   " +
                     (topScreen[picIndex].getYear());
+            picMaterial.setText(picDetail);
+
+            // Back button
+            imgBtn.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    chipListener.chipClick();
+                }
+            });
+
+        }else if (artWayIndex.equals("recycle_photo")) {
+            int picIndex = RecycleListPhotoFragment.positionPhoto;
+            picImg.setImageResource(photo[picIndex].getImageResourceId());
+            picName.setText(photo[picIndex].getName());
+
+            String picDetail = photo[picIndex].getMaterial() + "   " +
+                    (photo[picIndex].getYear());
             picMaterial.setText(picDetail);
 
             // Back button

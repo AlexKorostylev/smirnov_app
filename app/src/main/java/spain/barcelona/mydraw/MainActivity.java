@@ -225,12 +225,22 @@ public class MainActivity extends AppCompatActivity
             ft.commit();
 
         } else if (id == R.id.nav_camera) {
-            PhotoFragment photoFragment = new PhotoFragment();
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.top_container, photoFragment);
-            ft.addToBackStack(null);
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            ft.commit();
+            appBranch = "photoBranch";
+            if(startPositionGraphic ==0){
+                PhotoFragment photoFragment = new PhotoFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.top_container, photoFragment);
+                ft.addToBackStack(null);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();
+            } else {
+                RecycleTopFragment recycleTopFragment = new RecycleTopFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.top_container, recycleTopFragment);
+                ft.addToBackStack(null);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();
+            }
 
         } else if (id == R.id.nav_biography) {
             BioFragment bioFragment = new BioFragment();

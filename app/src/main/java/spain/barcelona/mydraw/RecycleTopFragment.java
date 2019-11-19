@@ -66,6 +66,20 @@ public class RecycleTopFragment extends Fragment {
             Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
             toolbar.setTitle("Вадим Смирнов");
         }
+        else if(appBranch.equals("photoBranch")){
+            RecycleListPhotoFragment recycleListFragment = new RecycleListPhotoFragment();
+            //RecycleChipsWelcomeFragment recycleChipsFragment = new RecycleChipsWelcomeFragment();
+            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+
+            //ft.replace(R.id.recycle_chips_container, recycleChipsFragment);
+            ft.replace(R.id.recycle_list_container, recycleListFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+
+            Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+            toolbar.setTitle("Фотоархив");
+        }
 
 
 
@@ -116,6 +130,16 @@ public class RecycleTopFragment extends Fragment {
                     ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                     ft.commit();
                     MainActivity.startPositionWelcome = 0;
+                }
+
+                else if(appBranch.equals("photoBranch")) {
+                    PhotoFragment photoFragment = new PhotoFragment();
+                    FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.top_container, photoFragment);
+                    ft.addToBackStack(null);
+                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                    ft.commit();
+                    MainActivity.startPositionPhoto = 0;
                 }
 
                 break;

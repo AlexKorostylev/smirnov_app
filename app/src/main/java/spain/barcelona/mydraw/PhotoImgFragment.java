@@ -40,12 +40,12 @@ public class PhotoImgFragment extends Fragment {
         ImageView image = v.findViewById(R.id.info_image_photo);
         TextView photoDetail = v.findViewById(R.id.detail_text_photo);
 
-        int periodState = PhotoBtnFragment.periodCurrentState; //
-        int indexState = PhotoBtnFragment.indexCurrentState;
+        int periodState = MainActivity.periodCurrentStatePhoto; //
+        int indexState = MainActivity.indexCurrentStatePhoto;
 
         if (periodState == 0 & indexState == -1) {
             indexState = BizLogic.incrementCheck(periodState, indexState, photo);
-            PhotoBtnFragment.indexAllPeriod++;
+            MainActivity.indexAllPeriodPhoto++;
         }
 
         image.setImageResource(photo[BizLogic.positionAtArray(periodState, indexState, photo)].getImageResourceId());
