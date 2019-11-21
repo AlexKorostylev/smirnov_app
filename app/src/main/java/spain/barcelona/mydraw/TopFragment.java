@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import static spain.barcelona.mydraw.MainActivity.appBranch;
+import static spain.barcelona.mydraw.MainActivity.startPositionG;
 
 public class TopFragment extends Fragment {
 
@@ -58,7 +59,13 @@ public class TopFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // Do something that differs the Activity's menu here
         menu.findItem(R.id.recycle_list).setTitle("Frame");
-        menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_grid);
+        if(startPositionG==0){
+            menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_grid_black_24);
+            menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_black);
+        } else {
+            menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_grid_white_24);
+            menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_white);
+        }
         super.onCreateOptionsMenu(menu, inflater);
 
     }
