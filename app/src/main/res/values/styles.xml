@@ -5,31 +5,48 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="toolbarStyle">@style/CustomToolBarStyle</item>
-        <item name="backgroundcolor">#4B93E2</item>
+
+
+        <item name="nextPreviousColor">#2C000000</item>
+        <item name="counterColor">#353535</item>
+        <item name="backgroundColor">#f4f4f4</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyleLight</item>
+        <item name="titleTextColor">@color/toolbar_title_text_color</item>
+
     </style>
 
     <!-- Night / dark Mode theme. -->
     <style name="DarkTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#7CD400</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="toolbarStyle">@style/CustomToolBarStyle</item>
-        <item name="backgroundcolor">#C14BE2</item>
+        <item name="colorPrimary">#252525</item>
+        <item name="colorAccent">#f4f4f4</item>
+
+        <item name="nextPreviousColor">#97868686</item>
+        <item name="counterColor">#BBBABA</item>
+        <item name="backgroundColor">#000000</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyleDark</item>
+        <item name="titleTextColor">#f4f4f4</item>
     </style>
 
 
 
 
+    <style name="DrawerArrowStyleLight" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/toolbar_back_arrow_color</item>
+    </style>
 
-
-
-
-
-
+    <style name="DrawerArrowStyleDark" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">#f4f4f4</item>
+    </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -39,15 +56,6 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-
-    <style name="CustomToolBarStyle" parent="@style/Widget.AppCompat.Toolbar">
-        <item name="titleTextColor">@color/toolbar_title_text_color</item>
-    </style>
-
-    <style name="ToolbarColoredBackArrow" parent="AppTheme">
-        <item name="android:textColorSecondary">@color/toolbar_back_arrow_color</item>
-    </style>
 
     <style name="ThemeOverlay.AppCompat.navTheme">
         <!-- Background color when SELECTED at drawer menu -->

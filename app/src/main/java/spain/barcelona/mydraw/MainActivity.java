@@ -2,6 +2,7 @@ package spain.barcelona.mydraw;
 
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -9,11 +10,10 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import static spain.barcelona.mydraw.BizLogic.allPeriod;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -65,10 +65,19 @@ public class MainActivity extends AppCompatActivity
     // Recycle
     static int positionRecycle;
 
+    static int startPosition =0;
+
+    static int startPositionG =0;
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.DarkTheme);
+        }else setTheme(R.style.AppTheme);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -81,6 +90,7 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        //toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.colorAccent));
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -101,6 +111,15 @@ public class MainActivity extends AppCompatActivity
             RecycleTopFragment recycleTopFragment = new RecycleTopFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.top_container, recycleTopFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+        }
+
+        if(startPosition ==1){
+            PaintFragment paintingFragment = new PaintFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.top_container, paintingFragment);
             ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
@@ -135,35 +154,29 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getTitle().equals("Тёмный фон")) {
-        }
         switch (item.getItemId()) {
             case R.id.background_mode:
-/*                if (item.getTitle().equals("Тёмный фон")) {
-                    FrameLayout frame = findViewById(R.id.top_container);
-                    frame.setBackgroundColor(getResources().getColor(R.color.darkBackground));
-
-                    Toolbar toolbar = findViewById(R.id.toolbar);
-                    toolbar.setBackgroundColor(getResources().getColor(R.color.darkBackground));
-                    toolbar.setTitleTextColor(getResources().getColor(R.color.darkTextColor));
-
-                    //  DrawerLayout drawer = findViewById(R.id.drawer_layout);
-                    //  ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                    //          this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-
-                    NavigationView navigationView = findViewById(R.id.nav_view);
-                    navigationView.setItemBackground(R.color.darkBackground);*//*
-
-                    //  toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.darkBackground));
-
+                if (startPositionG==0){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    startPositionG =1;
+                    restartApp();
                 }
-                return super.onOptionsItemSelected(item);*/
-            case R.id.recycle_list:
-
+                else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    restartApp();
+                    startPositionG =0;
+                }
+                break;
             default:
                 break;
         }
         return false;
+    }
+
+    public  void restartApp(){
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(i);
+        finish();
     }
 
     @Override
@@ -274,10 +287,6 @@ public class MainActivity extends AppCompatActivity
         ft.addToBackStack(null);
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.commit();
-/*        if(getSupportActionBar() != null){
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }*/
-
     }
 
     @Override
