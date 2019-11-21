@@ -23,12 +23,6 @@ import static spain.barcelona.mydraw.Pic.*;
 
 public class TopBtnFragment extends Fragment implements View.OnClickListener {
 
-    // start index counter number for paints per period
-
-
-
-
-
     interface FragmentArtListener {
         void itemClickedArtListener(String fragment_name);
     }
@@ -41,7 +35,6 @@ public class TopBtnFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_top_btn, container, false);
-        // Inflate the layout for this fragment
 
         Button btnNext = v.findViewById(R.id.btn_next);
         btnNext.setOnClickListener(this);
@@ -50,6 +43,8 @@ public class TopBtnFragment extends Fragment implements View.OnClickListener {
 
         Spinner spinner = v.findViewById(R.id.spinner_top);
         spinner.setSelection(PaintImgFragment.dataForCounterPeriodState);
+        spinner.setVisibility(View.GONE);
+
 
         TextView pictureCounter = v.findViewById(R.id.counter_top);
         pictureCounter.setText(BizLogic.dataForCounter(TopImgFragment.dataForCounterPeriodState, TopImgFragment.dataForCounterIndexState, topScreen));
