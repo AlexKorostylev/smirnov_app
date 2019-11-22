@@ -80,7 +80,6 @@ public class TopFragment extends Fragment {
                     ft.addToBackStack(null);
                     ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                     ft.commit();
-                    MainActivity.startPositionPaint = 1;
                     appBranch = "welcomeBranch";
                     MainActivity.startPositionWelcome =1;
                 }
