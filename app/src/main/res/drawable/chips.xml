@@ -3,8 +3,8 @@
 
     <item android:state_pressed="false">
         <shape>
-            <solid android:color="#EAEEEE" />
-
+            <solid android:color="?attr/chipsColor" />
+            <stroke android:width="2px" android:color="#FFFFFF" />
             <corners android:bottomLeftRadius="30dp" android:bottomRightRadius="30dp" android:radius="1dp" android:topLeftRadius="30dp" android:topRightRadius="30dp" />
 
         </shape>
@@ -12,8 +12,8 @@
 
     <item android:state_pressed="true">
         <shape>
-            <solid android:color="#D87373" />
-
+            <solid android:color="#CB2B00" />
+            <stroke android:width="1px" android:color="#FFFFFF" />
             <corners android:bottomLeftRadius="30dp" android:bottomRightRadius="30dp" android:radius="1dp" android:topLeftRadius="30dp" android:topRightRadius="30dp" />
         </shape>
     </item>
@@ -21,7 +21,7 @@
     <item android:state_selected="true">
         <shape>
             <solid android:color="#1BECC3" />
-
+            <stroke android:width="2px" android:color="#FFFFFF" />
             <corners android:bottomLeftRadius="30dp" android:bottomRightRadius="30dp" android:radius="1dp" android:topLeftRadius="30dp" android:topRightRadius="30dp" />
         </shape>
     </item>
