@@ -23,7 +23,7 @@
     <!-- Night / dark Mode theme. -->
     <style name="DarkTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#252525</item>
+        <item name="colorPrimary">#000000</item>
         <item name="colorAccent">#f4f4f4</item>
 
         <item name="picSingColor">#BBBABA</item>
