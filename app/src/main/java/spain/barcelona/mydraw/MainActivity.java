@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity
     // Global Variable
     static String appBranch = "welcomeBranch"; // for recycleList Fragment
     static int dayNightMode = 0; // 0 - Day mode; 1 - Night mode.
-    static Boolean chipsEnabled = true;
+    static Boolean chipsDisabled = true;
 
     // Variable for Welcome Branch (welcome and recycle welcome fragment).
     static int periodCurrentStateWelcome = 0;

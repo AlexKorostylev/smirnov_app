@@ -61,7 +61,7 @@ public class RecycleTopFragment extends Fragment {
             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
             ft.replace(R.id.recycle_list_container, recycleListFragment);
 
-            if (MainActivity.chipsEnabled){
+            if (!MainActivity.chipsDisabled){
                 ft.replace(R.id.recycle_chips_container, recycleChipsFragment);
             }
 
@@ -116,10 +116,10 @@ public class RecycleTopFragment extends Fragment {
         menu.findItem(R.id.recycle_list).setTitle("Recycle");
         if(!"welcomeBranch".equals(appBranch)){
             menu.findItem(R.id.filter_hide).setVisible(true);
-                if(MainActivity.chipsEnabled){
-                    menu.findItem(R.id.filter_hide).setTitle("Убрать фильтры");
+                if(MainActivity.chipsDisabled){
+                    menu.findItem(R.id.filter_hide).setTitle("Показать фильтры");
                 } else {
-                    menu.findItem(R.id.filter_hide).setTitle("Добавить фильтры");
+                    menu.findItem(R.id.filter_hide).setTitle("Убрать фильтры");
                 }
 
         } else{
@@ -183,17 +183,15 @@ public class RecycleTopFragment extends Fragment {
 
                 break;
             case R.id.filter_hide:
-                if(item.getTitle().equals("Убрать фильтры")){
-                    FrameLayout layout = getActivity().findViewById(R.id.recycle_chips_container);
-                    layout.setVisibility(View.INVISIBLE);
-                    MainActivity.chipsEnabled = false;
-                    item.setTitle("Добавить фильтры" );
+                if(item.getTitle().equals("Показать фильтры")){
+                    MainActivity.chipsDisabled = false;
+                    item.setTitle("Убрать фильтры" );
+                    chipListener.chipClick();
                 } else{
                     FrameLayout layout = getActivity().findViewById(R.id.recycle_chips_container);
-                    layout.setVisibility(View.VISIBLE);
-                    MainActivity.chipsEnabled = true;
-                    chipListener.chipClick();
-                    item.setTitle("Убрать фильтры" );
+                    layout.setVisibility(View.INVISIBLE);
+                    MainActivity.chipsDisabled = true;
+                    item.setTitle("Показать фильтры" );
                 }
         }
         return false;
