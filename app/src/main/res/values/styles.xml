@@ -31,7 +31,7 @@
         <item name="colorAccent">#f4f4f4</item>
         <item name="colorPrimaryDark">#000000</item>
 
-        <item name="chipsColor">#2C2C2C</item>\
+        <item name="chipsColor">#1F1F1F</item>\
         <item name="recycleCardBackColor">#000000</item>
         <item name="picSingColor">#BBBABA</item>
         <item name="nextPreviousColor">#97868686</item>

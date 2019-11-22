@@ -8,7 +8,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="32dp"
+        android:layout_height="26dp"
         android:orientation="horizontal">
 
 
@@ -21,7 +21,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_marginEnd="8dp"
             android:textSize="@dimen/chip_btn_textSize"
             android:background="@drawable/chips"
-            style="?android:attr/borderlessButtonStyle"/>
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="?attr/textColor"/>
 
         <Button
             android:id="@+id/chipBtn_1"
@@ -33,7 +34,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:text="@string/chip_btn1_paint"
             android:textSize="@dimen/chip_btn_textSize"
             android:background="@drawable/chips"
-            style="?android:attr/borderlessButtonStyle"/>
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="?attr/textColor"/>
 
         <Button
             android:id="@+id/chipBtn_2"
@@ -45,7 +47,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:text="@string/chip_btn2"
             android:textSize="@dimen/chip_btn_textSize"
             android:background="@drawable/chips"
-            style="?android:attr/borderlessButtonStyle"/>
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="?attr/textColor"/>
 
         <Button
             android:id="@+id/chipBtn_3"
@@ -57,7 +60,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_marginEnd="8dp"
             android:background="@drawable/chips"
             android:text="@string/chip_btn3"
-            android:textSize="@dimen/chip_btn_textSize" />
+            android:textSize="@dimen/chip_btn_textSize"
+            android:textColor="?attr/textColor"/>
 
         <Button
             android:id="@+id/chipBtn_4"
@@ -68,7 +72,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_marginEnd="8dp"
             android:textSize="@dimen/chip_btn_textSize"
             android:background="@drawable/chips"
-            style="?android:attr/borderlessButtonStyle"/>
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="?attr/textColor"/>
 
     </LinearLayout>
 </HorizontalScrollView>
