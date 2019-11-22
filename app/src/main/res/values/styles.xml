@@ -7,7 +7,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-
+        <item name="recycleCardBackColor">#f4f4f4</item>
         <item name="picSingColor">#ffffff</item>
         <item name="nextPreviousColor">#2C000000</item>
         <item name="textColor">#353535</item>
@@ -26,6 +26,7 @@
         <item name="colorPrimary">#000000</item>
         <item name="colorAccent">#f4f4f4</item>
 
+        <item name="recycleCardBackColor">#000000</item>
         <item name="picSingColor">#BBBABA</item>
         <item name="nextPreviousColor">#97868686</item>
         <item name="textColor">#BBBABA</item>
