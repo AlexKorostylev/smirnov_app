@@ -8,13 +8,15 @@
         android:id="@+id/paint_img_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/paint_btn_container"/>
+        android:layout_above="@id/paint_btn_container"
+        android:background="?attr/backgroundColor"/>
 
     <FrameLayout
         android:id="@+id/paint_btn_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:background="?attr/backgroundColor"/>
 
 </RelativeLayout>
