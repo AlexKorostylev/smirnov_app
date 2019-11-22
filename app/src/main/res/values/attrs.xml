@@ -6,6 +6,7 @@
         <attr name="picSingColor" format="color"/>
         <attr name="nextPreviousColor" format="color"/>
         <attr name="recycleCardBackColor" format="color"/>
+        <attr name="chipsColor" format="color"/>
 
 
     </declare-styleable>
