@@ -28,7 +28,7 @@
         android:maxLines="1"
         android:paddingStart="8dp"
         android:paddingEnd="12dp"
-        android:textColor="#ffffff"
+        android:textColor="?attr/picSingColor"
         android:textSize="16sp" />
 
 </RelativeLayout>
