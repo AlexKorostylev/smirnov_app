@@ -83,6 +83,7 @@ public class TopFragment extends Fragment {
                     ft.commit();
                     MainActivity.startPositionPaint = 1;
                     appBranch = "welcomeBranch";
+                    MainActivity.startPositionWelcome =1;
                 }
         }
         return false;
