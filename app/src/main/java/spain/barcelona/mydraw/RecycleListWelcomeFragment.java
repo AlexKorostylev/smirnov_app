@@ -69,7 +69,7 @@ public class RecycleListWelcomeFragment extends Fragment {
 
         int[] picImages = new int[amountOfPicAtPeriod];
         for (int i = 0; i < amountOfPicAtPeriod; i++) {
-            picImages[i] = topScreen[positionAtArray(period, i, topScreen)].getImageResourceId();
+            picImages[i] = topScreen[positionAtArray(period, i, topScreen)].getSmallimageResourceId();
         }
 
         CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(picNames, picImages);
