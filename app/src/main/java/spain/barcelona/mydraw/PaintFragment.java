@@ -50,7 +50,6 @@ public class PaintFragment extends Fragment {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Живопись");
 
-
         ((MainActivity) getActivity()).getSupportActionBar().show();
 
         return v;
@@ -78,6 +77,10 @@ public class PaintFragment extends Fragment {
                     MainActivity.startPositionPaint = 1;
                     appBranch = "paintingBranch";
                 }
+                break;
+            case R.id.background_mode:
+        break;
+
         }
         return false;
     }
