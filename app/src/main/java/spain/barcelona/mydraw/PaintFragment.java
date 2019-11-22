@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 
 import static spain.barcelona.mydraw.MainActivity.appBranch;
 
-
 public class PaintFragment extends Fragment {
 
     ChipListener chipListener;
@@ -57,8 +56,14 @@ public class PaintFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        // Do something that differs the Activity's menu here
-
+        menu.findItem(R.id.recycle_list).setTitle("Frame");
+        if(MainActivity.dayNightMode ==0){
+            menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_grid_black_24);
+            menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_black);
+        } else {
+            menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_grid_white_24);
+            menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_white);
+        }
         super.onCreateOptionsMenu(menu, inflater);
 
     }
