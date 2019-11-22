@@ -23,28 +23,29 @@ public class MainActivity extends AppCompatActivity
         TopBtnFragment.FragmentArtListener, ImgClickListener, ChipListener {
 
 
-// Global Variable
-    static String appBranch; // for recycleList Fragment
+    // Global Variable
+    static String appBranch = "welcomeBranch"; // for recycleList Fragment
+    static int dayNightMode = 0; // 0 - Day mode; 1 - Night mode.
 
-// Variable for Welcome Branch (welcome and recycle welcome fragment).
+    // Variable for Welcome Branch (welcome and recycle welcome fragment).
     static int periodCurrentStateWelcome = 0;
     static int indexCurrentStateWelcome = 0;
 
-    static int indexAllPeriodWelcome = -1;
-    static int startPositionWelcome =0;
+    static int indexAllPeriodWelcome = 0;
+    static int startPositionWelcome = 0; // 0 - Full frame; 1 - Recycle mode.
 
-// Variable for Paint Branch (paint and recycle paint fragment.
+    // Variable for Paint Branch (paint and recycle paint fragment.
     static int periodCurrentStatePaint = 0;
     static int indexCurrentStatePaint = 0;
 
-    static int indexAllPeriodPaint = -1;
+    static int indexAllPeriodPaint = 0; // Обрать на это внимение чтобы счетчик сразу откликался.
     static int indexFirstPeriodPaint = -1;
     static int indexSecondPeriodPaint = -1;
     static int indexThirdPeriodPaint = -1;
     static int indexFoursPeriodPaint = -1;
-    static int startPositionPaint =0;
+    static int startPositionPaint = 0;
 
-// Variable for Graphic Branch (graphic and recycle graphic fragment).
+    // Variable for Graphic Branch (graphic and recycle graphic fragment).
     static int periodCurrentStateGraphic = 0;
     static int indexCurrentStateGraphic = 0;
 
@@ -53,21 +54,17 @@ public class MainActivity extends AppCompatActivity
     static int indexSecondPeriodGraphic = -1;
     static int indexThirdPeriodGraphic = -1;
     static int indexFoursPeriodGraphic = -1;
-    static int startPositionGraphic =0;
+    static int startPositionGraphic = 0;
 
-// Photo
+    // Photo
     static int periodCurrentStatePhoto = 0;
     static int indexCurrentStatePhoto = 0;
     static int indexAllPeriodPhoto = -1;
 
-    static int startPositionPhoto =0;
+    static int startPositionPhoto = 0;
 
     // Recycle
     static int positionRecycle;
-
-    static int startPosition =0;
-
-    static int startPositionG =0;
 
 
 
@@ -75,9 +72,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.DarkTheme);
-        }else setTheme(R.style.AppTheme);
+        } else setTheme(R.style.AppTheme);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -96,35 +93,41 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-
-
-
-        if(startPositionWelcome ==0){
-            TopFragment topFragment = new TopFragment();
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.top_container, topFragment);
-            ft.addToBackStack(null);
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            ft.commit();
+        if (appBranch.equals("paintingBranch")) {
+            setTitle("Живопись");
+            if (startPositionPaint == 0) {
+                PaintFragment paintingFragment = new PaintFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.top_container, paintingFragment);
+                ft.addToBackStack(null);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();
+            } else {
+                RecycleTopFragment recycleTopFragment = new RecycleTopFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.top_container, recycleTopFragment);
+                ft.addToBackStack(null);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();
+            }
         } else {
             appBranch = "welcomeBranch";
-            RecycleTopFragment recycleTopFragment = new RecycleTopFragment();
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.top_container, recycleTopFragment);
-            ft.addToBackStack(null);
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            ft.commit();
+            if (startPositionWelcome == 0) {
+                TopFragment topFragment = new TopFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.top_container, topFragment);
+                ft.addToBackStack(null);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();
+            } else {
+                RecycleTopFragment recycleTopFragment = new RecycleTopFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.top_container, recycleTopFragment);
+                ft.addToBackStack(null);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();
+            }
         }
-
-        if(startPosition ==1){
-            PaintFragment paintingFragment = new PaintFragment();
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.top_container, paintingFragment);
-            ft.addToBackStack(null);
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            ft.commit();
-        }
-
     }
 
     @Override
@@ -156,15 +159,14 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.background_mode:
-                if (startPositionG==0){
+                if (dayNightMode == 0) {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    startPositionG =1;
+                    dayNightMode = 1;
                     restartApp();
-                }
-                else {
+                } else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     restartApp();
-                    startPositionG =0;
+                    dayNightMode = 0;
                 }
                 break;
             default:
@@ -173,7 +175,7 @@ public class MainActivity extends AppCompatActivity
         return false;
     }
 
-    public  void restartApp(){
+    public void restartApp() {
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(i);
         finish();
@@ -187,7 +189,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_painting) {
             appBranch = "paintingBranch";
-            if(startPositionPaint ==0){
+            if (startPositionPaint == 0) {
                 PaintFragment paintingFragment = new PaintFragment();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.top_container, paintingFragment);
@@ -205,7 +207,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_graphics) {
             appBranch = "graphicBranch";
-            if(startPositionGraphic ==0){
+            if (startPositionGraphic == 0) {
                 GraphicFragment graphicFragment = new GraphicFragment();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.top_container, graphicFragment);
@@ -239,7 +241,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_camera) {
             appBranch = "photoBranch";
-            if(startPositionGraphic ==0){
+            if (startPositionGraphic == 0) {
                 PhotoFragment photoFragment = new PhotoFragment();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.top_container, photoFragment);
