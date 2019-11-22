@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import static spain.barcelona.mydraw.MainActivity.appBranch;
-import static spain.barcelona.mydraw.MainActivity.startPositionG;
+import static spain.barcelona.mydraw.MainActivity.dayNightMode;
 
 public class TopFragment extends Fragment {
 
@@ -59,7 +59,7 @@ public class TopFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // Do something that differs the Activity's menu here
         menu.findItem(R.id.recycle_list).setTitle("Frame");
-        if(startPositionG==0){
+        if(dayNightMode ==0){
             menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_grid_black_24);
             menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_black);
         } else {
