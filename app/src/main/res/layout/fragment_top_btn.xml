@@ -12,7 +12,7 @@
         android:id="@+id/btn_previous"
         android:layout_width="53dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="40dp"
         android:layout_marginEnd="20dp"
         android:text="@string/btn_previous_txt"
         android:textSize="@dimen/btn_arrow_size"
@@ -24,17 +24,20 @@
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:layout_weight="4"
-        android:gravity="center"/>
+        android:textColor="?attr/textColor"
+        android:gravity="center"
+        />
 
     <Spinner
         android:id="@+id/spinner_top"
-        android:layout_width="128dp"
+        android:layout_width="97dp"
         android:layout_height="wrap_content"
-        android:entries="@array/spinner_top"
         android:layout_weight="2"
+        android:entries="@array/spinner_top"
         android:gravity="center"
         android:paddingStart="1dp"
-        android:paddingEnd="1dp"/>
+        android:paddingEnd="1dp"
+ />
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,66 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_marginStart="0dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="40dp"
         android:text="@string/btn_next_txt"
         android:textSize="@dimen/btn_arrow_size"
         android:background="@drawable/btn_next_previous"/>
 
 </LinearLayout>
-
-<!--
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".TopBtnFragment">
-
-    <TextView
-        android:id="@+id/counter_paint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="92dp"
-        android:text="3 из 18"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-    <Spinner
-        android:id="@+id/art_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="117dp"
-        android:background="#fbfbfb"
-        android:entries="@array/spinner_paint"
-        android:gravity="end"
-        android:minWidth="10dp" />
-
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="64dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="end"
-        android:layout_marginEnd="32dp"
-        android:background="#48b5c6"
-        android:paddingEnd="4dp"
-        android:paddingStart="4dp"
-        android:text="\u232A"
-        android:textColor="#0c0c0c" />
-
-    <Button
-        android:id="@+id/btn_previous"
-        android:layout_width="35dp"
-        android:layout_height="25dp"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="32dp"
-        android:background="#d2d4d4"
-        android:text="\u2329"
-        android:textColor="#0c0c0c" />
-
-</RelativeLayout>
--->
