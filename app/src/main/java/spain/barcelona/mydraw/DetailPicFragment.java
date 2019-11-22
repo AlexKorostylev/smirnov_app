@@ -92,6 +92,9 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
+            if(startPositionG==1){
+                imgBtn.setImageResource(R.drawable.back_arrow_24_white);
+            }
             imgBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -110,6 +113,9 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
+            if(startPositionG==1){
+                imgBtn.setImageResource(R.drawable.back_arrow_24_white);
+            }
             imgBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -129,6 +135,9 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
+            if(startPositionG==1){
+                imgBtn.setImageResource(R.drawable.back_arrow_24_white);
+            }
             imgBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -151,6 +160,9 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
+            if(startPositionG==1){
+                imgBtn.setImageResource(R.drawable.back_arrow_24_white);
+            }
             imgBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -173,6 +185,9 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
+            if(startPositionG==1){
+                imgBtn.setImageResource(R.drawable.back_arrow_24_white);
+            }
             imgBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -195,6 +210,9 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
+            if(startPositionG==1){
+                imgBtn.setImageResource(R.drawable.back_arrow_24_white);
+            }
             imgBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -212,6 +230,9 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
+            if(startPositionG==1){
+                imgBtn.setImageResource(R.drawable.back_arrow_24_white);
+            }
             imgBtn.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     chipListener.chipClick();
@@ -228,6 +249,9 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
+            if(startPositionG==1){
+                imgBtn.setImageResource(R.drawable.back_arrow_24_white);
+            }
             imgBtn.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     chipListener.chipClick();
@@ -243,6 +267,9 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
+            if(startPositionG==1){
+                imgBtn.setImageResource(R.drawable.back_arrow_24_white);
+            }
             imgBtn.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     chipListener.chipClick();
@@ -259,6 +286,9 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
+            if(startPositionG==1){
+                imgBtn.setImageResource(R.drawable.back_arrow_24_white);
+            }
             imgBtn.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     chipListener.chipClick();
