@@ -29,19 +29,22 @@
 
     <Spinner
         android:id="@+id/spinner_paint"
-        android:layout_width="121dp"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:entries="@array/spinner_paint"
         android:layout_weight="2"
+        android:entries="@array/spinner_paint"
         android:gravity="center"
         android:paddingStart="1dp"
-        android:paddingEnd="1dp"/>
+        android:paddingEnd="1dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/down_arrow"
+        android:text="@string/dropDownArrow"
+android:textColor="?attr/textColor"
+        android:layout_width="29dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:gravity="center" />
+        android:gravity="start" />
 
     <Button
         android:id="@+id/btn_next"
