@@ -26,7 +26,7 @@
         <item name="colorPrimary">#252525</item>
         <item name="colorAccent">#f4f4f4</item>
 
-        <item name="picSingColor">#D6D6D6</item>
+        <item name="picSingColor">#BBBABA</item>
         <item name="nextPreviousColor">#97868686</item>
         <item name="textColor">#BBBABA</item>
         <item name="backgroundColor">#000000</item>
@@ -34,7 +34,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyleDark</item>
-        <item name="titleTextColor">#f4f4f4</item>
+        <item name="titleTextColor">#BBBABA</item>
     </style>
 
 
