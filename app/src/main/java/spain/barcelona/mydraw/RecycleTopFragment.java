@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import static spain.barcelona.mydraw.MainActivity.appBranch;
+import static spain.barcelona.mydraw.MainActivity.startPositionG;
 
 public class RecycleTopFragment extends Fragment {
 
@@ -94,7 +95,14 @@ public class RecycleTopFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // Do something that differs the Activity's menu here
         menu.findItem(R.id.recycle_list).setTitle("Recycle");
-        menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_24);
+        if(startPositionG==0){
+            menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_24_black);
+            menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_black);
+        } else {
+            menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_24_white);
+            menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_white);
+        }
+
         super.onCreateOptionsMenu(menu, inflater);
 
     }
@@ -104,7 +112,7 @@ public class RecycleTopFragment extends Fragment {
         switch (item.getItemId()) {
             case R.id.recycle_list:
                 item.setTitle("Frame");
-                item.setIcon(R.drawable.frame_grid);
+                item.setIcon(R.drawable.frame_grid_black_24);
                 if(appBranch.equals("graphicBranch")){
                     GraphicFragment graphicFragment = new GraphicFragment();
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
