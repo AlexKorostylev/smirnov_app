@@ -35,12 +35,15 @@ public class RecycleChipsWelcomeFragment extends Fragment implements View.OnClic
 
         Button chipBtn_1 = v.findViewById(R.id.chipBtn_1);
         chipBtn_1.setText(R.string.chip_btn_welcome);
+        chipBtn_1.setVisibility(View.GONE);
         chipBtn_1.setOnClickListener(this);
         Button chipBtn_2 = v.findViewById(R.id.chipBtn_2);
         chipBtn_2.setText(R.string.chip_btn_art_paint);
+        chipBtn_2.setVisibility(View.GONE);
         chipBtn_2.setOnClickListener(this);
         Button chipBtn_3 = v.findViewById(R.id.chipBtn_3);
         chipBtn_3.setText(R.string.chip_btn_art_graphic);
+        chipBtn_3.setVisibility(View.GONE);
         chipBtn_3.setOnClickListener(this);
 
         return v;
