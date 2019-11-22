@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity
     // Global Variable
     static String appBranch = "welcomeBranch"; // for recycleList Fragment
     static int dayNightMode = 0; // 0 - Day mode; 1 - Night mode.
+    static Boolean chipsEnabled = true;
 
     // Variable for Welcome Branch (welcome and recycle welcome fragment).
     static int periodCurrentStateWelcome = 0;
@@ -151,6 +152,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        menu.findItem(R.id.filter_hide).setVisible(false);
         menu.findItem(R.id.background_mode).setTitle("Тёмный фон");
         return true;
     }

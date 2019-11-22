@@ -1,6 +1,7 @@
 package spain.barcelona.mydraw;
 
 
+import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -17,6 +18,19 @@ import static spain.barcelona.mydraw.MainActivity.appBranch;
 
 
 public class RecycleTopFragment extends Fragment {
+
+    ChipListener chipListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            chipListener = (ChipListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onClickChipListener");
+        }
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,10 +56,15 @@ public class RecycleTopFragment extends Fragment {
         } else if(appBranch.equals("paintingBranch")){
             RecycleListPaintFragment recycleListFragment = new RecycleListPaintFragment();
             RecycleChipsPaintFragment recycleChipsFragment = new RecycleChipsPaintFragment();
-            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
 
-            ft.replace(R.id.recycle_chips_container, recycleChipsFragment);
+
+            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
             ft.replace(R.id.recycle_list_container, recycleListFragment);
+
+            if (MainActivity.chipsEnabled){
+                ft.replace(R.id.recycle_chips_container, recycleChipsFragment);
+            }
+
             ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
@@ -95,6 +114,18 @@ public class RecycleTopFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // Do something that differs the Activity's menu here
         menu.findItem(R.id.recycle_list).setTitle("Recycle");
+        if(!"welcomeBranch".equals(appBranch)){
+            menu.findItem(R.id.filter_hide).setVisible(true);
+                if(MainActivity.chipsEnabled){
+                    menu.findItem(R.id.filter_hide).setTitle("Убрать фильтры");
+                } else {
+                    menu.findItem(R.id.filter_hide).setTitle("Добавить фильтры");
+                }
+
+        } else{
+            menu.findItem(R.id.filter_hide).setVisible(false);
+        }
+
         if(MainActivity.dayNightMode ==0){
             menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_24_black);
             menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_black);
@@ -151,9 +182,19 @@ public class RecycleTopFragment extends Fragment {
                 }
 
                 break;
-            case R.id.background_mode:
-                FrameLayout layout = getActivity().findViewById(R.id.recycle_chips_container);
-                layout.setVisibility(View.GONE);
+            case R.id.filter_hide:
+                if(item.getTitle().equals("Убрать фильтры")){
+                    FrameLayout layout = getActivity().findViewById(R.id.recycle_chips_container);
+                    layout.setVisibility(View.INVISIBLE);
+                    MainActivity.chipsEnabled = false;
+                    item.setTitle("Добавить фильтры" );
+                } else{
+                    FrameLayout layout = getActivity().findViewById(R.id.recycle_chips_container);
+                    layout.setVisibility(View.VISIBLE);
+                    MainActivity.chipsEnabled = true;
+                    chipListener.chipClick();
+                    item.setTitle("Убрать фильтры" );
+                }
         }
         return false;
     }
