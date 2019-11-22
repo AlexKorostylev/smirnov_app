@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import static spain.barcelona.mydraw.MainActivity.appBranch;
-import static spain.barcelona.mydraw.MainActivity.startPositionG;
+
 
 public class RecycleTopFragment extends Fragment {
 
@@ -95,7 +95,7 @@ public class RecycleTopFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // Do something that differs the Activity's menu here
         menu.findItem(R.id.recycle_list).setTitle("Recycle");
-        if(startPositionG==0){
+        if(MainActivity.dayNightMode ==0){
             menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_24_black);
             menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_black);
         } else {
