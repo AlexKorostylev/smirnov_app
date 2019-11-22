@@ -5,8 +5,12 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">#000000</item>
+        <item name="colorPrimaryDark">#BFCACACA</item>
 
+
+        <item name="actionOverflowButtonStyle">@style/DotsDarkTheme</item>
+        <item name="chipsColor">#EAEEEE</item>\
         <item name="recycleCardBackColor">#f4f4f4</item>
         <item name="picSingColor">#ffffff</item>
         <item name="nextPreviousColor">#2C000000</item>
@@ -25,7 +29,9 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#000000</item>
         <item name="colorAccent">#f4f4f4</item>
+        <item name="colorPrimaryDark">#000000</item>
 
+        <item name="chipsColor">#2C2C2C</item>\
         <item name="recycleCardBackColor">#000000</item>
         <item name="picSingColor">#BBBABA</item>
         <item name="nextPreviousColor">#97868686</item>
@@ -63,6 +69,10 @@
     <style name="ThemeOverlay.AppCompat.navTheme">
         <!-- Background color when SELECTED at drawer menu -->
         <item name="colorControlHighlight">@color/drawer_item_background_color</item>
+    </style>
+
+    <style name="DotsDarkTheme" parent="@style/Widget.AppCompat.ActionButton.Overflow" >
+        <item name="android:tint">@color/toolbar_title_text_color</item>
     </style>
 
 </resources>
