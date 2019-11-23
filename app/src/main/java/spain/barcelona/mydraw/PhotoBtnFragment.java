@@ -84,7 +84,7 @@ public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
                 }
                 picCounter.setText(dataForCounter(allPeriod, indexAllPeriodPhoto, photo));
                 periodCurrentStatePhoto = allPeriod;
-                indexAllPeriodPhoto = indexAllPeriodPhoto;
+                indexCurrentStatePhoto = indexAllPeriodPhoto;
                 indexToPicDetail = positionAtArray(allPeriod, indexAllPeriodPhoto, photo);
                 break;
         }
