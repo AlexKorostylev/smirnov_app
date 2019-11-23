@@ -76,7 +76,12 @@ public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
                 String year = photo[positionAtArray(allPeriod, indexAllPeriodPhoto, photo)].getYear();
                 String place = photo[positionAtArray(allPeriod, indexAllPeriodPhoto, photo)].getMaterial();
                 String photoDetail = place + "  " + year;
-                detailText.setText(photoDetail);
+                if(photoDetail.equals("  ")){
+                    detailText.setVisibility(View.INVISIBLE);
+                } else {
+                    detailText.setVisibility(View.VISIBLE);
+                    detailText.setText(photoDetail(year, place));
+                }
                 picCounter.setText(dataForCounter(allPeriod, indexAllPeriodPhoto, photo));
                 periodCurrentStatePhoto = allPeriod;
                 indexAllPeriodPhoto = indexAllPeriodPhoto;
@@ -99,7 +104,13 @@ public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
                 image.setImageResource(photo[positionAtArray(allPeriod, indexAllPeriodPhoto, photo)].getImageResourceId());
                 String year = photo[positionAtArray(allPeriod, indexAllPeriodPhoto, photo)].getYear();
                 String place = photo[positionAtArray(allPeriod, indexAllPeriodPhoto, photo)].getMaterial();
-                detailText.setText(photoDetail(year, place));
+                String photoDetail = place + "  " + year;
+                if(photoDetail.equals("  ")){
+                    detailText.setVisibility(View.INVISIBLE);
+                } else {
+                    detailText.setVisibility(View.VISIBLE);
+                    detailText.setText(photoDetail(year, place));
+                }
                 picCounter.setText(dataForCounter(allPeriod, indexAllPeriodPhoto, photo));
                 periodCurrentStatePhoto = allPeriod;
                 indexCurrentStatePhoto = indexAllPeriodPhoto;

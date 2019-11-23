@@ -38,7 +38,7 @@ public class PhotoImgFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_photo_img, container, false);
 
         ImageView image = v.findViewById(R.id.info_image_photo);
-        TextView photoDetail = v.findViewById(R.id.detail_text_photo);
+        TextView detailText = v.findViewById(R.id.detail_text_photo);
 
         int periodState = MainActivity.periodCurrentStatePhoto; //
         int indexState = MainActivity.indexCurrentStatePhoto;
@@ -51,8 +51,13 @@ public class PhotoImgFragment extends Fragment {
         image.setImageResource(photo[BizLogic.positionAtArray(periodState, indexState, photo)].getImageResourceId());
         String year = photo[BizLogic.positionAtArray(periodState, indexState, photo)].getYear();
         String place = photo[BizLogic.positionAtArray(periodState, indexState, photo)].getMaterial();
-        photoDetail.setText(PhotoBtnFragment.photoDetail(year, place));
-
+        String photoDetail = place + "  " + year;
+        if(photoDetail.equals("  ")){
+            detailText.setVisibility(View.INVISIBLE);
+        } else {
+            detailText.setVisibility(View.VISIBLE);
+            detailText.setText(PhotoBtnFragment.photoDetail(year, place));
+        }
 
         indexToPicDetail = BizLogic.positionAtArray(periodState, indexState, photo);
         artWayIndex = "photo";
