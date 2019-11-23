@@ -8,6 +8,7 @@
         <attr name="recycleCardBackColor" format="color"/>
         <attr name="chipsColor" format="color"/>
         <attr name="popupOverlayStyle" format="reference"/>
+        <attr name="backgroundPhotoTextColor" format="color"/>
 
 
     </declare-styleable>

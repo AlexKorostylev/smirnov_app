@@ -9,9 +9,8 @@
         <item name="colorPrimaryDark">#BFCACACA</item>
 
 
+        <item name="backgroundPhotoTextColor">@color/photo_text_background</item>
         <item name="popupOverlayStyle">@style/ThemeOverlayPopUp.Light</item>
-
-
         <item name="actionOverflowButtonStyle">@style/DotsDarkTheme</item>
         <item name="chipsColor">#EAEEEE</item>\
         <item name="recycleCardBackColor">#f4f4f4</item>
@@ -34,7 +33,7 @@
         <item name="colorAccent">#f4f4f4</item>
         <item name="colorPrimaryDark">#000000</item>
 
-
+        <item name="backgroundPhotoTextColor">#000000</item>
         <item name="popupOverlayStyle">@style/ThemeOverlayPopUp.Dark</item>
         <item name="chipsColor">#1F1F1F</item>
         <item name="recycleCardBackColor">#000000</item>
