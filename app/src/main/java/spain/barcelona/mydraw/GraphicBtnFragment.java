@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -35,7 +36,22 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
         Button btnPrevious = v.findViewById(R.id.btn_previous);
         btnPrevious.setOnClickListener(this);
 
+        String[] years = new String[]{
+                "1972-2012",
+                "1972-1979",
+                "1980-1989",
+                "1990-1999",
+                "2000-2012",
+        };
+
         Spinner spinner = v.findViewById(R.id.spinner_pics);
+
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(
+                getActivity(), R.layout.spinner_item, years
+        );
+        spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
+        spinner.setAdapter(spinnerArrayAdapter);
+
         spinner.setSelection(GraphicImgFragment.dataForCounterPeriodState);
 
         TextView pictureCounter = v.findViewById(R.id.counter_graphic);
