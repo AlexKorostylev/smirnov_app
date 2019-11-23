@@ -62,11 +62,6 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
         return v;
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
-
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_next:
