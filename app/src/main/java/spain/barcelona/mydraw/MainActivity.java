@@ -59,8 +59,7 @@ public class MainActivity extends AppCompatActivity
     // Photo
     static int periodCurrentStatePhoto = 0;
     static int indexCurrentStatePhoto = 0;
-    static int indexAllPeriodPhoto = -1;
-
+    static int indexAllPeriodPhoto = 0;
     static int startPositionPhoto = 0;
 
     // Recycle
