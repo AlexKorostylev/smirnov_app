@@ -46,7 +46,7 @@ public class GraphicFragment extends Fragment {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Графика");
 
-        ((MainActivity)getActivity()).getSupportActionBar().show();
+        ((MainActivity) getActivity()).getSupportActionBar().show();
 
         return inflater.inflate(R.layout.fragment_graphic, container, false);
     }
@@ -54,7 +54,7 @@ public class GraphicFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.findItem(R.id.recycle_list).setTitle("Frame");
-        if(MainActivity.dayNightMode ==0){
+        if (MainActivity.dayNightMode == 0) {
             menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_grid_black_24);
             menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_black);
         } else {
@@ -78,6 +78,7 @@ public class GraphicFragment extends Fragment {
                     MainActivity.startPositionGraphic = 1;
                     appBranch = "graphicBranch";
                 }
+                break;
         }
         return false;
     }
