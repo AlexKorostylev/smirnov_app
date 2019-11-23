@@ -53,11 +53,15 @@ public class PhotoFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        // Do something that differs the Activity's menu here
         menu.findItem(R.id.recycle_list).setTitle("Frame");
-        menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_grid_black_24);
+        if(MainActivity.dayNightMode ==0){
+            menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_grid_black_24);
+            menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_black);
+        } else {
+            menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_grid_white_24);
+            menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_white);
+        }
         super.onCreateOptionsMenu(menu, inflater);
-
     }
 
     @Override
