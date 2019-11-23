@@ -260,7 +260,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_camera) {
             appBranch = "photoBranch";
-            if (startPositionGraphic == 0) {
+            if (startPositionPhoto == 0) {
                 PhotoFragment photoFragment = new PhotoFragment();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.top_container, photoFragment);
