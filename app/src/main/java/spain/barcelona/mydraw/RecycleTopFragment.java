@@ -39,14 +39,13 @@ public class RecycleTopFragment extends Fragment {
 
         setHasOptionsMenu(true);
 
-        if(appBranch.equals("graphicBranch")){
+        if (appBranch.equals("graphicBranch")) {
             RecycleListGraphicFragment recycleListGraphic = new RecycleListGraphicFragment();
             RecycleChipsGraphicFragment recycleChipsFragment = new RecycleChipsGraphicFragment();
             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
 
 
-
-            if (!MainActivity.chipsDisabled){
+            if (!MainActivity.chipsDisabled) {
                 ft.replace(R.id.recycle_chips_container, recycleChipsFragment);
             }
 
@@ -59,7 +58,7 @@ public class RecycleTopFragment extends Fragment {
             Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
             toolbar.setTitle("Графика");
 
-        } else if(appBranch.equals("paintingBranch")){
+        } else if (appBranch.equals("paintingBranch")) {
             RecycleListPaintFragment recycleListFragment = new RecycleListPaintFragment();
             RecycleChipsPaintFragment recycleChipsFragment = new RecycleChipsPaintFragment();
 
@@ -67,7 +66,7 @@ public class RecycleTopFragment extends Fragment {
             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
             ft.replace(R.id.recycle_list_container, recycleListFragment);
 
-            if (!MainActivity.chipsDisabled){
+            if (!MainActivity.chipsDisabled) {
                 ft.replace(R.id.recycle_chips_container, recycleChipsFragment);
             }
 
@@ -77,8 +76,7 @@ public class RecycleTopFragment extends Fragment {
 
             Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
             toolbar.setTitle("Живопись");
-        }
-        else if(appBranch.equals("welcomeBranch")){
+        } else if (appBranch.equals("welcomeBranch")) {
             RecycleListWelcomeFragment recycleListFragment = new RecycleListWelcomeFragment();
             RecycleChipsWelcomeFragment recycleChipsFragment = new RecycleChipsWelcomeFragment();
             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
@@ -91,8 +89,7 @@ public class RecycleTopFragment extends Fragment {
 
             Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
             toolbar.setTitle("Вадим Смирнов");
-        }
-        else if(appBranch.equals("photoBranch")){
+        } else if (appBranch.equals("photoBranch")) {
             RecycleListPhotoFragment recycleListFragment = new RecycleListPhotoFragment();
             //RecycleChipsWelcomeFragment recycleChipsFragment = new RecycleChipsWelcomeFragment();
             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
@@ -108,9 +105,6 @@ public class RecycleTopFragment extends Fragment {
         }
 
 
-
-
-
         ((MainActivity) getActivity()).getSupportActionBar().show();
 
         return inflater.inflate(R.layout.fragment_recycle_top, container, false);
@@ -120,19 +114,30 @@ public class RecycleTopFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // Do something that differs the Activity's menu here
         menu.findItem(R.id.recycle_list).setTitle("Recycle");
-        if(!"welcomeBranch".equals(appBranch)){
+        if (!"welcomeBranch".equals(appBranch)) {
             menu.findItem(R.id.filter_hide).setVisible(true);
-                if(MainActivity.chipsDisabled){
-                    menu.findItem(R.id.filter_hide).setTitle("Показать фильтры");
-                } else {
-                    menu.findItem(R.id.filter_hide).setTitle("Убрать фильтры");
-                }
+            if (MainActivity.chipsDisabled) {
+                menu.findItem(R.id.filter_hide).setTitle("Показать фильтры");
+            } else {
+                menu.findItem(R.id.filter_hide).setTitle("Убрать фильтры");
+            }
 
-        } else{
+        } else {
             menu.findItem(R.id.filter_hide).setVisible(false);
         }
 
-        if(MainActivity.dayNightMode ==0){
+        if(!"photoBranch".equals(appBranch)){
+            menu.findItem(R.id.filter_hide).setVisible(true);
+            if(MainActivity.chipsDisabled){
+                menu.findItem(R.id.filter_hide).setTitle("Показать фильтры");
+            } else {
+                menu.findItem(R.id.filter_hide).setTitle("Убрать фильтры");
+            }
+        } else {
+            menu.findItem(R.id.filter_hide).setVisible(false);
+        }
+
+        if (MainActivity.dayNightMode == 0) {
             menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_24_black);
             menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_black);
         } else {
@@ -150,7 +155,7 @@ public class RecycleTopFragment extends Fragment {
             case R.id.recycle_list:
                 item.setTitle("Frame");
                 item.setIcon(R.drawable.frame_grid_black_24);
-                if(appBranch.equals("graphicBranch")){
+                if (appBranch.equals("graphicBranch")) {
                     GraphicFragment graphicFragment = new GraphicFragment();
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
                     ft.replace(R.id.top_container, graphicFragment);
@@ -158,7 +163,7 @@ public class RecycleTopFragment extends Fragment {
                     ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                     ft.commit();
                     MainActivity.startPositionGraphic = 0;
-                } else if(appBranch.equals("paintingBranch")) {
+                } else if (appBranch.equals("paintingBranch")) {
                     PaintFragment paintingFragment = new PaintFragment();
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
                     ft.replace(R.id.top_container, paintingFragment);
@@ -166,8 +171,7 @@ public class RecycleTopFragment extends Fragment {
                     ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                     ft.commit();
                     MainActivity.startPositionPaint = 0;
-                }
-                else if(appBranch.equals("welcomeBranch")) {
+                } else if (appBranch.equals("welcomeBranch")) {
                     TopFragment topFragment = new TopFragment();
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
                     ft.replace(R.id.top_container, topFragment);
@@ -175,9 +179,7 @@ public class RecycleTopFragment extends Fragment {
                     ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                     ft.commit();
                     MainActivity.startPositionWelcome = 0;
-                }
-
-                else if(appBranch.equals("photoBranch")) {
+                } else if (appBranch.equals("photoBranch")) {
                     PhotoFragment photoFragment = new PhotoFragment();
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
                     ft.replace(R.id.top_container, photoFragment);
@@ -189,15 +191,15 @@ public class RecycleTopFragment extends Fragment {
 
                 break;
             case R.id.filter_hide:
-                if(item.getTitle().equals("Показать фильтры")){
+                if (item.getTitle().equals("Показать фильтры")) {
                     MainActivity.chipsDisabled = false;
-                    item.setTitle("Убрать фильтры" );
+                    item.setTitle("Убрать фильтры");
                     chipListener.chipClick();
-                } else{
+                } else {
                     FrameLayout layout = getActivity().findViewById(R.id.recycle_chips_container);
                     layout.setVisibility(View.INVISIBLE);
                     MainActivity.chipsDisabled = true;
-                    item.setTitle("Показать фильтры" );
+                    item.setTitle("Показать фильтры");
                 }
         }
         return false;
