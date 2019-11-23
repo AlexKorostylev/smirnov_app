@@ -44,8 +44,14 @@ public class RecycleTopFragment extends Fragment {
             RecycleChipsGraphicFragment recycleChipsFragment = new RecycleChipsGraphicFragment();
             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
 
-            ft.replace(R.id.recycle_chips_container, recycleChipsFragment);
+
+
+            if (!MainActivity.chipsDisabled){
+                ft.replace(R.id.recycle_chips_container, recycleChipsFragment);
+            }
+
             ft.replace(R.id.recycle_list_container, recycleListGraphic);
+
             ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
@@ -151,7 +157,7 @@ public class RecycleTopFragment extends Fragment {
                     ft.addToBackStack(null);
                     ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                     ft.commit();
-                    MainActivity.startPositionPaint = 0;
+                    MainActivity.startPositionGraphic = 0;
                 } else if(appBranch.equals("paintingBranch")) {
                     PaintFragment paintingFragment = new PaintFragment();
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
