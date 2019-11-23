@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -40,8 +42,13 @@ public class BioFragment extends Fragment  {
 
         View view = inflater.inflate(R.layout.fragment_biogrphy, container, false);
 
+        setHasOptionsMenu(true);
+
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.drawer_bio);
+
+
+
 
         TextView title = view.findViewById(R.id.title_text);
         final TextView description = view.findViewById(R.id.description_text);
@@ -138,8 +145,31 @@ public class BioFragment extends Fragment  {
             }
         });
 
+
+        if(MainActivity.dayNightMode == 0){
+            increaseBtn.setImageResource(R.drawable.font_increase_64_black);
+            decreaseBtn.setImageResource(R.drawable.font_decrease_64_black);
+        }else {
+            increaseBtn.setImageResource(R.drawable.font_increase_64_white);
+            decreaseBtn.setImageResource(R.drawable.font_decrease_64_white);
+        }
+
         ((MainActivity) getActivity()).getSupportActionBar().show();
 
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        // Do something that differs the Activity's menu here
+        menu.findItem(R.id.recycle_list).setTitle("Frame");
+        menu.findItem(R.id.recycle_list).setVisible(false);
+        if(MainActivity.dayNightMode ==0){
+            menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_black);
+        } else {
+            menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_white);
+        }
+        super.onCreateOptionsMenu(menu, inflater);
+
     }
 }
