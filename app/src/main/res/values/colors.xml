@@ -18,4 +18,8 @@
     <color name="drawer_item_text_selected_color">#CB2B00</color>
     <color name="drawer_item_background_color">#315D7C7C</color>
 
+    <!-- Dark Theme here -->
+    <color name="darkBackground">#FF4081</color>
+    <color name="darkTextColor">#D9ffffff</color>
+
 </resources>
