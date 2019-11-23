@@ -55,7 +55,7 @@ public class PhotoFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // Do something that differs the Activity's menu here
         menu.findItem(R.id.recycle_list).setTitle("Frame");
-        menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_grid);
+        menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_grid_black_24);
         super.onCreateOptionsMenu(menu, inflater);
 
     }
