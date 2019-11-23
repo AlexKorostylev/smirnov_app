@@ -41,6 +41,7 @@ public class PhotoBtnFragment extends Fragment implements View.OnClickListener {
 
         Spinner spinner = v.findViewById(R.id.spinner_photo);
         spinner.setSelection(PhotoImgFragment.dataForCounterPeriodState);
+        spinner.setVisibility(View.GONE);
 
         TextView pictureCounter = v.findViewById(R.id.counter_photo);
         pictureCounter.setText(BizLogic.dataForCounter(PhotoImgFragment.dataForCounterPeriodState, PhotoImgFragment.dataForCounterIndexState, photo));
