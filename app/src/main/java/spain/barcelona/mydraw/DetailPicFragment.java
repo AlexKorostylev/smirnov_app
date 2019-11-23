@@ -13,7 +13,7 @@ import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static spain.barcelona.mydraw.MainActivity.startPositionG;
+import static spain.barcelona.mydraw.MainActivity.dayNightMode;
 import static spain.barcelona.mydraw.Pic.*;
 
 
@@ -72,7 +72,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
-            if(startPositionG==1){
+            if(dayNightMode ==1){
                 imgBtn.setImageResource(R.drawable.back_arrow_24_white);
             }
             imgBtn.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +92,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
-            if(startPositionG==1){
+            if(dayNightMode ==1){
                 imgBtn.setImageResource(R.drawable.back_arrow_24_white);
             }
             imgBtn.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +113,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
-            if(startPositionG==1){
+            if(dayNightMode ==1){
                 imgBtn.setImageResource(R.drawable.back_arrow_24_white);
             }
             imgBtn.setOnClickListener(new View.OnClickListener() {
@@ -135,7 +135,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
-            if(startPositionG==1){
+            if(dayNightMode ==1){
                 imgBtn.setImageResource(R.drawable.back_arrow_24_white);
             }
             imgBtn.setOnClickListener(new View.OnClickListener() {
@@ -160,7 +160,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
-            if(startPositionG==1){
+            if(dayNightMode ==1){
                 imgBtn.setImageResource(R.drawable.back_arrow_24_white);
             }
             imgBtn.setOnClickListener(new View.OnClickListener() {
@@ -185,7 +185,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
-            if(startPositionG==1){
+            if(dayNightMode ==1){
                 imgBtn.setImageResource(R.drawable.back_arrow_24_white);
             }
             imgBtn.setOnClickListener(new View.OnClickListener() {
@@ -210,7 +210,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
-            if(startPositionG==1){
+            if(dayNightMode ==1){
                 imgBtn.setImageResource(R.drawable.back_arrow_24_white);
             }
             imgBtn.setOnClickListener(new View.OnClickListener() {
@@ -230,7 +230,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
-            if(startPositionG==1){
+            if(dayNightMode ==1){
                 imgBtn.setImageResource(R.drawable.back_arrow_24_white);
             }
             imgBtn.setOnClickListener(new View.OnClickListener() {
@@ -249,7 +249,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
-            if(startPositionG==1){
+            if(dayNightMode ==1){
                 imgBtn.setImageResource(R.drawable.back_arrow_24_white);
             }
             imgBtn.setOnClickListener(new View.OnClickListener() {
@@ -267,7 +267,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
-            if(startPositionG==1){
+            if(dayNightMode ==1){
                 imgBtn.setImageResource(R.drawable.back_arrow_24_white);
             }
             imgBtn.setOnClickListener(new View.OnClickListener() {
@@ -286,7 +286,7 @@ public class DetailPicFragment extends Fragment implements View.OnTouchListener 
             picMaterial.setText(picDetail);
 
             // Back button
-            if(startPositionG==1){
+            if(dayNightMode ==1){
                 imgBtn.setImageResource(R.drawable.back_arrow_24_white);
             }
             imgBtn.setOnClickListener(new View.OnClickListener() {
