@@ -1,6 +1,5 @@
 package spain.barcelona.mydraw;
 
-
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
@@ -128,7 +127,7 @@ public class MainActivity extends AppCompatActivity
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 ft.commit();
             }
-        }else {
+        } else {
             appBranch = "welcomeBranch";
             if (startPositionWelcome == 0) {
                 TopFragment topFragment = new TopFragment();
