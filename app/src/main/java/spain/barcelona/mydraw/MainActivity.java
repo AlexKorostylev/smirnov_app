@@ -125,14 +125,21 @@ public class MainActivity extends AppCompatActivity
                 ft.commit();
             }
         } else if (appBranch.equals("interviewBranch")) {
-            setTitle("Фотоархив");
             InterviewListFragment interviewListFragment = new InterviewListFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.top_container, interviewListFragment);
             ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
-        } else if (appBranch.equals("photoBranch")) {
+        }else if (appBranch.equals("bioBranch")) {
+            BioFragment bioFragment = new BioFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.top_container, bioFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+        }
+        else if (appBranch.equals("photoBranch")) {
             setTitle("Фотоархив");
             if (startPositionPhoto == 0) {
                 PhotoFragment photoFragment = new PhotoFragment();
@@ -301,6 +308,7 @@ public class MainActivity extends AppCompatActivity
             }
 
         } else if (id == R.id.nav_biography) {
+            appBranch = "bioBranch";
             BioFragment bioFragment = new BioFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.top_container, bioFragment);
