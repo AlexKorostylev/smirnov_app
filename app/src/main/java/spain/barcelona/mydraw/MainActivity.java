@@ -67,8 +67,6 @@ public class MainActivity extends AppCompatActivity
     static int positionRecycle;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -116,6 +114,23 @@ public class MainActivity extends AppCompatActivity
                 GraphicFragment graphicFragment = new GraphicFragment();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.top_container, graphicFragment);
+                ft.addToBackStack(null);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();
+            } else {
+                RecycleTopFragment recycleTopFragment = new RecycleTopFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.top_container, recycleTopFragment);
+                ft.addToBackStack(null);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();
+            }
+        } else if (appBranch.equals("photoBranch")) {
+            setTitle("Фотоархив");
+            if (startPositionPhoto == 0) {
+                PhotoFragment photoFragment = new PhotoFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.top_container, photoFragment);
                 ft.addToBackStack(null);
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 ft.commit();
