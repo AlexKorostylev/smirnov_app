@@ -9,6 +9,9 @@
         <item name="colorPrimaryDark">#BFCACACA</item>
 
 
+        <item name="popupOverlayStyle">@style/ThemeOverlayPopUp.Light</item>
+
+
         <item name="actionOverflowButtonStyle">@style/DotsDarkTheme</item>
         <item name="chipsColor">#EAEEEE</item>\
         <item name="recycleCardBackColor">#f4f4f4</item>
@@ -31,7 +34,9 @@
         <item name="colorAccent">#f4f4f4</item>
         <item name="colorPrimaryDark">#000000</item>
 
-        <item name="chipsColor">#1F1F1F</item>\
+
+        <item name="popupOverlayStyle">@style/ThemeOverlayPopUp.Dark</item>
+        <item name="chipsColor">#1F1F1F</item>
         <item name="recycleCardBackColor">#000000</item>
         <item name="picSingColor">#BBBABA</item>
         <item name="nextPreviousColor">#97868686</item>
@@ -64,7 +69,6 @@
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="ThemeOverlay.AppCompat.navTheme">
         <!-- Background color when SELECTED at drawer menu -->
@@ -74,5 +78,18 @@
     <style name="DotsDarkTheme" parent="@style/Widget.AppCompat.ActionButton.Overflow" >
         <item name="android:tint">@color/toolbar_title_text_color</item>
     </style>
+
+
+    <style name="ThemeOverlayPopUp.Light" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">#F1F1F1</item>
+        <item name="android:textColor">#353535</item>
+    </style>
+
+    <style name="ThemeOverlayPopUp.Dark" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">#161616</item>
+        <item name="android:textColor">#EEEDED</item>
+
+    </style>
+
 
 </resources>
