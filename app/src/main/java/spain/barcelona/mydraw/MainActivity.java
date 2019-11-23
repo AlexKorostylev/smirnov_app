@@ -111,7 +111,24 @@ public class MainActivity extends AppCompatActivity
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 ft.commit();
             }
-        } else {
+        } else if (appBranch.equals("graphicBranch")) {
+            setTitle("Графика");
+            if (startPositionGraphic == 0) {
+                GraphicFragment graphicFragment = new GraphicFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.top_container, graphicFragment);
+                ft.addToBackStack(null);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();
+            } else {
+                RecycleTopFragment recycleTopFragment = new RecycleTopFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.top_container, recycleTopFragment);
+                ft.addToBackStack(null);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();
+            }
+        }else {
             appBranch = "welcomeBranch";
             if (startPositionWelcome == 0) {
                 TopFragment topFragment = new TopFragment();
