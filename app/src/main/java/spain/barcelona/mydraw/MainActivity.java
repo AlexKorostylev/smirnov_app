@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -80,15 +81,23 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
+
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        //toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.colorAccent));
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        if(MainActivity.dayNightMode == 0){
+            View hView =  navigationView.inflateHeaderView(R.layout.nav_header_main);
+            hView.setBackgroundResource(R.drawable.nav_bac_1_white);
+        } else {
+            View hView =  navigationView.inflateHeaderView(R.layout.nav_header_main);
+            hView.setBackgroundResource(R.drawable.nav_bac_1_black);
+        }
 
         if (appBranch.equals("paintingBranch")) {
             setTitle("Живопись");

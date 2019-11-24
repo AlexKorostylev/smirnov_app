@@ -8,7 +8,8 @@
         <item name="colorAccent">#000000</item>
         <item name="colorPrimaryDark">#BFCACACA</item>
 
-
+        <item name="drawerTextColor">#353535</item>
+        <item name="drawerBackgroundColor">#F8F8F8</item>
         <item name="backgroundPhotoTextColor">@color/photo_text_background</item>
         <item name="popupOverlayStyle">@style/ThemeOverlayPopUp.Light</item>
         <item name="actionOverflowButtonStyle">@style/DotsDarkTheme</item>
@@ -33,6 +34,8 @@
         <item name="colorAccent">#f4f4f4</item>
         <item name="colorPrimaryDark">#000000</item>
 
+        <item name="drawerTextColor">#BBBABA</item>
+        <item name="drawerBackgroundColor">#070707</item>
         <item name="backgroundPhotoTextColor">#000000</item>
         <item name="popupOverlayStyle">@style/ThemeOverlayPopUp.Dark</item>
         <item name="chipsColor">#1F1F1F</item>

@@ -5,6 +5,6 @@
         android:color="@color/drawer_item_text_selected_color"
         android:state_checked="true" />
 
-    <item android:color="@color/drawer_item_text__color" />
+    <item android:color="?attr/drawerTextColor" />
 
 </selector>

@@ -9,7 +9,8 @@
         <attr name="chipsColor" format="color"/>
         <attr name="popupOverlayStyle" format="reference"/>
         <attr name="backgroundPhotoTextColor" format="color"/>
-
+        <attr name="drawerBackgroundColor" format="color"/>
+        <attr name="drawerTextColor" format="color"/>
 
     </declare-styleable>
 </resources>
