@@ -279,6 +279,7 @@ public class MainActivity extends AppCompatActivity
             }
 
         } else if (id == R.id.nav_poetry) {
+            appBranch = "poetryBranch";
             PoetryListFragment poetryListFragment = new PoetryListFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.top_container, poetryListFragment);
