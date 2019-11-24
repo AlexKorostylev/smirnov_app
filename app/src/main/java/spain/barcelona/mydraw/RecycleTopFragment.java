@@ -114,28 +114,23 @@ public class RecycleTopFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // Do something that differs the Activity's menu here
         menu.findItem(R.id.recycle_list).setTitle("Recycle");
-        if (!"welcomeBranch".equals(appBranch)) {
+        if (appBranch.equals("paintingBranch")) {
             menu.findItem(R.id.filter_hide).setVisible(true);
             if (MainActivity.chipsDisabled) {
                 menu.findItem(R.id.filter_hide).setTitle("Показать фильтры");
             } else {
                 menu.findItem(R.id.filter_hide).setTitle("Убрать фильтры");
             }
-
-        } else {
-            menu.findItem(R.id.filter_hide).setVisible(false);
-        }
-
-        if(!"photoBranch".equals(appBranch)){
+        } else if (appBranch.equals("graphicBranch")) {
             menu.findItem(R.id.filter_hide).setVisible(true);
-            if(MainActivity.chipsDisabled){
+            if (MainActivity.chipsDisabled) {
                 menu.findItem(R.id.filter_hide).setTitle("Показать фильтры");
             } else {
                 menu.findItem(R.id.filter_hide).setTitle("Убрать фильтры");
             }
-        } else {
-            menu.findItem(R.id.filter_hide).setVisible(false);
         }
+
+
 
         if (MainActivity.dayNightMode == 0) {
             menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_24_black);
