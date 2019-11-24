@@ -49,6 +49,9 @@
     <string name="btn_previous_txt">\u2329</string>
     <string name="img_btn_back_arrow">back</string>
     <string name="dropDownArrow">▼</string>
+    <string name="img_description_increase_font_size">Increase font size</string>
+    <string name="img_description_decrease_font_size">Decrease font size</string>
+    <string name="img_description_additional_pic">Additional pic</string>
 
     <string name="chip_btn_welcome">ЗНАКОМСТВО</string>
     <string name="chip_btn_all_paint">1974\-2011</string>
@@ -61,7 +64,6 @@
     <string name="chip_btn3">1990\-99</string>
     <string name="chip_btn4_paint">2000\-11</string>
     <string name="chip_btn4_graphic">2000\-12</string>
-
 
 
 

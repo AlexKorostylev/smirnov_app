@@ -52,6 +52,12 @@ public class AboutDetailFragment extends Fragment {
             }
         });
 
+        if(MainActivity.dayNightMode == 0){
+            imgBtn.setImageResource(R.drawable.back_arrow_24_black);
+        }else {
+            imgBtn.setImageResource(R.drawable.back_arrow_24_white);
+        }
+
         return v;
     }
 
@@ -185,11 +191,16 @@ public class AboutDetailFragment extends Fragment {
                     }
                 }
             });
+
+            if(MainActivity.dayNightMode == 0){
+                increaseBtn.setImageResource(R.drawable.font_increase_64_black);
+                decreaseBtn.setImageResource(R.drawable.font_decrease_64_black);
+            }else {
+                increaseBtn.setImageResource(R.drawable.font_increase_64_white);
+                decreaseBtn.setImageResource(R.drawable.font_decrease_64_white);
+            }
+
         }
-
-
-        //description.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25f);
-        //fontSize = (int) getResources().getDimension(R.dimen.text_body_16);
     }
 
     @Override
