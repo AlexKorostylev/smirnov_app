@@ -138,7 +138,15 @@ public class MainActivity extends AppCompatActivity
             ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
-        } else if (appBranch.equals("aboutBranch")) {
+        } else if (appBranch.equals("poetryBranch")) {
+            setTitle("Поэзия");
+            PoetryListFragment poetryListFragment = new PoetryListFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.top_container, poetryListFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+        }else if (appBranch.equals("aboutBranch")) {
             AboutListFragment aboutListFragment = new AboutListFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.top_container, aboutListFragment);
