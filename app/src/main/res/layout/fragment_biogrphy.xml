@@ -42,7 +42,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="32dp"
                 android:layout_gravity="center"
-                android:src="@drawable/font_increase_64"
+                android:src="@drawable/font_increase_64_black"
                 android:layout_weight="0.1"/>
 
             <ImageView
