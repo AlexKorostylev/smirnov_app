@@ -3,10 +3,12 @@ package spain.barcelona.mydraw;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -32,6 +34,7 @@ public class PoetryDetailFragment extends Fragment {
 
         // Back button
         ImageView imgBtn = v.findViewById(R.id.back_button);
+        LinearLayout imgBackPic = v.findViewById(R.id.poetry_back_img);
         imgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,8 +44,10 @@ public class PoetryDetailFragment extends Fragment {
 
         if(MainActivity.dayNightMode == 0){
             imgBtn.setImageResource(R.drawable.back_arrow_24_black);
+            imgBackPic.setBackgroundResource(R.drawable.poetry_back);
         }else {
             imgBtn.setImageResource(R.drawable.back_arrow_24_white);
+            imgBackPic.setBackgroundResource(R.drawable.poetry_back_black);
         }
 
         return v;
