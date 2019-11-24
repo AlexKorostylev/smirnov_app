@@ -147,7 +147,7 @@ public class BioFragment extends Fragment  {
 
 
         if(MainActivity.dayNightMode == 0){
-            increaseBtn.setImageResource(R.drawable.font_increase_64);
+            increaseBtn.setImageResource(R.drawable.font_increase_64_black);
             decreaseBtn.setImageResource(R.drawable.font_decrease_64_black);
         }else {
             increaseBtn.setImageResource(R.drawable.font_increase_64_white);
