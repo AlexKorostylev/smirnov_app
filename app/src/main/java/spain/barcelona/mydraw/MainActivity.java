@@ -147,6 +147,7 @@ public class MainActivity extends AppCompatActivity
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
         }else if (appBranch.equals("aboutBranch")) {
+            setTitle("Отзывы о творчестве");
             AboutListFragment aboutListFragment = new AboutListFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.top_container, aboutListFragment);
