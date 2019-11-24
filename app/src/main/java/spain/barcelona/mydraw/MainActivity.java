@@ -138,8 +138,14 @@ public class MainActivity extends AppCompatActivity
             ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
-        }
-        else if (appBranch.equals("photoBranch")) {
+        } else if (appBranch.equals("aboutBranch")) {
+            AboutListFragment aboutListFragment = new AboutListFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.top_container, aboutListFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+        } else if (appBranch.equals("photoBranch")) {
             setTitle("Фотоархив");
             if (startPositionPhoto == 0) {
                 PhotoFragment photoFragment = new PhotoFragment();
@@ -317,13 +323,13 @@ public class MainActivity extends AppCompatActivity
             ft.commit();
 
         } else if (id == R.id.nav_about) {
+            appBranch = "aboutBranch";
             AboutListFragment aboutListFragment = new AboutListFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.top_container, aboutListFragment);
             ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
-
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
