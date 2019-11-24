@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.app.ListFragment;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -23,6 +25,8 @@ public class InterviewListFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        setHasOptionsMenu(true);
 
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Интервью");
@@ -46,6 +50,17 @@ public class InterviewListFragment extends ListFragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         this.listener = (InterviewListListener) activity;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.findItem(R.id.recycle_list).setVisible(false);
+        if (MainActivity.dayNightMode == 0) {
+            menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_black);
+        } else {
+            menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_white);
+        }
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
