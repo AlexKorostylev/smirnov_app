@@ -2,6 +2,8 @@ package spain.barcelona.mydraw;
 
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.app.ListFragment;
 import android.support.v7.widget.Toolbar;
@@ -37,7 +39,7 @@ public class InterviewListFragment extends ListFragment {
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                inflater.getContext(), android.R.layout.simple_list_item_1,
+                inflater.getContext(), R.layout.simple_list_item_1,
                 listTitles);
         setListAdapter(adapter);
 
@@ -50,6 +52,20 @@ public class InterviewListFragment extends ListFragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         this.listener = (InterviewListListener) activity;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ListView listView = getListView();
+
+        if(MainActivity.dayNightMode == 0){
+            listView.setBackgroundResource(R.color.photo_text_background);
+            listView.setDivider(new ColorDrawable(Color.GRAY));
+            listView.setDividerHeight(1);
+        }else {
+            listView.setBackgroundResource(R.color.photo_text_color);
+        }
     }
 
     @Override
