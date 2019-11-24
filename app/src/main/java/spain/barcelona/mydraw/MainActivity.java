@@ -125,6 +125,7 @@ public class MainActivity extends AppCompatActivity
                 ft.commit();
             }
         } else if (appBranch.equals("interviewBranch")) {
+            setTitle("Интервью");
             InterviewListFragment interviewListFragment = new InterviewListFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.top_container, interviewListFragment);
@@ -132,6 +133,7 @@ public class MainActivity extends AppCompatActivity
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
         }else if (appBranch.equals("bioBranch")) {
+            setTitle("Биография");
             BioFragment bioFragment = new BioFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.top_container, bioFragment);
