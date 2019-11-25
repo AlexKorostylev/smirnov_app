@@ -87,7 +87,12 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 }
                 indexAllPeriodGraphic = BizLogic.incrementCheck(allPeriod, indexAllPeriodGraphic, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(allPeriod, indexAllPeriodGraphic, pics)].getImageResourceId());
-                nameText.setText(pics[BizLogic.positionAtArray(allPeriod, indexAllPeriodGraphic, pics)].getName());
+                if (pics[BizLogic.positionAtArray(allPeriod, indexAllPeriodGraphic, pics)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(pics[BizLogic.positionAtArray(allPeriod, indexAllPeriodGraphic, pics)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriodGraphic, pics));
                 periodCurrentStateGraphic = allPeriod;
                 indexCurrentStateGraphic = indexAllPeriodGraphic;
@@ -99,7 +104,12 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 }
                 indexFirstPeriodGraphic = BizLogic.incrementCheck(firstPeriod, indexFirstPeriodGraphic, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodGraphic, pics)].getImageResourceId());
-                nameText.setText(pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodGraphic, pics)].getName());
+                if (pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodGraphic, pics)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodGraphic, pics)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(firstPeriod, indexFirstPeriodGraphic, pics));
                 periodCurrentStateGraphic = firstPeriod;
                 indexCurrentStateGraphic = indexFirstPeriodGraphic;
@@ -111,7 +121,12 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 }
                 indexSecondPeriodGraphic = BizLogic.incrementCheck(secondPeriod, indexSecondPeriodGraphic, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodGraphic, pics)].getImageResourceId());
-                nameText.setText(pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodGraphic, pics)].getName());
+                if (pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodGraphic, pics)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodGraphic, pics)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(secondPeriod, indexSecondPeriodGraphic, pics));
                 periodCurrentStateGraphic = secondPeriod;
                 indexCurrentStateGraphic = indexSecondPeriodGraphic;
@@ -123,7 +138,12 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 }
                 indexThirdPeriodGraphic = BizLogic.incrementCheck(thirdPeriod, indexThirdPeriodGraphic, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodGraphic, pics)].getImageResourceId());
-                nameText.setText(pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodGraphic, pics)].getName());
+                if (pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodGraphic, pics)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodGraphic, pics)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(thirdPeriod, indexThirdPeriodGraphic, pics));
                 periodCurrentStateGraphic = thirdPeriod;
                 indexCurrentStateGraphic = indexThirdPeriodGraphic;
@@ -135,7 +155,12 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 }
                 indexFoursPeriodGraphic = BizLogic.incrementCheck(foursPeriod, indexFoursPeriodGraphic, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodGraphic, pics)].getImageResourceId());
-                nameText.setText(pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodGraphic, pics)].getName());
+                if (pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodGraphic, pics)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodGraphic, pics)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(foursPeriod, indexFoursPeriodGraphic, pics));
                 periodCurrentStateGraphic = foursPeriod;
                 indexCurrentStateGraphic = indexFoursPeriodGraphic;
@@ -159,7 +184,12 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 }
                 indexAllPeriodGraphic = BizLogic.decrementCheck(allPeriod, indexAllPeriodGraphic, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(allPeriod, indexAllPeriodGraphic, pics)].getImageResourceId());
-                nameText.setText(pics[BizLogic.positionAtArray(allPeriod, indexAllPeriodGraphic, pics)].getName());
+                if (pics[BizLogic.positionAtArray(allPeriod, indexAllPeriodGraphic, pics)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(pics[BizLogic.positionAtArray(allPeriod, indexAllPeriodGraphic, pics)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriodGraphic, pics));
                 periodCurrentStateGraphic = allPeriod;
                 indexCurrentStateGraphic = indexAllPeriodGraphic;
@@ -171,7 +201,12 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 }
                 indexFirstPeriodGraphic = BizLogic.decrementCheck(firstPeriod, indexFirstPeriodGraphic, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodGraphic, pics)].getImageResourceId());
-                nameText.setText(pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodGraphic, pics)].getName());
+                if (pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodGraphic, pics)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(pics[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodGraphic, pics)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(firstPeriod, indexFirstPeriodGraphic, pics));
                 periodCurrentStateGraphic = firstPeriod;
                 indexCurrentStateGraphic = indexFirstPeriodGraphic;
@@ -183,7 +218,12 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 }
                 indexSecondPeriodGraphic = BizLogic.decrementCheck(secondPeriod, indexSecondPeriodGraphic, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodGraphic, pics)].getImageResourceId());
-                nameText.setText(pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodGraphic, pics)].getName());
+                if (pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodGraphic, pics)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(pics[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodGraphic, pics)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(secondPeriod, indexSecondPeriodGraphic, pics));
                 periodCurrentStateGraphic = secondPeriod;
                 indexCurrentStateGraphic = indexSecondPeriodGraphic;
@@ -195,7 +235,12 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 }
                 indexThirdPeriodGraphic = BizLogic.decrementCheck(thirdPeriod, indexThirdPeriodGraphic, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodGraphic, pics)].getImageResourceId());
-                nameText.setText(pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodGraphic, pics)].getName());
+                if (pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodGraphic, pics)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(pics[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodGraphic, pics)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(thirdPeriod, indexThirdPeriodGraphic, pics));
                 periodCurrentStateGraphic = thirdPeriod;
                 indexCurrentStateGraphic = indexThirdPeriodGraphic;
@@ -207,7 +252,12 @@ public class GraphicBtnFragment extends Fragment implements View.OnClickListener
                 }
                 indexFoursPeriodGraphic = BizLogic.decrementCheck(foursPeriod, indexFoursPeriodGraphic, pics);
                 image.setImageResource(pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodGraphic, pics)].getImageResourceId());
-                nameText.setText(pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodGraphic, pics)].getName());
+                if (pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodGraphic, pics)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(pics[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodGraphic, pics)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(foursPeriod, indexFoursPeriodGraphic, pics));
                 periodCurrentStateGraphic = foursPeriod;
                 indexCurrentStateGraphic = indexFoursPeriodGraphic;
