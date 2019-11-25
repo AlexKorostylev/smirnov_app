@@ -1,12 +1,10 @@
 package spain.barcelona.mydraw;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -48,7 +46,7 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
 
         Spinner spinner = v.findViewById(R.id.spinner_paint);
 
-       ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(
                 getActivity(), R.layout.spinner_item, years
         );
         spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
@@ -88,7 +86,12 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 }
                 indexAllPeriodPaint = BizLogic.incrementCheck(allPeriod, indexAllPeriodPaint, paint);
                 image.setImageResource(paint[BizLogic.positionAtArray(allPeriod, indexAllPeriodPaint, paint)].getImageResourceId());
-                nameText.setText(paint[BizLogic.positionAtArray(allPeriod, indexAllPeriodPaint, paint)].getName());
+                if (paint[BizLogic.positionAtArray(allPeriod, indexAllPeriodPaint, paint)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(paint[BizLogic.positionAtArray(allPeriod, indexAllPeriodPaint, paint)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriodPaint, paint));
                 periodCurrentStatePaint = allPeriod;
                 indexCurrentStatePaint = indexAllPeriodPaint;
@@ -100,7 +103,12 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 }
                 indexFirstPeriodPaint = BizLogic.incrementCheck(firstPeriod, indexFirstPeriodPaint, paint);
                 image.setImageResource(paint[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodPaint, paint)].getImageResourceId());
-                nameText.setText(paint[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodPaint, paint)].getName());
+                if (paint[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodPaint, paint)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(paint[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodPaint, paint)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(firstPeriod, indexFirstPeriodPaint, paint));
                 periodCurrentStatePaint = firstPeriod;
                 indexCurrentStatePaint = indexFirstPeriodPaint;
@@ -112,7 +120,12 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 }
                 indexSecondPeriodPaint = BizLogic.incrementCheck(secondPeriod, indexSecondPeriodPaint, paint);
                 image.setImageResource(paint[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodPaint, paint)].getImageResourceId());
-                nameText.setText(paint[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodPaint, paint)].getName());
+                if (paint[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodPaint, paint)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(paint[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodPaint, paint)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(secondPeriod, indexSecondPeriodPaint, paint));
                 periodCurrentStatePaint = secondPeriod;
                 indexCurrentStatePaint = indexSecondPeriodPaint;
@@ -124,7 +137,12 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 }
                 indexThirdPeriodPaint = BizLogic.incrementCheck(thirdPeriod, indexThirdPeriodPaint, paint);
                 image.setImageResource(paint[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodPaint, paint)].getImageResourceId());
-                nameText.setText(paint[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodPaint, paint)].getName());
+                if (paint[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodPaint, paint)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(paint[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodPaint, paint)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(thirdPeriod, indexThirdPeriodPaint, paint));
                 periodCurrentStatePaint = thirdPeriod;
                 indexCurrentStatePaint = indexThirdPeriodPaint;
@@ -136,7 +154,12 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 }
                 indexFoursPeriodPaint = BizLogic.incrementCheck(foursPeriod, indexFoursPeriodPaint, paint);
                 image.setImageResource(paint[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodPaint, paint)].getImageResourceId());
-                nameText.setText(paint[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodPaint, paint)].getName());
+                if (paint[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodPaint, paint)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(paint[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodPaint, paint)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(foursPeriod, indexFoursPeriodPaint, paint));
                 periodCurrentStatePaint = foursPeriod;
                 indexCurrentStatePaint = indexFoursPeriodPaint;
@@ -160,7 +183,12 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 }
                 indexAllPeriodPaint = BizLogic.decrementCheck(allPeriod, indexAllPeriodPaint, paint);
                 image.setImageResource(paint[BizLogic.positionAtArray(allPeriod, indexAllPeriodPaint, paint)].getImageResourceId());
-                nameText.setText(paint[BizLogic.positionAtArray(allPeriod, indexAllPeriodPaint, paint)].getName());
+                if (paint[BizLogic.positionAtArray(allPeriod, indexAllPeriodPaint, paint)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(paint[BizLogic.positionAtArray(allPeriod, indexAllPeriodPaint, paint)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(allPeriod, indexAllPeriodPaint, paint));
                 periodCurrentStatePaint = allPeriod;
                 indexCurrentStatePaint = indexAllPeriodPaint;
@@ -172,7 +200,12 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 }
                 indexFirstPeriodPaint = BizLogic.decrementCheck(firstPeriod, indexFirstPeriodPaint, paint);
                 image.setImageResource(paint[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodPaint, paint)].getImageResourceId());
-                nameText.setText(paint[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodPaint, paint)].getName());
+                if (paint[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodPaint, paint)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(paint[BizLogic.positionAtArray(firstPeriod, indexFirstPeriodPaint, paint)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(firstPeriod, indexFirstPeriodPaint, paint));
                 periodCurrentStatePaint = firstPeriod;
                 indexCurrentStatePaint = indexFirstPeriodPaint;
@@ -184,7 +217,12 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 }
                 indexSecondPeriodPaint = BizLogic.decrementCheck(secondPeriod, indexSecondPeriodPaint, paint);
                 image.setImageResource(paint[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodPaint, paint)].getImageResourceId());
-                nameText.setText(paint[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodPaint, paint)].getName());
+                if (paint[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodPaint, paint)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(paint[BizLogic.positionAtArray(secondPeriod, indexSecondPeriodPaint, paint)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(secondPeriod, indexSecondPeriodPaint, paint));
                 periodCurrentStatePaint = secondPeriod;
                 indexCurrentStatePaint = indexSecondPeriodPaint;
@@ -196,7 +234,12 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 }
                 indexThirdPeriodPaint = BizLogic.decrementCheck(thirdPeriod, indexThirdPeriodPaint, paint);
                 image.setImageResource(paint[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodPaint, paint)].getImageResourceId());
-                nameText.setText(paint[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodPaint, paint)].getName());
+                if (paint[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodPaint, paint)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(paint[BizLogic.positionAtArray(thirdPeriod, indexThirdPeriodPaint, paint)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(thirdPeriod, indexThirdPeriodPaint, paint));
                 periodCurrentStatePaint = thirdPeriod;
                 indexCurrentStatePaint = indexThirdPeriodPaint;
@@ -208,7 +251,12 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 }
                 indexFoursPeriodPaint = BizLogic.decrementCheck(foursPeriod, indexFoursPeriodPaint, paint);
                 image.setImageResource(paint[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodPaint, paint)].getImageResourceId());
-                nameText.setText(paint[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodPaint, paint)].getName());
+                if (paint[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodPaint, paint)].getName().equals("")) {
+                    nameText.setVisibility(View.INVISIBLE);
+                } else {
+                    nameText.setVisibility(View.VISIBLE);
+                    nameText.setText(paint[BizLogic.positionAtArray(foursPeriod, indexFoursPeriodPaint, paint)].getName());
+                }
                 picCounter.setText(BizLogic.dataForCounter(foursPeriod, indexFoursPeriodPaint, paint));
                 periodCurrentStatePaint = foursPeriod;
                 indexCurrentStatePaint = indexFoursPeriodPaint;
@@ -216,5 +264,4 @@ public class PaintBtnFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
-
 }
