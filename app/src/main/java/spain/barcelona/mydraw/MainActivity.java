@@ -24,22 +24,20 @@ public class MainActivity extends AppCompatActivity
 
 
     // Global Variable
-    static String appBranch = "welcomeBranch"; // for recycleList Fragment
+    static String appBranch = "welcomeBranch"; // start for recycleList Fragment
     static int dayNightMode = 0; // 0 - Day mode; 1 - Night mode.
     static Boolean chipsDisabled = true;
 
     // Variable for Welcome Branch (welcome and recycle welcome fragment).
     static int periodCurrentStateWelcome = 0;
     static int indexCurrentStateWelcome = 0;
-
     static int indexAllPeriodWelcome = 0;
-    static int startPositionWelcome = 0; // 0 - Full frame; 1 - Recycle mode.
+    static int startPositionWelcome = 0; // 0 - Full frame mode; 1 - Recycle mode.
 
-    // Variable for Paint Branch (paint and recycle paint fragment.
+    // Variable for Paint Branch (paint and recycle paint fragment).
     static int periodCurrentStatePaint = 0;
     static int indexCurrentStatePaint = 0;
-
-    static int indexAllPeriodPaint = 0; // Обрать на это внимение чтобы счетчик сразу откликался.
+    static int indexAllPeriodPaint = 0; //
     static int indexFirstPeriodPaint = -1;
     static int indexSecondPeriodPaint = -1;
     static int indexThirdPeriodPaint = -1;
@@ -49,15 +47,14 @@ public class MainActivity extends AppCompatActivity
     // Variable for Graphic Branch (graphic and recycle graphic fragment).
     static int periodCurrentStateGraphic = 0;
     static int indexCurrentStateGraphic = 0;
-
-    static int indexAllPeriodGraphic = -1;
+    static int indexAllPeriodGraphic = 0;
     static int indexFirstPeriodGraphic = -1;
     static int indexSecondPeriodGraphic = -1;
     static int indexThirdPeriodGraphic = -1;
     static int indexFoursPeriodGraphic = -1;
     static int startPositionGraphic = 0;
 
-    // Photo
+    // Variable for Photo Branch (paint and recycle paint fragment).
     static int periodCurrentStatePhoto = 0;
     static int indexCurrentStatePhoto = 0;
     static int indexAllPeriodPhoto = 0;
