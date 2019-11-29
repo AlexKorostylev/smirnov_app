@@ -41,7 +41,7 @@ public class RecycleListWelcomeFragment extends Fragment {
         // View v = inflater.inflate(R.layout.fragment_recycle_list, container, false);
 
 
-        RecyclerView pizzaRecycler = (RecyclerView) inflater.inflate(
+        RecyclerView welcomeRecycler = (RecyclerView) inflater.inflate(
                 R.layout.fragment_recycle_list, container, false);
 
 
@@ -73,10 +73,10 @@ public class RecycleListWelcomeFragment extends Fragment {
         }
 
         CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(picNames, picImages);
-        pizzaRecycler.setAdapter(adapter);
+        welcomeRecycler.setAdapter(adapter);
 
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
-        pizzaRecycler.setLayoutManager(layoutManager);
+        welcomeRecycler.setLayoutManager(layoutManager);
 
         // Установление возиции элемента recycle view
 
@@ -102,7 +102,7 @@ public class RecycleListWelcomeFragment extends Fragment {
             }
         });
 
-        return pizzaRecycler;
+        return welcomeRecycler;
     }
 
     @Override
