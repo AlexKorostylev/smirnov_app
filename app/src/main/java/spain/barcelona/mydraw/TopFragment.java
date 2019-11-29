@@ -49,7 +49,10 @@ public class TopFragment extends Fragment {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Вадим Смирнов");
 
-        ((MainActivity) getActivity()).getSupportActionBar().show();
+        if (getActivity() != null) {
+            ((MainActivity) getActivity()).getSupportActionBar().show();
+        }
+
 
         return v;
     }
@@ -58,7 +61,7 @@ public class TopFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // Do something that differs the Activity's menu here
         menu.findItem(R.id.recycle_list).setTitle("Frame");
-        if(MainActivity.dayNightMode ==0){
+        if (MainActivity.dayNightMode == 0) {
             menu.findItem(R.id.recycle_list).setIcon(R.drawable.frame_grid_black_24);
             menu.findItem(R.id.background_mode).setIcon(R.drawable.day_night_24_black);
         } else {
@@ -81,7 +84,7 @@ public class TopFragment extends Fragment {
                     ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                     ft.commit();
                     appBranch = "welcomeBranch";
-                    MainActivity.startPositionWelcome =1;
+                    MainActivity.startPositionWelcome = 1;
                 }
         }
         return false;

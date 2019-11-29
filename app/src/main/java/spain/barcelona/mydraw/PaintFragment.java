@@ -49,7 +49,9 @@ public class PaintFragment extends Fragment {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Живопись");
 
-        ((MainActivity) getActivity()).getSupportActionBar().show();
+        if (getActivity() != null) {
+            ((MainActivity) getActivity()).getSupportActionBar().show();
+        }
 
         return v;
     }
