@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="spain.barcelona.mydraw">
+    package="orbis.tertius.smirnov">
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme"
         android:allowBackup="false">
         <activity
-            android:name=".MainActivity"
+            android:name="orbis.tertius.smirnov.MainActivity"
             android:label="@string/app_bar_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
